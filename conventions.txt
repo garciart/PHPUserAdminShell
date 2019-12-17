@@ -1,0 +1,7 @@
+PHP Project    PascalCase
+FileNames      camelCase
+Classes        PascalCase
+Class Methods  camelCase
+Properties     camelCase
+Functions      camelCase
+Variables      camelCase
