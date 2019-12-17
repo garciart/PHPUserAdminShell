@@ -1,0 +1,9 @@
+{
+    "name": "Rob Garcia <rgarcia@rgprogramming.com>",
+
+    "autoload": {
+        "psr-4": {
+            "UserAdmin\\": "useradmin/"
+        }
+    }
+}

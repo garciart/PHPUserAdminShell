@@ -26,21 +26,21 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a href="<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" class="navbar-left" title="Home"><img src="g_logo.png" class="nav_logo"></a>
-                <a class="navbar-brand" href="<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" title="Home">PHP User Admin Shell</a>
+                <a href="<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" class="navbar-left" title="Home"><img src="g_logo.png" class="nav_logo"></a>
+                <a class="navbar-brand" href="<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" title="Home">PHP User Admin Shell</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item <?php if($childPage == "index.php") echo "active"; ?>">
-                            <a class="nav-link" href="<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" title="Home">Home</a>
+                        <li class="nav-item <?php if($childPage == "Index.php") echo "active"; ?>">
+                            <a class="nav-link" href="<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" title="Home">Home</a>
                         </li>
-                        <li class="nav-item <?php if($childPage == "about.php") echo "active"; ?>">
-                            <a class="nav-link" href="<?php echo ($childPage == "about.php" ? "#" : "about.php"); ?>" title="About">About</a>
+                        <li class="nav-item <?php if($childPage == "About.php") echo "active"; ?>">
+                            <a class="nav-link" href="<?php echo ($childPage == "About.php" ? "#" : "About.php"); ?>" title="About">About</a>
                         </li>
-                        <li class="nav-item <?php if($childPage == "login.php") echo "active"; ?>">
-                            <a class="nav-link" href="<?php echo ($childPage == "login.php" ? "#" : "login.php"); ?>" title="Log In">Log In</a>
+                        <li class="nav-item <?php if($childPage == "Login.php") echo "active"; ?>">
+                            <a class="nav-link" href="<?php echo ($childPage == "Login.php" ? "#" : "Login.php"); ?>" title="Log In">Log In</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://github.com/garciart/Master-Pages-In-PHP" target="_blank" title="GitHub Repository">GitHub</a>
