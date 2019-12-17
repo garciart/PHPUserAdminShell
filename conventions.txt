@@ -1,5 +1,5 @@
 PHP Project    PascalCase
-FileNames      camelCase
+FileNames      PascalCase
 Classes        PascalCase
 Class Methods  camelCase
 Properties     camelCase
