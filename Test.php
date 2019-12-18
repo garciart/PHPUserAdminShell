@@ -1,10 +1,9 @@
 <?php
-session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>Login Page</title>
+<title>PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -15,7 +14,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">Login Page</p>
+<p class="lead">About Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -24,24 +23,8 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<div class="col-sm-4 mx-auto text-center">
-    <form class="form-signin" action="useradmin/authenticate.php" method="post">
-        <img class="mb-4" src="g_logo.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
-        <label for="username" class="sr-only">Username</label>
-        <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus>
-        <br>
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" class="form-control" placeholder="Password" id="password" required>
-        <br>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
-    </form>
-</div>
+<div class="text-center"><img class="mb-4" src="g_logo.png" alt="" width="72" height="72"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();

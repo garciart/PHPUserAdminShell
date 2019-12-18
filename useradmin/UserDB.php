@@ -58,7 +58,7 @@ class UserDB {
     /**
      * Creates the database if it does not exist.
      */
-    protected function initialize() {
+    private function initialize() {
         // Create Role table first
         $sql = "CREATE TABLE IF NOT EXISTS Role (
             RoleID integer PRIMARY KEY,
@@ -94,7 +94,7 @@ class UserDB {
      * Gets the highest value of RoleID (usually the last row inserted) in the Role table.
      * @return type The max value of RoleID or 0 if there is no data.
      */
-    public function getMaxRoleID() {
+    private function getMaxRoleID() {
         $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role";
         $result = $this->pdo->query($sql);
         $row = $result->fetch();
@@ -106,7 +106,7 @@ class UserDB {
      * Gets the highest value of UserID (usually the last row inserted) in the User table.
      * @return type The max value of UserID or 0 if there is no data.
      */
-    public function getMaxUserID() {
+    private function getMaxUserID() {
         $sql = "SELECT MAX(UserID) as maxUserID FROM User";
         $result = $this->pdo->query($sql);
         $row = $result->fetch();
@@ -177,18 +177,11 @@ class UserDB {
      * @return True if the password matches for the username, false if not.
      */
     public function authenticateUser($username, $password) {
+        $authenticated = false;
         if ($this->userExists($username)) {
-            $storedPassword = $this->getUsersPassword($username);
-            echo "Here!<br>";
-            if (password_verify($password, $storedPassword)) {
-                $authenticated = true;
-            } else {
-                $authenticated = false;
-            }
-        } else {
-            $authenticated = false;
+            $storedPassword = $this->getUserPassword($username);
+            $authenticated = password_verify($password, $storedPassword) ? true : false;
         }
-
         return $authenticated;
     }
 
@@ -198,16 +191,16 @@ class UserDB {
      * @param $username The username to check if exists.
      * @return True if the users exists, false if not.
      */
-    protected function userExists($username) {
-        $sql = "SELECT COUNT(*) AS count
+    private function userExists($username) {
+        $sql = "SELECT COUNT(*) AS Count
                 FROM   User
                 WHERE  UserName = :UserName";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(":UserName", $username);
-        $result = $stmt->execute();
-        echo "Count: {$result} ";
-        $exists = ($result == 1) ? true : false;
-        echo "{$exists}<br>";
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $exists = ($result["Count"]) == 1 ? true : false;
         return $exists;
     }
 
@@ -217,17 +210,28 @@ class UserDB {
      * @param $username The username to get the password of.
      * @return The password of the given user.
      */
-    protected function getUsersPassword($username) {
+    private function getUserPassword($username) {
         $sql = "SELECT PasswordHash
                 FROM   User
                 WHERE  UserName = :UserName";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(":UserName", $username);
         $stmt->execute();
+        // Fetch the result set
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         $passwordHash = $result["PasswordHash"];
-        echo "PasswordHash: {$passwordHash}<br>";
         return $passwordHash;
     }
-
+    
+    public function getUserDetails($username) {
+        $sql = "SELECT *
+                FROM   User
+                WHERE  UserName = :UserName";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":UserName", $username);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

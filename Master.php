@@ -9,6 +9,7 @@
         <!-- Bootstrap goes first -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -33,17 +34,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item <?php if($childPage == "Index.php") echo "active"; ?>">
+                        <li class="nav-item <?php if ($childPage == "Index.php") echo "active"; ?>">
                             <a class="nav-link" href="<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" title="Home">Home</a>
                         </li>
-                        <li class="nav-item <?php if($childPage == "About.php") echo "active"; ?>">
+                        <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
                             <a class="nav-link" href="<?php echo ($childPage == "About.php" ? "#" : "About.php"); ?>" title="About">About</a>
                         </li>
-                        <li class="nav-item <?php if($childPage == "Login.php") echo "active"; ?>">
+                        <li class="nav-item <?php if ($childPage == "Login.php") echo "active"; ?>">
                             <a class="nav-link" href="<?php echo ($childPage == "Login.php" ? "#" : "Login.php"); ?>" title="Log In">Log In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/garciart/Master-Pages-In-PHP" target="_blank" title="GitHub Repository">GitHub</a>
+                            <a class="nav-link" href="https://github.com/garciart/Master-Pages-In-PHP" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
                         </li>
                     </ul>
                 </div>
