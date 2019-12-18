@@ -8,3 +8,4 @@
 <img src="README_images\readme02.png" title="Opening the php.ini file using XAMPP" />
 <p>Restart the server.</p>
 <hr>
+<p>Thanks to Julen Pardo at https://www.webcodegeeks.com/php/login-form-php-example/ for the Key Derivation Functions (KDF).<p>
