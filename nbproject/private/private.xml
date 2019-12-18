@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/useradmin/UserAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/Login.php</file>
             <file>file:/C:/xampp/htdocs/PHPUserAdminShell/useradmin/UserDB.php</file>
-            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/composer.json</file>
-            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/authenticate.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/Index.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/About.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/useradmin/User.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/useradmin/Authenticate.php</file>
+            <file>file:/C:/xampp/htdocs/PHPUserAdminShell/Master.php</file>
         </group>
     </open-files>
 </project-private>

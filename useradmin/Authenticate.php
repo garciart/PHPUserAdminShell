@@ -1,12 +1,15 @@
 <?php
 
+session_start();
 /**
  * 
  */
-require "UserDB.php";
+require_once "UserDB.php";
+require_once "User.php";
 
 // Get the class name
 use UserAdmin\UserDB;
+use UserAdmin\User;
 
 // Get and verify the posted data
 $username = filter_input(INPUT_POST, "username");
@@ -19,18 +22,27 @@ if (!isset($username, $password)) {
 $userDB = new UserDB();
 $pdo = $userDB->connect();
 if ($pdo != null) {
-    echo "Connected to the SQLite database successfully!<br>";
     $authenticated = $userDB->authenticateUser($username, $password);
-
     if ($authenticated) {
-        $response = "Hello $username, you have been successfully authenticated.";
+        $result = $userDB->getUserDetails($username);
+        if ($result["IsLockedOut"]) {
+            $response = "We are sorry, but your account is locked. Please contact your administrator.";
+        } else {
+            $user = new User($result["UserID"], $result["UserName"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+            session_regenerate_id();
+            $_SESSION["Authenticated"] = TRUE;
+            $_SESSION["UserName"] = $user->getUserName();
+            $_SESSION["RoleID"] = $user->getRoleID();
+            $response = "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.";
+            header('Location: UserAdmin.php');
+        }
     } else {
-        $response = 'Incorrect credentials or user does not exist.';
+        $response = "Incorrect credentials or user does not exist.";
     }
 
     echo $response;
 } else {
-    die("Whoops, could not connect to the SQLite database!");
+    die("Could not connect to the database.<br>");
 }
 
 /*
