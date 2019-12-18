@@ -21,7 +21,7 @@
     <body>
         <?php
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
-        $childPage = (basename($_SERVER['PHP_SELF']));
+        $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
