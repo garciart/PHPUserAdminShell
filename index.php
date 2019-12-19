@@ -7,7 +7,7 @@ session_start();
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>PHP User Admin Shell</title>
+<title>Home | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */

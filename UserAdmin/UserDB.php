@@ -222,7 +222,7 @@ class UserDB {
         $passwordHash = $result["PasswordHash"];
         return $passwordHash;
     }
-    
+
     public function getUserDetails($username) {
         $sql = "SELECT *
                 FROM   User
@@ -234,4 +234,30 @@ class UserDB {
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getUserRole($roleID) {
+        $sql = "SELECT Title
+                FROM   Role
+                WHERE  RoleID = :RoleID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":RoleID", $roleID);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $roleTitle = $result["Title"];
+        return $roleTitle;
+    }
+
+    public function updateLoginDate($userID) {
+        $sql = "UPDATE User
+                SET    LastLoginDate = :LastLoginDate
+                WHERE  UserID = :UserID";
+        $lastLoginDate = date("Y-m-d H:i:s");
+        $stmt = $this->pdo->prepare($sql);
+        // Get the highest value of UserID + 1
+        $stmt->bindValue(":UserID", $userID);
+        $stmt->bindValue(":LastLoginDate", $lastLoginDate);
+        $stmt->execute();
+    }
+
 }
