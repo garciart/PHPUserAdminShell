@@ -1,4 +1,8 @@
 <?php
+/**
+ * Site landing page.
+ */
+session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>

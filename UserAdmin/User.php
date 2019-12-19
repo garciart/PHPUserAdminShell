@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Class
+ * User Class.
  */
 
 namespace UserAdmin;

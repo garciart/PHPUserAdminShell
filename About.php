@@ -1,4 +1,8 @@
 <?php
+/**
+ * Contains general information about the site and its authors.
+ */
+session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -41,4 +45,3 @@ $contentPlaceHolderFooter = ob_get_contents();
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
 include("Master.php");
-?>
