@@ -40,6 +40,11 @@ ob_clean();
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
+        <?php
+        if($_SESSION["Authenticated"] == FALSE) {
+            echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+        }
+        ?>
     </form>
 </div>
 <?php

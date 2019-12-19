@@ -37,7 +37,9 @@ if ($pdo != null) {
             header('Location: UserAdmin.php');
         }
     } else {
+        $_SESSION["Authenticated"] = FALSE;
         $response = "Incorrect credentials or user does not exist.";
+        header('Location: /PHPUserAdminShell/Login.php');
     }
 
     echo $response;
