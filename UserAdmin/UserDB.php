@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class that handles all database actions.
+ * Database class. Handles all database calls.
  */
 
 namespace UserAdmin;

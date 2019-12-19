@@ -1,4 +1,7 @@
 <?php
+/**
+ * Login page.
+ */
 session_start();
 /* Start placing content into an output buffer */
 ob_start();
@@ -25,7 +28,7 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <div class="col-sm-4 mx-auto text-center">
-    <form class="form-signin" action="useradmin/authenticate.php" method="post">
+    <form class="form-signin" action="UserAdmin/Authenticate.php" method="post">
         <img class="mb-4" src="g_logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
         <label for="username" class="sr-only">Username</label>
@@ -41,8 +44,15 @@ ob_clean();
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
         <?php
-        if($_SESSION["Authenticated"] == FALSE) {
-            echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+        if (isset($_SESSION["Authenticated"])) {
+            if ($_SESSION["Authenticated"] == FALSE) {
+                echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+                unset($_SESSION["Authenticated"]);
+            }
+            else {
+                header('Location: UserAdmin\UserAdmin.php');
+                exit();
+            }
         }
         ?>
     </form>

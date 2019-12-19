@@ -1,4 +1,8 @@
 <?php
+/**
+ * Test Page; delete before release to production.
+ */
+session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>

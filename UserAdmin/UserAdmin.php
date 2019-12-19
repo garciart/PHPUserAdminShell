@@ -1,7 +1,12 @@
 <?php
+/**
+ * Landing page for user administration.
+ */
 session_start();
+
 if ($_SESSION["Authenticated"] == FALSE) {
     header('Location: /PHPUserAdminShell/Login.php');
+    exit();
 }
 /* Start placing content into an output buffer */
 ob_start();
@@ -62,4 +67,3 @@ $contentPlaceHolderFooter = ob_get_contents();
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
 include("../Master.php");
-?>

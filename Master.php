@@ -1,3 +1,9 @@
+<?php
+/*
+ * Master page for all pages. Standardizes page format accros the site.
+ */
+// Sessions must be started by calling page, if necessary
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -27,21 +33,44 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a href="/PHPUserAdminShell/<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" class="navbar-left" title="Home"><img src="/PHPUserAdminShell/g_logo.png" class="nav_logo"></a>
-                <a class="navbar-brand" href="/PHPUserAdminShell/<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" title="Home">PHP User Admin Shell</a>
+                <a href="/PHPUserAdminShell/<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" class="navbar-left" title="Home"><img src="/PHPUserAdminShell/g_logo.png" class="nav_logo"></a>
+                <a class="navbar-brand" href="/PHPUserAdminShell/<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" title="Home">PHP User Admin Shell</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item <?php if ($childPage == "Index.php") echo "active"; ?>">
-                            <a class="nav-link" href="/PHPUserAdminShell/<?php echo ($childPage == "Index.php" ? "#" : "Index.php"); ?>" title="Home">Home</a>
+                        <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
+                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/PHPUserAdminShell/index.php\""); ?> title="Home">Home</a>
                         </li>
                         <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" href="/PHPUserAdminShell/<?php echo ($childPage == "About.php" ? "#" : "About.php"); ?>" title="About">About</a>
+                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/PHPUserAdminShell/About.php\""); ?> title="About">About</a>
                         </li>
-                        <li class="nav-item <?php if ($childPage == "Login.php") echo "active"; ?>">
-                            <a class="nav-link" href="/PHPUserAdminShell/<?php echo ($childPage == "Login.php" ? "#" : "Login.php"); ?>" title="Log In">Log In</a>
+                        <?php
+                        if (isset($_SESSION["Authenticated"])) {
+                            if ($_SESSION["Authenticated"] == TRUE) {
+                                ?>
+                                <li class="nav-item <?php if ($childPage == "UserAdmin.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "UserAdmin.php" ? "" : "href=\"/PHPUserAdminShell/UserAdmin/UserAdmin.php\""); ?> title="About">UserAdmin</a>
+                                </li>
+                                <?php
+                                // Use $logPage and $logStatus to prevent duplication of code
+                                $logPage = "Logout.php";
+                                $logStatus = "Log Out";
+                            }
+                            else {
+                                $logPage = "Login.php";
+                                $logStatus = "Log In";
+                            }
+                        } else {
+                            $logPage = "Login.php";
+                            $logStatus = "Log In";
+                        }
+                        ?>
+                        <li class="nav-item <?php if ($childPage == $logPage) echo "active"; ?>">
+                            <a class="nav-link" <?php echo ($childPage == $logPage ? "" : "href=\"/PHPUserAdminShell/" . $logPage . "\""); ?> title="<?php echo $logStatus; ?>">
+                                <?php echo $logStatus; ?>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://github.com/garciart/Master-Pages-In-PHP" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
@@ -53,6 +82,7 @@
         <header class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <?php echo $childPage . "<br>"; ?> 
                     <!-- Content placeholder for header element content -->
                     <?php echo $contentPlaceHolderHeader; ?>
                 </div>

@@ -1,9 +1,10 @@
 <?php
 
-session_start();
 /**
- * 
+ * Authenticates credentials and creates user session.
  */
+session_start();
+
 require_once "UserDB.php";
 require_once "User.php";
 
@@ -35,11 +36,13 @@ if ($pdo != null) {
             $_SESSION["RoleID"] = $user->getRoleID();
             $response = "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.";
             header('Location: UserAdmin.php');
+            exit();
         }
     } else {
         $_SESSION["Authenticated"] = FALSE;
         $response = "Incorrect credentials or user does not exist.";
         header('Location: /PHPUserAdminShell/Login.php');
+        exit();
     }
 
     echo $response;
