@@ -12,11 +12,11 @@ require_once "User.php";
 use UserAdmin\UserDB;
 use UserAdmin\User;
 
-// Get and verify the posted data
+// Get and filter the posted data
 $username = filter_input(INPUT_POST, "username");
 $password = filter_input(INPUT_POST, "password");
 if (!isset($username, $password)) {
-    die("Please fill both the username and password field!");
+    die("Please fill both the username and password field.");
 }
 
 // Connect to the database
@@ -35,17 +35,18 @@ if ($pdo != null) {
             $_SESSION["UserName"] = $user->getUserName();
             $_SESSION["RoleID"] = $user->getRoleID();
             $response = "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.";
-            header('Location: UserAdmin.php');
+            $userDB->updateLoginDate($user->getUserID());
+            header("Location: UserAdmin.php");
             exit();
         }
     } else {
         $_SESSION["Authenticated"] = FALSE;
         $response = "Incorrect credentials or user does not exist.";
-        header('Location: /PHPUserAdminShell/Login.php');
+        header("Location: /PHPUserAdminShell/Login.php");
         exit();
     }
 
-    echo $response;
+    echo $response. "<br>";
 } else {
     die("Could not connect to the database.<br>");
 }

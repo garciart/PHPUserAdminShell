@@ -30,11 +30,11 @@
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a href="/PHPUserAdminShell/<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" class="navbar-left" title="Home"><img src="/PHPUserAdminShell/g_logo.png" class="nav_logo"></a>
-                <a class="navbar-brand" href="/PHPUserAdminShell/<?php echo ($childPage == "index.php" ? "#" : "index.php"); ?>" title="Home">PHP User Admin Shell</a>
+                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/PHPUserAdminShell/index.php\""); ?> class="navbar-left" title="Home"><img src="/PHPUserAdminShell/g_logo.png" class="nav_logo"></a>
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/PHPUserAdminShell/index.php\""); ?> title="Home">PHP User Admin Shell</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -47,6 +47,9 @@
                             <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/PHPUserAdminShell/About.php\""); ?> title="About">About</a>
                         </li>
                         <?php
+                        $logID = "login";
+                        $logPage = "Login.php";
+                        $logStatus = "Log In";
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
@@ -55,25 +58,19 @@
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code
+                                $logID = "logout";
                                 $logPage = "Logout.php";
                                 $logStatus = "Log Out";
                             }
-                            else {
-                                $logPage = "Login.php";
-                                $logStatus = "Log In";
-                            }
-                        } else {
-                            $logPage = "Login.php";
-                            $logStatus = "Log In";
                         }
                         ?>
                         <li class="nav-item <?php if ($childPage == $logPage) echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == $logPage ? "" : "href=\"/PHPUserAdminShell/" . $logPage . "\""); ?> title="<?php echo $logStatus; ?>">
+                            <a class="nav-link" <?php echo ($childPage == $logPage ? "" : "href=\"/PHPUserAdminShell/" . $logPage . "\" id=\"" . $logID . "\" title=\"" . $logStatus . "\""); ?>>
                                 <?php echo $logStatus; ?>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/garciart/Master-Pages-In-PHP" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
+                            <a class="nav-link" href="https://github.com/garciart/PHPUserAdminShell" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +79,6 @@
         <header class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <?php echo $childPage . "<br>"; ?> 
                     <!-- Content placeholder for header element content -->
                     <?php echo $contentPlaceHolderHeader; ?>
                 </div>
@@ -119,5 +115,16 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script>
+            // Using jQuery
+            $(function () {
+                $("a#logout").click(function () {
+                    if (confirm("Are you sure you want to log out?")) {
+                        return true;
+                    }
+                    return false;
+                });
+            });
+        </script>
     </body>
 </html>

@@ -5,14 +5,14 @@
 session_start();
 
 if ($_SESSION["Authenticated"] == FALSE) {
-    header('Location: /PHPUserAdminShell/Login.php');
+    header("Location: /PHPUserAdminShell/Login.php");
     exit();
 }
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>Login Page</title>
+<title>User Administration | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -33,24 +33,29 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php
-if (!isset($_SESSION["Authenticated"])) {
-    header("Location: /PHPUserAdminShell/Login.php");
-    exit();
-} else {
-    echo "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.<br>";
+echo "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.<br>";
 
-    echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
-    // echo "UserID: " . $_SESSION["UserID"] . "<br>";
-    echo "UserName: " . $_SESSION["UserName"] . "<br>";
-    // echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
-    echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
-    // echo "Email: " . $_SESSION["Email"] . "<br>";
-    // echo "IsLockedOut: " . $_SESSION["IsLockedOut"] . "<br>";
-    // echo "LastLoginDate: " . $_SESSION["LastLoginDate"] . "<br>";
-    // echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
-    // echo "Comment: " . $_SESSION["Comment"] . "<br>";
-}
+echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
+// echo "UserID: " . $_SESSION["UserID"] . "<br>";
+echo "UserName: " . $_SESSION["UserName"] . "<br>";
+// echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
+echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
+// echo "Email: " . $_SESSION["Email"] . "<br>";
+// echo "IsLockedOut: " . $_SESSION["IsLockedOut"] . "<br>";
+// echo "LastLoginDate: " . $_SESSION["LastLoginDate"] . "<br>";
+// echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
+// echo "Comment: " . $_SESSION["Comment"] . "<br>";
 ?>
+<br>
+<form action="EditUser.php" method="post">
+    <input name="username" value="<?php echo $_SESSION["UserName"] ?>" hidden />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User</button>
+</form>
+<br>
+<form action="UserProfile.php" method="post">
+    <input name="username" value="<?php echo $_SESSION["UserName"] ?>" hidden />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">View Profile</button>
+</form>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();
