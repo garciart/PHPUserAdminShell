@@ -1,5 +1,6 @@
 # PHP User Login and Administration Shell
 <h3>This is an extension of my tutorial, Master Pages in PHP, incorporating a user administration system (using SQLite) and Bootstrap styling.</h3>
+<p>To install, simply copy Login.php and the UserAdmin folder into your website's root directory.
 <img src="README_images\readme00.png" title="Login Page" />
 <hr>
 <h2>Introduction:</h2>
