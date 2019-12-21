@@ -2,22 +2,29 @@
 
 /**
  * User Class.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 
 namespace UserAdmin;
 
 class User {
 
-    private $userID;
-    private $username;
-    private $nickname;
-    private $passwordHash;
-    private $roleID;
-    private $email;
-    private $isLockedOut;
-    private $lastLoginDate;
-    private $createDate;
-    private $comment;
+    private $_userID;
+    private $_username;
+    private $_nickname;
+    private $_passwordHash;
+    private $_roleID;
+    private $_email;
+    private $_isLockedOut;
+    private $_lastLoginDate;
+    private $_createDate;
+    private $_comment;
 
     public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $createDate, $comment) {
         $this->setUserID($userID);
@@ -33,83 +40,83 @@ class User {
     }
 
     public function getUserID() {
-        return $this->userID;
+        return $this->_userID;
     }
 
     public function setUserID($userID) {
-        $this->userID = $userID;
+        $this->_userID = $userID;
     }
 
     function getUsername() {
-        return $this->username;
+        return $this->_username;
     }
 
     public function setUsername($username) {
-        $this->username = $username;
+        $this->_username = $username;
     }
 
     function getNickname() {
-        return $this->nickname;
+        return $this->_nickname;
     }
 
     public function setNickname($nickname) {
-        $this->nickname = $nickname;
+        $this->_nickname = $nickname;
     }
 
     public function getPasswordHash() {
-        return $this->passwordHash;
+        return $this->_passwordHash;
     }
 
     public function setPasswordHash($passwordHash) {
-        $this->passwordHash = $passwordHash;
+        $this->_passwordHash = $passwordHash;
     }
 
     public function getRoleID() {
-        return $this->roleID;
+        return $this->_roleID;
     }
 
     public function setRoleID($roleID) {
-        $this->roleID = $roleID;
+        $this->_roleID = $roleID;
     }
 
     public function getEmail() {
-        return $this->email;
+        return $this->_email;
     }
 
     public function setEmail($email) {
-        $this->email = $email;
+        $this->_email = $email;
     }
 
     public function getIsLockedOut() {
-        return $this->isLockedOut;
+        return $this->_isLockedOut;
     }
 
     public function setIsLockedOut($isLockedOut) {
-        $this->isLockedOut = $isLockedOut;
+        $this->_isLockedOut = ($isLockedOut == 0 ? false : true);
     }
 
     public function getLastLoginDate() {
-        return $this->lastLoginDate;
+        return $this->_lastLoginDate;
     }
 
     public function setLastLoginDate($lastLoginDate) {
-        $this->lastLoginDate = $lastLoginDate;
+        $this->_lastLoginDate = $lastLoginDate;
     }
 
     public function getCreateDate() {
-        return $this->createDate;
+        return $this->_createDate;
     }
 
     public function setCreateDate($createDate) {
-        $this->createDate = $createDate;
+        $this->_createDate = $createDate;
     }
 
     public function getComment() {
-        return $this->comment;
+        return $this->_comment;
     }
 
     public function setComment($comment) {
-        $this->comment = $comment;
+        $this->_comment = $comment;
     }
 
 }

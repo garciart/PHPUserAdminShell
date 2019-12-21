@@ -1,6 +1,13 @@
 <?php
 /**
  * Test Page; delete before release to production.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
 /* Start placing content into an output buffer */
@@ -105,5 +112,5 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-include("Master.php");
+require_once "Master.php";
 ?>

@@ -1,10 +1,17 @@
 <?php
 /**
  * Landing page for user administration.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
 
-if ($_SESSION["Authenticated"] == FALSE) {
+if ($_SESSION["Authenticated"] == false) {
     header('Location: /PHPUserAdminShell/Login.php');
     exit();
 }
@@ -33,8 +40,9 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php
-require_once "UserDB.php";
-require_once "User.php";
+require_once "Common.php";
+require_once "User.class.php";
+require_once "UserDB.class.php";
 
 // Get the class name
 use UserAdmin\UserDB;
@@ -125,4 +133,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-include("../Master.php");
+require_once "../Master.php";

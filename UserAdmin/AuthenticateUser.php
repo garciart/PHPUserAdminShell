@@ -2,11 +2,19 @@
 
 /**
  * Authenticates credentials and creates user session.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
 
-require_once "UserDB.php";
-require_once "User.php";
+require_once "Common.php";
+require_once "User.class.php";
+require_once "UserDB.class.php";
 
 // Get the class name
 use UserAdmin\UserDB;
@@ -24,25 +32,25 @@ $userDB = new UserDB();
 $authenticated = $userDB->authenticateUser($username, $password);
 if ($authenticated) {
     $result = $userDB->getUserByUsername($username);
-    if ($result["IsLockedOut"]) {
-        $response = "We are sorry, but your account is locked. Please contact your administrator.";
-    } else {
-        $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
-        session_regenerate_id();
-        $_SESSION["Authenticated"] = TRUE;
-        $_SESSION["UserID"] = $user->getUserID();
-        $_SESSION["Username"] = $user->getUsername();
-        $_SESSION["Nickname"] = $user->getNickname();
-        $_SESSION["RoleID"] = $user->getRoleID();
-        $userDB->updateLoginDate($user->getUserID());
-        header("Location: UserAdmin.php");
+    $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+    // Create session
+    session_regenerate_id();
+    $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
+    if ($user->getIsLockedOut()) {
+        header("Location: /PHPUserAdminShell/Login.php");
         exit();
+    } else {
+        $userDB->updateLoginDate($user->getUserID());
     }
+    $_SESSION["Authenticated"] = true;
+    $_SESSION["UserID"] = $user->getUserID();
+    $_SESSION["Username"] = $user->getUsername();
+    $_SESSION["Nickname"] = $user->getNickname();
+    $_SESSION["RoleID"] = $user->getRoleID();
+    header("Location: UserAdmin.php");
+    exit();
 } else {
-    $_SESSION["Authenticated"] = FALSE;
-    $response = "Incorrect credentials or user does not exist.";
+    $_SESSION["Authenticated"] = false;
     header("Location: /PHPUserAdminShell/Login.php");
     exit();
 }
-
-echo "{$response}<br>";

@@ -1,5 +1,5 @@
-ErrorDocument 400 /error.php
-ErrorDocument 401 /error.php
-ErrorDocument 403 /error.php
-ErrorDocument 404 /error.php
-ErrorDocument 500 /error.php
+ErrorDocument 400 /UserAdmin/Error.php
+ErrorDocument 401 /UserAdmin/Error.php
+ErrorDocument 403 /UserAdmin/Error.php
+ErrorDocument 404 /UserAdmin/Error.php
+ErrorDocument 500 /UserAdmin/Error.php

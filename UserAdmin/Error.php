@@ -1,6 +1,6 @@
 <?php
-/**
- * Landing page for user administration.
+/*
+ * Error page.
  *
  * PHP version 5.3
  *
@@ -10,17 +10,11 @@
  * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
-
-if ($_SESSION["Authenticated"] == false) {
-    header("Location: /PHPUserAdminShell/Login.php");
-    exit();
-}
-
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>User Administration | PHP User Admin Shell</title>
+<title>About Page | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -31,7 +25,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">User Registration Page</p>
+<p class="lead">Error Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -40,8 +34,19 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<?php
-?>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="page-header">
+            <h1>PC LOAD LETTER???</h1>
+            <img id="errorimg" src="office_space.gif" alt="PC LOAD LETTER" />
+        </div>
+        <br>
+        <div class="text-danger">
+            <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
+            <a href="../index.php" class="btn btn-primary">Return To Home Page</a>
+        </div>
+    </div>
+</div>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();
