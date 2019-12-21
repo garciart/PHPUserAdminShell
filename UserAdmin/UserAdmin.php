@@ -44,22 +44,18 @@ use UserAdmin\User;
 
 // Connect to the database
 $userDB = new UserDB();
-$pdo = $userDB->connect();
-if ($pdo != null) {
-    $result = $userDB->getAllUsers();
-    foreach ($result as $r) {
-        foreach ($r as $c) {
-            echo "$c | ";
-        }
-        echo "<br>";
+$result = $userDB->getAllUsers();
+foreach ($result as $r) {
+    foreach ($r as $c) {
+        echo "$c | ";
     }
-} else {
-    die("Could not connect to the database.<br>");
+    echo "<br>";
 }
 
 echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
 // echo "UserID: " . $_SESSION["UserID"] . "<br>";
 echo "Username: " . $_SESSION["Username"] . "<br>";
+echo "Nickname: " . $_SESSION["Nickname"] . "<br>";
 // echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
 echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
 // echo "Email: " . $_SESSION["Email"] . "<br>";

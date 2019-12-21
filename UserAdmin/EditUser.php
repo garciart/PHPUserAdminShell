@@ -48,37 +48,33 @@ if (!isset($username)) {
 
 // Connect to the database
 $userDB = new UserDB();
-$pdo = $userDB->connect();
-if ($pdo != null) {
-    $result = $userDB->getUser($username);
-    $user = new User($result["UserID"], $result["Username"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
-    ?>
-    <form action="" method="post">
-        <div class="container">
-            <div class="row">
-                <div class="col"><label for="username">Username:</label></div>
-                <div class="col"><input type="email" name="username" class="form-control" placeholder="<?php echo $user->getUsername() ?>" id="username" required autofocus></div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col"><label for="email">Email:</label></div>
-                <div class="col"><input type="email" name="email" class="form-control" placeholder="<?php echo $user->getEmail() ?>" id="username" required autofocus></div>
-            </div>
+$result = $userDB->getUserByUsername($username);
+$user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+?>
+<form action="" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col"><label for="username">Username:</label></div>
+            <div class="col"><input type="email" name="username" class="form-control" placeholder="<?php echo $user->getUsername() ?>" id="username" required autofocus></div>
         </div>
-    </form>
-    <?php
-    echo "UserID: " . $user->getUserID() . "<br>";
-    echo "Username: " . $user->getUsername() . "<br>";
-    echo "PasswordHash: " . $user->getPasswordHash() . "<br>";
-    echo "RoleID: " . $user->getRoleID() . "<br>";
-    echo "Email: " . $user->getEmail() . "<br>";
-    echo "IsLockedOut: " . $user->getIsLockedOut() . "<br>";
-    echo "LastLoginDate: " . $user->getLastLoginDate() . "<br>";
-    echo "CreateDate: " . $user->getCreateDate() . "<br>";
-    echo "Comment: " . $user->getComment() . "<br>";
-} else {
-    die("Could not connect to the database.<br>");
-}
+        <br>
+        <div class="row">
+            <div class="col"><label for="email">Email:</label></div>
+            <div class="col"><input type="email" name="email" class="form-control" placeholder="<?php echo $user->getEmail() ?>" id="username" required autofocus></div>
+        </div>
+    </div>
+</form>
+<?php
+echo "UserID: " . $user->getUserID() . "<br>";
+echo "Username: " . $user->getUsername() . "<br>";
+echo "Nickname: " . $user->getNickname() . "<br>";
+echo "PasswordHash: " . $user->getPasswordHash() . "<br>";
+echo "RoleID: " . $user->getRoleID() . "<br>";
+echo "Email: " . $user->getEmail() . "<br>";
+echo "IsLockedOut: " . $user->getIsLockedOut() . "<br>";
+echo "LastLoginDate: " . $user->getLastLoginDate() . "<br>";
+echo "CreateDate: " . $user->getCreateDate() . "<br>";
+echo "Comment: " . $user->getComment() . "<br>";
 ?>
 <?php
 /* Store the content of the buffer for later use */
