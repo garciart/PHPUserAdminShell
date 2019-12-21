@@ -9,7 +9,8 @@ namespace UserAdmin;
 class User {
 
     private $userID;
-    private $userName;
+    private $username;
+    private $nickname;
     private $passwordHash;
     private $roleID;
     private $email;
@@ -18,9 +19,10 @@ class User {
     private $createDate;
     private $comment;
 
-    public function __construct($userID, $userName, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $createDate, $comment) {
+    public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $createDate, $comment) {
         $this->setUserID($userID);
-        $this->setUserName($userName);
+        $this->setUsername($username);
+        $this->setNickname($nickname);
         $this->setPasswordHash($passwordHash);
         $this->setRoleID($roleID);
         $this->setEmail($email);
@@ -38,12 +40,20 @@ class User {
         $this->userID = $userID;
     }
 
-    function getUserName() {
-        return $this->userName;
+    function getUsername() {
+        return $this->username;
     }
 
-    public function setUserName($userName) {
-        $this->userName = $userName;
+    public function setUsername($username) {
+        $this->username = $username;
+    }
+
+    function getNickname() {
+        return $this->nickname;
+    }
+
+    public function setNickname($nickname) {
+        $this->nickname = $nickname;
     }
 
     public function getPasswordHash() {

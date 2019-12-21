@@ -25,13 +25,33 @@ class UserDB {
     private $pdo;
 
     /**
+     * Main methods:
+     * _construct
+     * connect()
+     * createRoleTable()
+     * createUserTable()
+     * create role($title, $comment)
+     * create user($nickname, $username, $password, $roleID, $comment)
+     * getAllRoles()
+     * getRole($roleID)
+     * getAllUsers()
+     * getUserByUserID($userID)
+     * getUserByUsername($username)
+     * updateRole($title, $comment)
+     * updateUser($nickname, $username, $password, $roleID, $comment)
+     * deleteRole($roleID)
+     * deleteUser($userID)
+     */
+
+    /**
      * Constructor. If the database is not found, it creates it.
      */
     public function __construct() {
         if (!file_exists(self::PATH_TO_SQLITE_DB)) {
             $this->connect();
             // Create tables if they do not exist
-            $this->initialize();
+            $this->createRoleTable();
+            $this->createUserTable();
         }
     }
 
@@ -40,6 +60,7 @@ class UserDB {
      * @return \PDO The PDO object that connects to the SQLite database
      */
     public function connect() {
+        // Check if connection does not exists
         if ($this->pdo == null) {
             try {
                 // Create (connect to) SQLite database in file
@@ -56,80 +77,26 @@ class UserDB {
     }
 
     /**
-     * Creates the database if it does not exist.
-     */
-    private function initialize() {
-        // Create Role table first
-        $sql = "CREATE TABLE IF NOT EXISTS Role (
-            RoleID integer PRIMARY KEY,
-            Title text UNIQUE NOT NULL,
-            Comment text
-        )";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute();
-        // Create User table next due to the foreign key constraint
-        $sql = "CREATE TABLE IF NOT EXISTS User (
-            UserID integer PRIMARY KEY,
-            UserName text UNIQUE NOT NULL,
-            PasswordHash text NOT NULL,
-            RoleID integer NOT NULL,
-            Email text NOT NULL,
-            IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
-            LastLoginDate string NOT NULL,
-            CreateDate string NOT NULL,
-            Comment text,
-            FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
-        )";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute();
-
-        // Set initial values
-        $this->createRole("user", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
-        $this->createRole("superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-        $this->createRole("admin", "Authenticated user. Can browse all pages and edit information.");
-        $this->createUser("admin@rgprogramming.com", "P@ssW0rd", "3", "For test purposes only.");
-    }
-
-    /**
-     * Gets the highest value of RoleID (usually the last row inserted) in the Role table.
-     * @return type The max value of RoleID or 0 if there is no data.
-     */
-    private function getMaxRoleID() {
-        $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role";
-        $result = $this->pdo->query($sql);
-        $row = $result->fetch();
-        $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
-        return $maxRoleID;
-    }
-
-    /**
-     * Gets the highest value of UserID (usually the last row inserted) in the User table.
-     * @return type The max value of UserID or 0 if there is no data.
-     */
-    private function getMaxUserID() {
-        $sql = "SELECT MAX(UserID) as maxUserID FROM User";
-        $result = $this->pdo->query($sql);
-        $row = $result->fetch();
-        $maxUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
-        return $maxUserID;
-    }
-
-    /**
      * Inserts a user role into the database.
      * @param type $title The name of the role.
      * @param type $comment Any additional comments.
      * @return type The rowid of the new role.
      */
     public function createRole($title, $comment) {
-        $sql = "INSERT INTO Role
+        try {
+            $this->pdo = $this->connect();
+            $sql = "INSERT INTO Role
                 VALUES (:RoleID, :Title, :Comment)";
-        $stmt = $this->pdo->prepare($sql);
-        // Get the highest value of RoleID + 1
-        $stmt->bindValue(":RoleID", $this->getMaxRoleID() + 1);
-        $stmt->bindValue(":Title", $title);
-        $stmt->bindValue(":Comment", $comment);
-        $stmt->execute();
-        return $this->pdo->lastInsertId();
+            $stmt = $this->pdo->prepare($sql);
+            // Get the highest value of RoleID + 1
+            $stmt->bindValue(":RoleID", $this->getNextRoleID());
+            $stmt->bindValue(":Title", $title);
+            $stmt->bindValue(":Comment", $comment);
+            $stmt->execute();
+            return $this->pdo->lastInsertId();
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
     /**
@@ -139,32 +106,230 @@ class UserDB {
      * @param type $comment Any additional comments.
      * @return type The rowid of the new user.
      */
-    public function createUser($username, $password, $roleID, $comment) {
-        $sql = "INSERT INTO User
-                VALUES (:UserID, :UserName, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment)";
-        // Hash the password using Key Derivation Functions (KDF)
-        $options = array("cost" => self::BCRYPT_COST);
-        $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
-        // Email and username are initially the same
-        $email = $username;
-        // Set other initial values
-        $isLockedOut = 0;
-        $lastLoginDate = date("Y-m-d H:i:s");
-        $createDate = date("Y-m-d H:i:s");
+    public function createUser($username, $nickname, $password, $roleID, $comment) {
+        try {
+            $this->pdo = $this->connect();
+            $sql = "INSERT INTO User
+                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment)";
+            // Hash the password using Key Derivation Functions (KDF)
+            $options = array("cost" => self::BCRYPT_COST);
+            $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
+            // Email and username are initially the same
+            $email = $username;
+            // Set other initial values
+            $isLockedOut = 0;
+            $lastLoginDate = date("Y-m-d H:i:s");
+            $createDate = date("Y-m-d H:i:s");
+            $stmt = $this->pdo->prepare($sql);
+            // Get the highest value of UserID + 1
+            $stmt->bindValue(":UserID", $this->getNextUserID());
+            $stmt->bindValue(":Username", $username);
+            $stmt->bindValue(":Nickname", $nickname);
+            $stmt->bindValue(":PasswordHash", $passwordHash);
+            $stmt->bindValue(":RoleID", $roleID);
+            $stmt->bindValue(":Email", $email);
+            $stmt->bindValue(":IsLockedOut", $isLockedOut);
+            $stmt->bindValue(":LastLoginDate", $lastLoginDate);
+            $stmt->bindValue(":CreateDate", $createDate);
+            $stmt->bindValue(":Comment", $comment);
+            $stmt->execute();
+            return $this->pdo->lastInsertId();
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
+    public function getAllRoles() {
+        $sql = "SELECT *
+                FROM Role
+                ORDER BY RoleID ASC;";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
+    public function getRole($roleID) {
+        $sql = "SELECT *
+                FROM Role
+                WHERE RoleID = :RoleID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":RoleID", $roleID);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getAllUsers() {
+        $sql = "SELECT *
+                FROM User
+                ORDER BY Username ASC";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
+    public function getUserByUserID($userID) {
+        $sql = "SELECT *
+                FROM User
+                WHERE UserID = :UserID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":UserID", $userID);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getUserByUsername($username) {
+        $sql = "SELECT *
+                FROM User
+                WHERE Username = :Username";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":Username", $username);
+        $stmt->execute();
+        // Fetch the result set
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function updateRole($roleID, $title, $comment) {
+        $sql = "UPDATE Tole
+                SET Title = :Title,
+                Comment = :Comment
+                WHERE RoleID = :RoleID";
+        $lastLoginDate = date("Y-m-d H:i:s");
         $stmt = $this->pdo->prepare($sql);
         // Get the highest value of UserID + 1
-        $stmt->bindValue(":UserID", $this->getMaxUserID() + 1);
-        $stmt->bindValue(":UserName", $username);
-        $stmt->bindValue(":PasswordHash", $passwordHash);
+        $stmt->bindValue(":UserID", $userID);
+        $stmt->bindValue(":LastLoginDate", $lastLoginDate);
+        $stmt->execute();
+    }
+
+    public function updateUser($userID, $username, $nickname, $password, $roleID, $email, $isLockedOut, $comment) {
+        $sql = "UPDATE User
+                SET Username = :Username,
+                Nickname = :Nickname,
+                Password = :Password,
+                RoleID = :RoleID,
+                Email = :Email,
+                IsLockedOut = :IsLockedOut,
+                Comment = :Comment
+                WHERE  UserID = :UserID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":UserID", $userID);
+        $stmt->bindValue(":Username", $username);
+        $stmt->bindValue(":Nickname", $nickname);
+        $stmt->bindValue(":Password", $password);
         $stmt->bindValue(":RoleID", $roleID);
         $stmt->bindValue(":Email", $email);
         $stmt->bindValue(":IsLockedOut", $isLockedOut);
-        $stmt->bindValue(":LastLoginDate", $lastLoginDate);
-        $stmt->bindValue(":CreateDate", $createDate);
         $stmt->bindValue(":Comment", $comment);
         $stmt->execute();
-        return $this->pdo->lastInsertId();
+    }
+
+    public function deleteRole($roleID) {
+        $sql = "DELETE FROM Role
+                WHERE  RoleID = :RoleID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":UserID", $roleID);
+        $stmt->execute();
+    }
+
+    public function deleteUser($userID) {
+        $sql = "DELETE FROM User
+                WHERE  UserID = :UserID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":UserID", $userID);
+        $stmt->execute();
+    }
+
+    /**
+     * Utility calls
+     */
+
+    /**
+     * Creates the database if it does not exist.
+     */
+    private function createRoleTable() {
+        // Make sure you create the Role table first
+        try {
+            $this->pdo = $this->connect();
+            $sql = "CREATE TABLE IF NOT EXISTS Role (
+                RoleID integer PRIMARY KEY,
+                Title text UNIQUE NOT NULL,
+                Comment text
+            )";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            // Set initial values
+            $this->createRole("user", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
+            $this->createRole("superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
+            $this->createRole("admin", "Authenticated user. Can browse all pages and edit information.");
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    /**
+     * Creates the database if it does not exist.
+     */
+    private function createUserTable() {
+        // Create User table after Role table due to the foreign key constraint
+        try {
+            $this->pdo = $this->connect();
+            $sql = "CREATE TABLE IF NOT EXISTS User (
+                UserID integer PRIMARY KEY,
+                Username text UNIQUE NOT NULL,
+                Nickname text UNIQUE NOT NULL,
+                PasswordHash text NOT NULL,
+                RoleID integer NOT NULL,
+                Email text NOT NULL,
+                IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
+                LastLoginDate string NOT NULL,
+                CreateDate string NOT NULL,
+                Comment text,
+                FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
+            )";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            // Set initial values
+            $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
+            $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
+            $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    /**
+     * Gets the highest value of RoleID (usually the last row inserted) in the Role table.
+     * @return type The max value of RoleID or 0 if there is no data.
+     */
+    private function getNextRoleID() {
+        $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role";
+        $result = $this->pdo->query($sql);
+        $row = $result->fetch();
+        $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
+        return $maxRoleID + 1;
+    }
+
+    /**
+     * Gets the highest value of UserID (usually the last row inserted) in the User table.
+     * @return type The max value of UserID or 0 if there is no data.
+     */
+    private function getNextUserID() {
+        $sql = "SELECT MAX(UserID) as maxUserID FROM User";
+        $result = $this->pdo->query($sql);
+        $row = $result->fetch();
+        $maxUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
+        return $maxUserID + 1;
     }
 
     /**
@@ -192,11 +357,18 @@ class UserDB {
      * @return True if the users exists, false if not.
      */
     private function userExists($username) {
+        /*
+         * Julen Pardo came up with this. 
+         * Thought about changing the method to retrieve the UserID instead,
+         * but Username is supposed to be unique.
+         * If the count != 1, that means there are no users or more than one,
+         * which means something is wrong. This is a better method.
+         */
         $sql = "SELECT COUNT(*) AS Count
                 FROM   User
-                WHERE  UserName = :UserName";
+                WHERE  Username = :Username";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":UserName", $username);
+        $stmt->bindValue(":Username", $username);
         $stmt->execute();
         // Fetch the result set
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -213,39 +385,14 @@ class UserDB {
     private function getUserPassword($username) {
         $sql = "SELECT PasswordHash
                 FROM   User
-                WHERE  UserName = :UserName";
+                WHERE  Username = :Username";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":UserName", $username);
+        $stmt->bindValue(":Username", $username);
         $stmt->execute();
         // Fetch the result set
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         $passwordHash = $result["PasswordHash"];
         return $passwordHash;
-    }
-
-    public function getUserDetails($username) {
-        $sql = "SELECT *
-                FROM   User
-                WHERE  UserName = :UserName";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":UserName", $username);
-        $stmt->execute();
-        // Fetch the result set
-        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        return $result;
-    }
-
-    public function getUserRole($roleID) {
-        $sql = "SELECT Title
-                FROM   Role
-                WHERE  RoleID = :RoleID";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":RoleID", $roleID);
-        $stmt->execute();
-        // Fetch the result set
-        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        $roleTitle = $result["Title"];
-        return $roleTitle;
     }
 
     public function updateLoginDate($userID) {

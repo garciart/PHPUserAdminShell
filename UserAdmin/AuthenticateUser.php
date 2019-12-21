@@ -25,16 +25,17 @@ $pdo = $userDB->connect();
 if ($pdo != null) {
     $authenticated = $userDB->authenticateUser($username, $password);
     if ($authenticated) {
-        $result = $userDB->getUserDetails($username);
+        $result = $userDB->getUserByUsername($username);
         if ($result["IsLockedOut"]) {
             $response = "We are sorry, but your account is locked. Please contact your administrator.";
         } else {
-            $user = new User($result["UserID"], $result["UserName"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+            $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
             session_regenerate_id();
             $_SESSION["Authenticated"] = TRUE;
-            $_SESSION["UserName"] = $user->getUserName();
+            $_SESSION["UserID"] = $user->getUserID();
+            $_SESSION["Username"] = $user->getUsername();
+            $_SESSION["Nickname"] = $user->getNickname();
             $_SESSION["RoleID"] = $user->getRoleID();
-            $response = "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.";
             $userDB->updateLoginDate($user->getUserID());
             header("Location: UserAdmin.php");
             exit();
@@ -46,15 +47,7 @@ if ($pdo != null) {
         exit();
     }
 
-    echo $response. "<br>";
+    echo "{$response}<br>";
 } else {
     die("Could not connect to the database.<br>");
 }
-
-/*
-echo "{$userDB->createUser($username, $password, 1, "New user.")}<br>";
-echo "{$userDB->createUser("steve@steve.com", "steve", 1, "Old user.")}<br>";
-echo "{$userDB->createUser("mike@mike.com", "mike", 1, "Old user.")}<br>";
-echo "{$userDB->getMaxRoleID()}<br>";
-echo "{$userDB->getMaxUserID()}<br>";
-*/
