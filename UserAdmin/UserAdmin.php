@@ -33,11 +33,33 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php
-echo "Hello " . $_SESSION["UserName"] . ", you have been successfully authenticated.<br>";
+echo "Hello, {$_SESSION["Nickname"]}, you have been successfully authenticated.<br>";
+
+require_once "UserDB.php";
+require_once "User.php";
+
+// Get the class name
+use UserAdmin\UserDB;
+use UserAdmin\User;
+
+// Connect to the database
+$userDB = new UserDB();
+$pdo = $userDB->connect();
+if ($pdo != null) {
+    $result = $userDB->getAllUsers();
+    foreach ($result as $r) {
+        foreach ($r as $c) {
+            echo "$c | ";
+        }
+        echo "<br>";
+    }
+} else {
+    die("Could not connect to the database.<br>");
+}
 
 echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
 // echo "UserID: " . $_SESSION["UserID"] . "<br>";
-echo "UserName: " . $_SESSION["UserName"] . "<br>";
+echo "Username: " . $_SESSION["Username"] . "<br>";
 // echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
 echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
 // echo "Email: " . $_SESSION["Email"] . "<br>";
@@ -48,12 +70,12 @@ echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
 ?>
 <br>
 <form action="EditUser.php" method="post">
-    <input name="username" value="<?php echo $_SESSION["UserName"] ?>" hidden />
+    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
     <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User</button>
 </form>
 <br>
 <form action="UserProfile.php" method="post">
-    <input name="username" value="<?php echo $_SESSION["UserName"] ?>" hidden />
+    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
     <button class="btn btn-lg btn-primary btn-block" type="submit">View Profile</button>
 </form>
 <?php

@@ -50,12 +50,12 @@ if (!isset($username)) {
 $userDB = new UserDB();
 $pdo = $userDB->connect();
 if ($pdo != null) {
-    $result = $userDB->getUserDetails($username);
-    $user = new User($result["UserID"], $result["UserName"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+    $result = $userDB->getUser($username);
+    $user = new User($result["UserID"], $result["Username"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
     $userRole = $userDB->getUserRole($user->getRoleID());
     /*
       echo "UserID: " . $user->getUserID() . "<br>";
-      echo "UserName: " . $user->getUserName() . "<br>";
+      echo "Username: " . $user->getUsername() . "<br>";
       echo "PasswordHash: " . $user->getPasswordHash() . "<br>";
       echo "RoleID: " . $user->getRoleID() . "<br>";
       echo "Email: " . $user->getEmail() . "<br>";
@@ -75,7 +75,7 @@ if ($pdo != null) {
     </tr>
     <tr>
         <th>User Name:</th>
-        <td><?php echo $user->getUserName() ?></td>
+        <td><?php echo $user->getUsername() ?></td>
     </tr>
     <tr>
         <th>Password Hash:</th>
