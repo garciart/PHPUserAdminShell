@@ -1,8 +1,16 @@
 <?php
 /*
  * Master page for all pages. Standardizes page format accros the site.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
-// Sessions must be started by calling page, if necessary
+
+// IMPORTANT! Sessions must be started by calling page, if necessary.
 ?>
 <!doctype html>
 <html lang="en">

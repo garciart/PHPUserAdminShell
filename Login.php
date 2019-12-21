@@ -1,6 +1,13 @@
 <?php
 /**
  * Login page.
+ *
+ * PHP version 5.3
+ *
+ * @author  Rob Garcia <rgarcia@rgprogramming.com>
+ * @license https://opensource.org/licenses/MIT The MIT License
+ * @version GIT: $Id$ In development
+ * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
 /* Start placing content into an output buffer */
@@ -39,12 +46,17 @@ ob_clean();
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
         <?php
-        if (isset($_SESSION["Authenticated"])) {
-            if ($_SESSION["Authenticated"] == FALSE) {
-                echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
-                unset($_SESSION["Authenticated"]);
+        if (isset($_SESSION["IsLockedOut"])) {
+            if ($_SESSION["IsLockedOut"] == true) {
+                echo "<br><p class=\"font-weight-bold text-danger\">We are sorry, but your account is locked.<br>Please contact your administrator.</p>";
+                session_destroy();
             }
-            else {
+        }
+        if (isset($_SESSION["Authenticated"])) {
+            if ($_SESSION["Authenticated"] == false) {
+                echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+                session_destroy();
+            } else {
                 header("Location: UserAdmin\UserAdmin.php");
                 exit();
             }
@@ -67,5 +79,5 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-include("Master.php");
+require_once "Master.php";
 ?>
