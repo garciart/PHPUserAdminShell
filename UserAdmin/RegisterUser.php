@@ -24,7 +24,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">User Administration Page</p>
+<p class="lead">User Registration Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
