@@ -1,20 +1,22 @@
-[21-Dec-2019 22:13:09 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/PHPUserAdminShell/Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:13:56 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'PHPUserAdminShell/Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:15:12 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'PHPUserAdminShell\Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:15:51 America/New_York] PHP Fatal error:  require_once(): Failed opening required '\{PHPUserAdminShell}\Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:16:01 America/New_York] PHP Fatal error:  require_once(): Failed opening required '\{PHPUserAdminShell}\Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:17:15 America/New_York] PHP Fatal error:  require_once(): Failed opening required '//Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:22:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'C:/xampp/htdocs/Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:22:39 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'C:/xampp/htdocs/Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 22:23:18 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'C:/xampp/htdocs/Master.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdmin.php on line 100
-[21-Dec-2019 23:04:31 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:07:55 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:07:55 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:08:23 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:08:24 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:08:24 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:42:52 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:42:53 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:42:53 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:43:01 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
-[21-Dec-2019 23:43:01 America/New_York] PHP Notice:  Undefined variable: ROOT_URL in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\Common.php on line 44
+[22-Dec-2019 12:38:47 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 12:41:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 12:42:16 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\ErrorPage.php(14): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 22
+[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php(15): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 22
+[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 47
+[22-Dec-2019 12:51:00 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 47
+[22-Dec-2019 12:57:23 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 12:59:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 12:59:26 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 13:03:01 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17

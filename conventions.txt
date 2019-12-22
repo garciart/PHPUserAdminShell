@@ -5,3 +5,26 @@ Class Methods  camelCase
 Properties     camelCase
 Functions      camelCase
 Variables      camelCase
+
+https://www.php-fig.org/psr/psr-1/
+https://framework.zend.com/manual/2.4/en/ref/coding.standard.html
+
+img folder
+css folder
+
+AddUserPage.php
+AddRolePage.php
+AuthenticateUser.php
+EditUserPage.php
+EditRolePage.php
+DeleteUserPage.php
+DeleteRolePage.php
+LoginPage.php
+Logout.php
+User.class.php
+UserAdminCommon.php
+UserAdminErrorLog.txt
+ErrorPage.php
+UserAdminMaster.php
+UserAdminPage.php
+UserDB.class.php

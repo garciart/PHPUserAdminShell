@@ -12,8 +12,8 @@
  */
 session_start();
 
-require_once "Common.php";
 require_once "User.class.php";
+require_once "UserAdminCommon.php";
 require_once "UserDB.class.php";
 
 // Get the class name
@@ -24,13 +24,13 @@ use UserAdmin\User;
 $username = filter_input(INPUT_POST, "username");
 $password = filter_input(INPUT_POST, "password");
 if (!isset($username, $password)) {
-    header("Location: /{$ROOT_URL}/Login.php");
+    header("Location: LoginPage.php");
     exit();
 }
 
 // Connect to the database
 $userDB = new UserDB();
-$authenticated = $userDB->authenticateUser($username, $password);
+$authenticated = $userDB->AuthenticateUser($username, $password);
 if ($authenticated) {
     $result = $userDB->getUserByUsername($username);
     $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
@@ -38,7 +38,7 @@ if ($authenticated) {
     session_regenerate_id();
     $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
     if ($user->getIsLockedOut()) {
-        header("Location: /{$ROOT_URL}/Login.php");
+        header("Location: LoginPage.php");
         exit();
     } else {
         $userDB->updateLoginDate($user->getUserID());
@@ -48,10 +48,10 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
-    header("Location: /{$ROOT_URL}/UserAdmin/UserAdmin.php");
+    header("Location: UserAdminPage.php");
     exit();
 } else {
     $_SESSION["Authenticated"] = false;
-    header("Location: /{$ROOT_URL}/Login.php");
+    header("Location: LoginPage.php");
     exit();
 }
