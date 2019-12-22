@@ -12,5 +12,5 @@
  */
 session_start();
 session_destroy();
-header("Location: Login.php");
+header("Location: LoginPage.php");
 exit();

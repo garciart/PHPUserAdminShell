@@ -13,7 +13,7 @@
 
 namespace UserAdmin;
 
-require_once "Common.php";
+require_once "UserAdminCommon.php";
 
 class UserDB {
 
@@ -78,7 +78,7 @@ class UserDB {
                 // Set errormode to exceptions
                 $this->_pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             } catch (\PDOException $e) {
-                echo ($e->getMessage());
+                error_log($e->getMessage());
             }
         }
         return $this->_pdo;
@@ -104,7 +104,7 @@ class UserDB {
             unset($this->_pdo);
             return $lastInsertID;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -147,7 +147,7 @@ class UserDB {
             unset($this->_pdo);
             return $lastInsertID;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -165,7 +165,7 @@ class UserDB {
             unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -183,7 +183,7 @@ class UserDB {
             unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -201,7 +201,7 @@ class UserDB {
             unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -219,7 +219,7 @@ class UserDB {
             unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -240,7 +240,7 @@ class UserDB {
             unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -259,7 +259,7 @@ class UserDB {
             $stmt->execute();
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -287,7 +287,7 @@ class UserDB {
             $stmt->execute();
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -301,7 +301,7 @@ class UserDB {
             $stmt->execute();
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -315,7 +315,7 @@ class UserDB {
             $stmt->execute();
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -342,7 +342,7 @@ class UserDB {
             $this->createRole("admin", "Authenticated user. Can browse all pages and edit information.");
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -373,7 +373,7 @@ class UserDB {
             $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
             $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -391,7 +391,7 @@ class UserDB {
             unset($this->_pdo);
             return $maxRoleID + 1;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -409,7 +409,7 @@ class UserDB {
             unset($this->_pdo);
             return $maxUserID + 1;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -422,7 +422,7 @@ class UserDB {
      * @param $password The password to authenticate the user.
      * @return True if the password matches for the username, false if not.
      */
-    public function authenticateUser($username, $password) {
+    public function AuthenticateUser($username, $password) {
         $authenticated = false;
         if ($this->userExists($username)) {
             $storedPassword = $this->getUserPassword($username);
@@ -459,7 +459,7 @@ class UserDB {
             $exists = ($result["Count"]) == 1 ? true : false;
             return $exists;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -484,7 +484,7 @@ class UserDB {
             $passwordHash = $result["PasswordHash"];
             return $passwordHash;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 
@@ -502,7 +502,7 @@ class UserDB {
             $stmt->execute();
             unset($this->_pdo);
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            error_log($e->getMessage());
         }
     }
 

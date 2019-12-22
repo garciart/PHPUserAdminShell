@@ -14,7 +14,9 @@ session_start();
 
 $ROOT_URL = "PHPUserAdminShell";
 
+// Report all PHP errors
 error_reporting(-1);
+// Log errors in ErrorLog.txt
 ini_set('log_errors', 1);
 ini_set("error_log", "ErrorLog.txt");
 
@@ -40,14 +42,15 @@ set_exception_handler("userAdminExceptionHandler");
  * @param string $errstr Specifies the error message for the user-defined error
  */
 function userAdminErrorHandler($errno, $errstr, $errfile, $errline) {
-    $_SESSION["ERROR"] = "Yo mamma!";
-    header("Location: Error.php");
+    $_SESSION["Error"] = "Type {$errno} Error: {$errstr} in {$errfile} at line {$errline}.";
+    header("Location: ErrorPage.php");
     // Do not die. ini_set("error_log", "..." must capture error info in log
 }
 
 function userAdminExceptionHandler($exception) {
-    $_SESSION["ERROR"] = "Yo mamma too!";
-    header("Location: Error.php");
+    $_SESSION["Error"] = $exception;
+    error_log($exception);
+    header("Location: ErrorPage.php");
     // Do not die. ini_set("error_log", "..." must capture error info in log
 }
 

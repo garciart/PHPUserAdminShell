@@ -10,7 +10,7 @@
  * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
-require_once 'UserAdmin\Common.php';
+require_once "UserAdminCommon.php";
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -36,8 +36,8 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <div class="col-sm-4 mx-auto text-center">
-    <form class="form-signin" action="UserAdmin/AuthenticateUser.php" method="post">
-        <img class="mb-4" src="g_logo.png" alt="" width="72" height="72">
+    <form class="form-signin" action="AuthenticateUser.php" method="post">
+        <img class="mb-4" src="images/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
@@ -58,7 +58,7 @@ ob_clean();
                 echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
                 session_destroy();
             } else {
-                header("Location: UserAdmin\UserAdmin.php");
+                header("Location: UserAdminPage.php");
                 exit();
             }
         }
@@ -80,5 +80,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "Master.php";
-?>
+require_once "UserAdminMaster.php";
