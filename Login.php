@@ -10,6 +10,7 @@
  * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
+require_once 'UserAdmin\Common.php';
 /* Start placing content into an output buffer */
 ob_start();
 ?>

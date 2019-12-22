@@ -58,4 +58,3 @@ $contentPlaceHolderFooter = ob_get_contents();
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
 require_once "Master.php";
-?>

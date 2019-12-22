@@ -11,6 +11,7 @@
  */
 
 // IMPORTANT! Sessions must be started by calling page, if necessary.
+require_once 'UserAdmin\Common.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,7 +20,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <link rel="icon" type="image/png" href="/PHPUserAdminShell/g_logo.png">
+        <link rel="icon" type="image/png" href="g_logo.png">
         <!-- Bootstrap goes first -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="/PHPUserAdminShell/css/stylesheet.css">
