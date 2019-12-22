@@ -12,5 +12,5 @@
  */
 session_start();
 session_destroy();
-header("Location: /PHPUserAdminShell/Login.php");
+header("Location: Login.php");
 exit();

@@ -1,5 +1,5 @@
-ErrorDocument 400 /UserAdmin/Error.php
-ErrorDocument 401 /UserAdmin/Error.php
-ErrorDocument 403 /UserAdmin/Error.php
-ErrorDocument 404 /UserAdmin/Error.php
-ErrorDocument 500 /UserAdmin/Error.php
+ErrorDocument 400 /PHPUserAdminShell/UserAdmin/Error.php
+ErrorDocument 401 /PHPUserAdminShell/UserAdmin/Error.php
+ErrorDocument 403 /PHPUserAdminShell/UserAdmin/Error.php
+ErrorDocument 404 /PHPUserAdminShell/UserAdmin/Error.php
+ErrorDocument 500 /PHPUserAdminShell/UserAdmin/Error.php

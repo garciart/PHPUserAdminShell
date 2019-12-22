@@ -24,7 +24,8 @@ use UserAdmin\User;
 $username = filter_input(INPUT_POST, "username");
 $password = filter_input(INPUT_POST, "password");
 if (!isset($username, $password)) {
-    die("Please fill both the username and password field.");
+    header("Location: /{$ROOT_URL}/Login.php");
+    exit();
 }
 
 // Connect to the database
@@ -37,7 +38,7 @@ if ($authenticated) {
     session_regenerate_id();
     $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
     if ($user->getIsLockedOut()) {
-        header("Location: /PHPUserAdminShell/Login.php");
+        header("Location: /{$ROOT_URL}/Login.php");
         exit();
     } else {
         $userDB->updateLoginDate($user->getUserID());
@@ -47,10 +48,10 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
-    header("Location: UserAdmin.php");
+    header("Location: /{$ROOT_URL}/UserAdmin/UserAdmin.php");
     exit();
 } else {
     $_SESSION["Authenticated"] = false;
-    header("Location: /PHPUserAdminShell/Login.php");
+    header("Location: /{$ROOT_URL}/Login.php");
     exit();
 }

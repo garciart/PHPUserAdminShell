@@ -11,8 +11,12 @@
  */
 session_start();
 
+require_once "Common.php";
+require_once "User.class.php";
+require_once "UserDB.class.php";
+
 if ($_SESSION["Authenticated"] == false) {
-    header('Location: /PHPUserAdminShell/Login.php');
+    header('Location: /{$ROOT_URL}/Login.php');
     exit();
 }
 /* Start placing content into an output buffer */
@@ -40,41 +44,7 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php
-require_once "Common.php";
-require_once "User.class.php";
-require_once "UserDB.class.php";
-
-// Get the class name
-use UserAdmin\UserDB;
-use UserAdmin\User;
-
-// Get and filter the posted data
-$username = filter_input(INPUT_POST, "username");
-if (!isset($username)) {
-    die("No username submitted.");
-}
-
-// Connect to the database
-$userDB = new UserDB();
-$pdo = $userDB->connect();
-if ($pdo != null) {
-    $result = $userDB->getUser($username);
-    $user = new User($result["UserID"], $result["Username"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
-    $userRole = $userDB->getUserRole($user->getRoleID());
-    /*
-      echo "UserID: " . $user->getUserID() . "<br>";
-      echo "Username: " . $user->getUsername() . "<br>";
-      echo "PasswordHash: " . $user->getPasswordHash() . "<br>";
-      echo "RoleID: " . $user->getRoleID() . "<br>";
-      echo "Email: " . $user->getEmail() . "<br>";
-      echo "IsLockedOut: " . $user->getIsLockedOut() . "<br>";
-      echo "LastLoginDate: " . $user->getLastLoginDate() . "<br>";
-      echo "CreateDate: " . $user->getCreateDate() . "<br>";
-      echo "Comment: " . $user->getComment() . "<br>";
-     */
-} else {
-    die("Could not connect to the database.<br>");
-}
+echo "Finally here!";
 ?>
 <table class="table table-striped">
     <tr>
@@ -133,4 +103,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "../Master.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/{$ROOT_URL}/Master.php";

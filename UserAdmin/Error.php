@@ -10,6 +10,9 @@
  * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
  */
 session_start();
+
+require_once "Common.php";
+
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -38,12 +41,18 @@ ob_clean();
     <div class="col-md-12 text-center">
         <div class="page-header">
             <h1>PC LOAD LETTER???</h1>
-            <img id="errorimg" src="office_space.gif" alt="PC LOAD LETTER" />
+            <img id="errorimg" src='<?php echo "/{$ROOT_URL}/UserAdmin/office_space.gif" ?>' alt="PC LOAD LETTER" />
+            <?php
+            if (isset($_SESSION['Error'])) {
+                echo "Here!<br>";
+                echo "{$_SESSION['Error']}<br>";
+            }
+            ?>
         </div>
         <br>
         <div class="text-danger">
             <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
-            <a href="../index.php" class="btn btn-primary">Return To Home Page</a>
+            <a href='<?php echo "/{$ROOT_URL}/index.php" ?>' class="btn btn-primary">Return To Home Page</a>
         </div>
     </div>
 </div>
@@ -62,4 +71,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "../Master.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/{$ROOT_URL}/Master.php";
