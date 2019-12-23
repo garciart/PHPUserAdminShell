@@ -11,20 +11,19 @@
  */
 session_start();
 
-require_once "User.class.php";
 require_once "AdminCommonCode.php";
+require_once "User.class.php";
 require_once "UserDB.class.php";
 
 if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
     exit();
 }
-
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>Add User | PHP User Admin Shell</title>
+<title>View User Details | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -35,7 +34,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">Add User Page</p>
+<p class="lead">View User Details</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -44,8 +43,7 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<?php
-?>
+
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();

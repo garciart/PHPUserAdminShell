@@ -61,8 +61,8 @@
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
-                                <li class="nav-item <?php if ($childPage == "UserAdminPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "UserAdminPage.php" ? "" : "href=\"UserAdmin/UserAdminPage.php\""); ?> title="About">User Admin</a>
+                                <li class="nav-item <?php if ($childPage == "AdminMainPage.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "AdminMainPage.php" ? "" : "href=\"UserAdmin/AdminMainPage.php\""); ?> title="About">User Admin</a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code

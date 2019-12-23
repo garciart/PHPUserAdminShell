@@ -11,8 +11,8 @@
  */
 session_start();
 
+require_once "AdminCommonCode.php";
 require_once "User.class.php";
-require_once "UserAdminCommon.php";
 require_once "UserDB.class.php";
 
 if ($_SESSION["Authenticated"] == false) {
@@ -23,7 +23,7 @@ if ($_SESSION["Authenticated"] == false) {
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>User Administration | PHP User Admin Shell</title>
+<title>User Administration Page | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -47,42 +47,44 @@ ob_clean();
 
 // Get the class name
 use UserAdmin\UserDB;
-use UserAdmin\User;
-
-echo "Hello, {$_SESSION["Nickname"]}, you have been successfully authenticated.<br>";
 
 // Connect to the database
 $userDB = new UserDB();
 $result = $userDB->getAllUsers();
-foreach ($result as $r) {
-    foreach ($r as $c) {
-        echo "$c | ";
+if ($result) {
+    echo "<table class=\"table table-bordered table-striped\" data-toggle=\"table\" id=\"adminTable\">";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>UserID:</th>";
+    echo "<th>Username:</th>";
+    echo "<th>Nickname:</th>";
+    echo "<th>RoleID:</th>";
+    echo "<th>Email:</th>";
+    echo "<th class=\"text-center\">Action</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+    foreach ($result as $row) {
+        echo "<tr>";
+        echo "<td><a href=\"ViewUserPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
+        echo "<td><a href=\"ViewUserPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["Username"]}</a></td>";
+        echo "<td>{$row["Nickname"]}</td>";
+        echo "<td>{$row["RoleID"]}</td>";
+        echo "<td>{$row["Email"]}</td>";
+        echo "<td class=\"text-center\">";
+        echo "<a href=\"ViewUserPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
+        echo "<a href=\"EditUserPage.php?UserID={$row["UserID"]}\" title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+        echo "<a href=\"DeleteUserPage.php?UserID={$row["UserID"]}\" title=\"Delete User\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+        echo "</td>";
+        echo "</tr>";
     }
-    echo "<br>";
+    echo "</tbody>";
+    echo "</table>";
+    unset($result);
+} else {
+    echo "<p class=\"lead\"><em>No records were found.</em></p>";
 }
-
-echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
-// echo "UserID: " . $_SESSION["UserID"] . "<br>";
-echo "Username: " . $_SESSION["Username"] . "<br>";
-echo "Nickname: " . $_SESSION["Nickname"] . "<br>";
-// echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
-echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
-// echo "Email: " . $_SESSION["Email"] . "<br>";
-// echo "IsLockedOut: " . $_SESSION["IsLockedOut"] . "<br>";
-// echo "LastLoginDate: " . $_SESSION["LastLoginDate"] . "<br>";
-// echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
-// echo "Comment: " . $_SESSION["Comment"] . "<br>";
 ?>
-<br>
-<form action="EditUserPage.php" method="post">
-    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User</button>
-</form>
-<br>
-<form action="UserProfile.php" method="post">
-    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
-    <button class="btn btn-lg btn-primary btn-block" type="submit">View Profile</button>
-</form>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();
@@ -98,4 +100,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UserAdminMaster.php";
+require_once "AdminMasterPage.php";

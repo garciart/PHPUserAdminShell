@@ -19,12 +19,11 @@ if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
     exit();
 }
-
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>Add User | PHP User Admin Shell</title>
+<title>Administration | PHP User Admin Shell</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -35,7 +34,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">Add User Page</p>
+<p class="lead">Administration Landing Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -44,8 +43,13 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<?php
-?>
+<?php echo "<div class=\"lead text-center\"><p>Welcome back, {$_SESSION["Nickname"]}.</p><p>Please select one of the options below:</p></div>"; ?>
+<div class="btn-toolbar my-5">
+    <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
+    <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
+    <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>
+    <a href="ErrorLogPage.php" class="btn btn-primary btn-block">Error Log</a>
+</div>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();

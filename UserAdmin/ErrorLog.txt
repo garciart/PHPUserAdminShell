@@ -3,20 +3,45 @@ Stack trace:
 #0 {main}
 [22-Dec-2019 12:41:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
 [22-Dec-2019 12:42:16 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
-[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php:22
+[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php:22
 Stack trace:
 #0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\ErrorPage.php(14): require_once()
 #1 {main}
-  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 22
-[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php:22
+  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php on line 22
+[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php:22
 Stack trace:
-#0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php(15): require_once()
+#0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminMainPage.php(15): require_once()
 #1 {main}
-  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 22
-[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 47
+  thrown in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php on line 22
+[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php on line 47
 [22-Dec-2019 12:51:00 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
-[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminCommon.php on line 47
+[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\AdminCommonCode.php on line 47
 [22-Dec-2019 12:57:23 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
 [22-Dec-2019 12:59:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
 [22-Dec-2019 12:59:26 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
 [22-Dec-2019 13:03:01 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserProfile.php on line 17
+[22-Dec-2019 18:35:58 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 18:38:24 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 18:43:50 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:18:07 America/New_York] Error: Call to undefined function getAllUsers() in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:57
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:19:37 America/New_York] Error: Call to a member function rowCount() on array in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:58
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:34:46 America/New_York] Error: Call to a member function query() on null in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserDB.class.php:192
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php(57): UserAdmin\UserDB->getAllUsers()
+#1 {main}
+[22-Dec-2019 20:11:11 America/New_York] Error: Call to a member function rowCount() on array in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:56
+Stack trace:
+#0 {main}
+[22-Dec-2019 20:11:52 America/New_York] Error: Call to a member function fetch() on array in C:\xampp\htdocs\PHPUserAdminShell\UserAdmin\UserAdminPage.php:69
+Stack trace:
+#0 {main}

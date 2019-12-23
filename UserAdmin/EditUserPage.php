@@ -12,7 +12,7 @@
 session_start();
 
 require_once "User.class.php";
-require_once "UserAdminCommon.php";
+require_once "AdminCommonCode.php";
 require_once "UserDB.class.php";
 
 if ($_SESSION["Authenticated"] == false) {
@@ -34,7 +34,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">Edit User Page</p>
+<p class="lead">Edit User</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -99,4 +99,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UserAdminMaster.php";
+require_once "AdminMasterPage.php";

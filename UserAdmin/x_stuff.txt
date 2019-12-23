@@ -1,0 +1,61 @@
+Add empty files
+
+Change quotes
+
+Add grid to UserAdmin
+
+// Get the class name
+use UserAdmin\UserDB;
+use UserAdmin\User;
+
+// Connect to the database
+$userDB = new UserDB();
+$result = $userDB->getAllUsers();
+foreach ($result as $r) {
+    foreach ($r as $c) {
+        echo "$c | ";
+    }
+    echo "<br>";
+}
+
+echo "Authenticated: " . $_SESSION["Authenticated"] . "<br>";
+// echo "UserID: " . $_SESSION["UserID"] . "<br>";
+echo "Username: " . $_SESSION["Username"] . "<br>";
+echo "Nickname: " . $_SESSION["Nickname"] . "<br>";
+// echo "PasswordHash: " . $_SESSION["PasswordHash"] . "<br>";
+echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
+// echo "Email: " . $_SESSION["Email"] . "<br>";
+// echo "IsLockedOut: " . $_SESSION["IsLockedOut"] . "<br>";
+// echo "LastLoginDate: " . $_SESSION["LastLoginDate"] . "<br>";
+// echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
+// echo "Comment: " . $_SESSION["Comment"] . "<br>";
+
+<form action="EditUserPage.php" method="post">
+    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User</button>
+</form>
+<br>
+<form action="UserProfile.php" method="post">
+    <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">View Profile</button>
+</form>
+
+    /**
+     * Main methods:
+     * _construct
+     * connect()
+     * create role($title, $comment)
+     * create user($nickname, $username, $password, $roleID, $comment)
+     * getAllRoles()
+     * getRole($roleID)
+     * getAllUsers()
+     * getUserByUserID($userID)
+     * getUserByUsername($username)
+     * updateRole($title, $comment)
+     * updateUser($nickname, $username, $password, $roleID, $comment)
+     * deleteRole($roleID)
+     * deleteUser($userID)
+     */
+
+     * createRoleTable()
+     * createUserTable()

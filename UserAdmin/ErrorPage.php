@@ -11,7 +11,7 @@
  */
 session_start();
 
-require_once "UserAdminCommon.php";
+require_once "AdminCommonCode.php";
 
 /* Start placing content into an output buffer */
 ob_start();
@@ -48,9 +48,6 @@ ob_clean();
                 echo "{$_SESSION["Error"]}<br>";
                 unset($_SESSION["Error"]);
             }
-            else {
-                echo "Dang!<br>";
-            }
             ?>
         </div>
         <br>
@@ -75,4 +72,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UserAdminMaster.php";
+require_once "AdminMasterPage.php";
