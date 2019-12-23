@@ -13,7 +13,7 @@
 session_start();
 
 require_once "User.class.php";
-require_once "UserAdminCommon.php";
+require_once "AdminCommonCode.php";
 require_once "UserDB.class.php";
 
 // Get the class name
@@ -48,7 +48,7 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
-    header("Location: UserAdminPage.php");
+    header("Location: AdminMainPage.php");
     exit();
 } else {
     $_SESSION["Authenticated"] = false;

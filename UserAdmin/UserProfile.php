@@ -11,10 +11,9 @@
  */
 session_start();
 
+require_once "AdminCommonCode.php";
 require_once "User.class.php";
-require_once "UserAdminCommon.php";
 require_once "UserDB.class.php";
-require_once "YoMama.php";
 
 if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
@@ -104,4 +103,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UserAdminMaster.php";
+require_once "AdminMasterPage.php";

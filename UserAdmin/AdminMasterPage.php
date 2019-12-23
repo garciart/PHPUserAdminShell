@@ -11,7 +11,7 @@
  */
 
 // IMPORTANT! Sessions must be started by calling page, if necessary.
-require_once "UserAdminCommon.php";
+require_once "AdminCommonCode.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@ require_once "UserAdminCommon.php";
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -62,8 +63,8 @@ require_once "UserAdminCommon.php";
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
-                                <li class="nav-item <?php if ($childPage == "UserAdminPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "UserAdminPage.php" ? "" : "href=\"UserAdminPage.php\""); ?> title="About">User Admin</a>
+                                <li class="nav-item <?php if ($childPage == "AdminMainPage.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "AdminMainPage.php" ? "" : "href=\"AdminMainPage.php\""); ?> title="About">User Admin</a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code
@@ -124,6 +125,15 @@ require_once "UserAdminCommon.php";
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("[data-toggle='tooltip']").tooltip();
+            });
+            $(document).ready(function () {
+                $("#adminTable").DataTable();
+            });
+        </script>
         <script>
             // Using jQuery
             $(function () {

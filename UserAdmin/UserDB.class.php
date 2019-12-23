@@ -13,7 +13,7 @@
 
 namespace UserAdmin;
 
-require_once "UserAdminCommon.php";
+require_once "AdminCommonCode.php";
 
 class UserDB {
 
@@ -94,7 +94,7 @@ class UserDB {
         try {
             $this->_pdo = $this->connect();
             $sql = "INSERT INTO Role
-                VALUES (:RoleID, :Title, :Comment)";
+                VALUES (:RoleID, :Title, :Comment);";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":RoleID", $this->getNextRoleID());
             $stmt->bindValue(":Title", $title);
@@ -120,7 +120,7 @@ class UserDB {
         try {
             $this->_pdo = $this->connect();
             $sql = "INSERT INTO User
-                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment)";
+                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment);";
             // Hash the password using Key Derivation Functions (KDF)
             $options = array("cost" => self::BCRYPT_COST);
             $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -157,13 +157,9 @@ class UserDB {
             $sql = "SELECT *
                 FROM Role
                 ORDER BY RoleID ASC;";
-            $stmt = $this->_pdo->prepare($sql);
-            $stmt->execute();
-            // Fetch the result set
-            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-            $result = $stmt->fetchAll();
+            $result = $this->_pdo->query($sql);
             unset($this->_pdo);
-            return $result;
+            return $result->fetchAll();
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -174,7 +170,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT *
                 FROM Role
-                WHERE RoleID = :RoleID";
+                WHERE RoleID = :RoleID;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":RoleID", $roleID);
             $stmt->execute();
@@ -192,14 +188,10 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT *
                 FROM User
-                ORDER BY Username ASC";
-            $stmt = $this->_pdo->prepare($sql);
-            $stmt->execute();
-            // Fetch the result set
-            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-            $result = $stmt->fetchAll();
+                ORDER BY Username ASC;";
+            $result = $this->_pdo->query($sql);
             unset($this->_pdo);
-            return $result;
+            return $result->fetchAll();
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -210,7 +202,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT *
                 FROM User
-                WHERE UserID = :UserID";
+                WHERE UserID = :UserID;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
@@ -228,7 +220,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT *
                 FROM User
-                WHERE Username = :Username";
+                WHERE Username = :Username;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
@@ -250,7 +242,7 @@ class UserDB {
             $sql = "UPDATE Tole
                 SET Title = :Title,
                 Comment = :Comment
-                WHERE RoleID = :RoleID";
+                WHERE RoleID = :RoleID;";
             $lastLoginDate = date("Y-m-d H:i:s");
             $stmt = $this->_pdo->prepare($sql);
             // Get the highest value of UserID + 1
@@ -274,7 +266,7 @@ class UserDB {
                 Email = :Email,
                 IsLockedOut = :IsLockedOut,
                 Comment = :Comment
-                WHERE  UserID = :UserID";
+                WHERE  UserID = :UserID;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":Username", $username);
@@ -295,7 +287,7 @@ class UserDB {
         try {
             $this->_pdo = $this->connect();
             $sql = "DELETE FROM Role
-                WHERE RoleID = :RoleID";
+                WHERE RoleID = :RoleID;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $roleID);
             $stmt->execute();
@@ -309,7 +301,7 @@ class UserDB {
         try {
             $this->_pdo = $this->connect();
             $sql = "DELETE FROM User
-                WHERE UserID = :UserID";
+                WHERE UserID = :UserID;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
@@ -334,7 +326,7 @@ class UserDB {
                 RoleID integer PRIMARY KEY,
                 Title text UNIQUE NOT NULL,
                 Comment text
-            )";
+            );";
             $this->_pdo->exec($sql);
             // Set initial values
             $this->createRole("user", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
@@ -365,7 +357,7 @@ class UserDB {
                 CreateDate string NOT NULL,
                 Comment text,
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
-            )";
+            );";
             $this->_pdo->exec($sql);
             unset($this->_pdo);
             // Set initial values
@@ -384,7 +376,7 @@ class UserDB {
     private function getNextRoleID() {
         try {
             $this->_pdo = $this->connect();
-            $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role";
+            $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role;";
             $result = $this->_pdo->query($sql);
             $row = $result->fetch();
             $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
@@ -402,7 +394,7 @@ class UserDB {
     private function getNextUserID() {
         try {
             $this->_pdo = $this->connect();
-            $sql = "SELECT MAX(UserID) as maxUserID FROM User";
+            $sql = "SELECT MAX(UserID) as maxUserID FROM User;";
             $result = $this->_pdo->query($sql);
             $row = $result->fetch();
             $maxUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
@@ -449,7 +441,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT COUNT(*) AS Count
                 FROM User
-                WHERE Username = :Username";
+                WHERE Username = :Username;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
@@ -474,7 +466,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "SELECT PasswordHash
                 FROM User
-                WHERE Username = :Username";
+                WHERE Username = :Username;";
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
@@ -493,7 +485,7 @@ class UserDB {
             $this->_pdo = $this->connect();
             $sql = "UPDATE User
                 SET LastLoginDate = :LastLoginDate
-                WHERE UserID = :UserID";
+                WHERE UserID = :UserID;";
             $lastLoginDate = date("Y-m-d H:i:s");
             $stmt = $this->_pdo->prepare($sql);
             // Get the highest value of UserID + 1
