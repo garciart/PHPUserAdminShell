@@ -20,6 +20,7 @@ require_once "AdminCommonCode.php";
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" type="image/png" href="images/logo.png">
         <!-- Bootstrap goes first -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
@@ -136,7 +137,7 @@ require_once "AdminCommonCode.php";
         </script>
         <script>
             // Using jQuery
-            $(function () {
+            $(document).ready(function () {
                 $("a#logout").click(function () {
                     if (confirm("Are you sure you want to log out?")) {
                         return true;
