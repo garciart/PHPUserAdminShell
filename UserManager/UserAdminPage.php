@@ -7,11 +7,11 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
 
-require_once "AdminCommonCode.php";
+require_once "UMCommonCode.php";
 require_once "User.class.php";
 require_once "UserDB.class.php";
 
@@ -23,7 +23,7 @@ if ($_SESSION["Authenticated"] == false) {
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>User Administration Page | PHP User Admin Shell</title>
+<title>User Administration Page | PHP User Manager</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -33,7 +33,7 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-5">PHP User Admin Shell</h1>
+<h1 class="mt-5">PHP User Manager</h1>
 <p class="lead">User Administration Page</p>
 <hr>
 <?php
@@ -46,7 +46,7 @@ ob_clean();
 <?php
 
 // Get the class name
-use UserAdmin\UserDB;
+use UserManager\UserDB;
 
 // Connect to the database
 $userDB = new UserDB();
@@ -100,4 +100,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "AdminMasterPage.php";
+require_once "UMMasterPage.php";

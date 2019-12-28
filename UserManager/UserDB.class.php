@@ -8,12 +8,12 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 
-namespace UserAdmin;
+namespace UserManager;
 
-require_once "AdminCommonCode.php";
+require_once "UMCommonCode.php";
 
 class UserDB {
 

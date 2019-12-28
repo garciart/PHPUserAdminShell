@@ -5,8 +5,8 @@ Change quotes
 Add grid to UserAdmin
 
 // Get the class name
-use UserAdmin\UserDB;
-use UserAdmin\User;
+use UserManager\UserDB;
+use UserManager\User;
 
 // Connect to the database
 $userDB = new UserDB();

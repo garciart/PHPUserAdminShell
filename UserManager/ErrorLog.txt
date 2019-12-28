@@ -1,0 +1,48 @@
+[22-Dec-2019 12:38:47 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 12:41:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 12:42:16 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\ErrorPage.php(14): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 22
+[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UMMainPage.php(15): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 22
+[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 47
+[22-Dec-2019 12:51:00 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 47
+[22-Dec-2019 12:57:23 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 12:59:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 12:59:26 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 13:03:01 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
+[22-Dec-2019 18:35:58 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 18:38:24 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 18:43:50 America/New_York] Error: Call to a member function getUserID() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:52
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:18:07 America/New_York] Error: Call to undefined function getAllUsers() in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:57
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:19:37 America/New_York] Error: Call to a member function rowCount() on array in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:58
+Stack trace:
+#0 {main}
+[22-Dec-2019 19:34:46 America/New_York] Error: Call to a member function query() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:192
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php(57): UserManager\UserDB->getAllUsers()
+#1 {main}
+[22-Dec-2019 20:11:11 America/New_York] Error: Call to a member function rowCount() on array in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:56
+Stack trace:
+#0 {main}
+[22-Dec-2019 20:11:52 America/New_York] Error: Call to a member function fetch() on array in C:\xampp\htdocs\PHPUserManager\UserManager\UserManagerPage.php:69
+Stack trace:
+#0 {main}
+[23-Dec-2019 00:16:31 America/New_York] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes) in C:\xampp\htdocs\PHPUserManager\UserManager\ErrorLogPage.php on line 51
