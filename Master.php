@@ -7,7 +7,7 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 
 // IMPORTANT! Sessions must be started by calling page, if necessary.
@@ -43,7 +43,7 @@
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
                 <a <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> class="navbar-left" title="Home"><img src="Images/logo.png" class="nav_logo"></a>
-                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">PHP User Admin Shell</a>
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,18 +57,18 @@
                         </li>
                         <?php
                         $logID = "login";
-                        $logPage = "UserAdmin/LoginPage.php";
+                        $logPage = "UserManager/LoginPage.php";
                         $logStatus = "Log In";
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
-                                <li class="nav-item <?php if ($childPage == "AdminMainPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "AdminMainPage.php" ? "" : "href=\"UserAdmin/AdminMainPage.php\""); ?> title="About">User Admin</a>
+                                <li class="nav-item <?php if ($childPage == "UMMainPage.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "UMMainPage.php" ? "" : "href=\"UserManager/UMMainPage.php\""); ?> title="About">User Admin</a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code
                                 $logID = "logout";
-                                $logPage = "UserAdmin/Logout.php";
+                                $logPage = "UserManager/Logout.php";
                                 $logStatus = "Log Out";
                             }
                         }
@@ -79,7 +79,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/garciart/PHPUserAdminShell" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
+                            <a class="nav-link" href="https://github.com/garciart/PHPUserManager" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
                         </li>
                     </ul>
                 </div>

@@ -8,17 +8,17 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
 
 require_once "User.class.php";
-require_once "AdminCommonCode.php";
+require_once "UMCommonCode.php";
 require_once "UserDB.class.php";
 
 // Get the class name
-use UserAdmin\UserDB;
-use UserAdmin\User;
+use UserManager\UserDB;
+use UserManager\User;
 
 // Get and filter the posted data
 $username = filter_input(INPUT_POST, "username");
@@ -48,7 +48,7 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
-    header("Location: AdminMainPage.php");
+    header("Location: UMMainPage.php");
     exit();
 } else {
     $_SESSION["Authenticated"] = false;

@@ -7,14 +7,14 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>About Page | PHP User Admin Shell</title>
+<title>About Page | PHP User Manager</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -24,7 +24,7 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-5">PHP User Admin Shell</h1>
+<h1 class="mt-5">PHP User Manager</h1>
 <p class="lead">About Page</p>
 <hr>
 <?php

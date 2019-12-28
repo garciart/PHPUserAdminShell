@@ -8,11 +8,11 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
 
-$ROOT_URL = "PHPUserAdminShell";
+$ROOT_URL = "PHPUserManager";
 
 // Report all PHP errors
 error_reporting(-1);
@@ -29,11 +29,11 @@ ini_set("error_log", "ErrorLog.txt");
 // ini_set('display_errors', 1);
 
 /*
- * Set userAdminError(error_level, error_message) to handle all errors and warnings.
+ * Set UserManagerError(error_level, error_message) to handle all errors and warnings.
  * Use 32767 (equivalent to E_ALL) which will log all errors and warnings, except of level E_STRICT prior to PHP 5.4.0.
  */
-set_error_handler("userAdminErrorHandler", 32767);
-set_exception_handler("userAdminExceptionHandler");
+set_error_handler("UserManagerErrorHandler", 32767);
+set_exception_handler("UserManagerExceptionHandler");
 
 /**
  * Error handler to redirect user to error page
@@ -41,13 +41,13 @@ set_exception_handler("userAdminExceptionHandler");
  * @param int $errno Specifies the error report level for the user-defined error
  * @param string $errstr Specifies the error message for the user-defined error
  */
-function userAdminErrorHandler($errno, $errstr, $errfile, $errline) {
+function UserManagerErrorHandler($errno, $errstr, $errfile, $errline) {
     $_SESSION["Error"] = "Type {$errno} Error: {$errstr} in {$errfile} at line {$errline}.";
     header("Location: ErrorPage.php");
     // Do not die. ini_set("error_log", "..." must capture error info in log
 }
 
-function userAdminExceptionHandler($exception) {
+function UserManagerExceptionHandler($exception) {
     $_SESSION["Error"] = $exception;
     error_log($exception);
     header("Location: ErrorPage.php");

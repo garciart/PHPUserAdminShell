@@ -22,9 +22,9 @@ DeleteRolePage.php
 LoginPage.php
 Logout.php
 User.class.php
-AdminCommonCode.php
-UserAdminErrorLog.txt
+UMCommonCode.php
+UserManagerErrorLog.txt
 ErrorPage.php
-AdminMasterPage.php
-AdminMainPage.php
+UMMasterPage.php
+UMMainPage.php
 UserDB.class.php

@@ -7,11 +7,11 @@
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
  * @version GIT: $Id$ In development
- * @link    https://github.com/garciart/PHPUserAdminShell GitHub Repository
+ * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
 
-require_once "AdminCommonCode.php";
+require_once "UMCommonCode.php";
 require_once "User.class.php";
 require_once "UserDB.class.php";
 
@@ -23,7 +23,7 @@ if ($_SESSION["Authenticated"] == false) {
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>Delete User | PHP User Admin Shell</title>
+<title>View User Details | PHP User Manager</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -33,8 +33,8 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-5">PHP User Admin Shell</h1>
-<p class="lead">Delete User</p>
+<h1 class="mt-5">PHP User Manager</h1>
+<p class="lead">View User Details</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -59,4 +59,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "AdminMasterPage.php";
+require_once "UMMasterPage.php";
