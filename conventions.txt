@@ -12,12 +12,12 @@ https://framework.zend.com/manual/2.4/en/ref/coding.standard.html
 img folder
 css folder
 
-AddUserPage.php
+UserCreatePage.php
 AddRolePage.php
 AuthenticateUser.php
-EditUserPage.php
+UserEditPage.php
 EditRolePage.php
-DeleteUserPage.php
+UserDeletePage.php
 DeleteRolePage.php
 LoginPage.php
 Logout.php

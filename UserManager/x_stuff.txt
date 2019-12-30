@@ -30,7 +30,7 @@ echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
 // echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
 // echo "Comment: " . $_SESSION["Comment"] . "<br>";
 
-<form action="EditUserPage.php" method="post">
+<form action="UserEditPage.php" method="post">
     <input name="username" value="<?php echo $_SESSION["Username"] ?>" hidden />
     <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User</button>
 </form>

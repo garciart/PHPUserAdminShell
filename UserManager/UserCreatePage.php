@@ -1,6 +1,6 @@
 <?php
 /**
- * Landing page for user administration.
+ * Create user page.
  *
  * PHP version 5.3
  *
@@ -23,7 +23,7 @@ if ($_SESSION["Authenticated"] == false) {
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>View User Details | PHP User Manager</title>
+<title>Add User | PHP User Manager</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -34,7 +34,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-5">PHP User Manager</h1>
-<p class="lead">View User Details</p>
+<p class="lead">Add User Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -43,7 +43,8 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-
+<?php
+?>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();
