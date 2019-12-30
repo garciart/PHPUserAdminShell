@@ -1,6 +1,6 @@
 <?php
 /**
- * Landing page for user administration.
+ * Landing page for administration.
  *
  * PHP version 5.3
  *
@@ -11,8 +11,8 @@
  */
 session_start();
 
-require_once "User.class.php";
 require_once "UMCommonCode.php";
+require_once "User.class.php";
 require_once "UserDB.class.php";
 
 if ($_SESSION["Authenticated"] == false) {
@@ -33,9 +33,6 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-5">PHP User Manager</h1>
-<p class="lead">Administration Landing Page</p>
-<hr>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderHeader = ob_get_contents();
@@ -43,7 +40,10 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<?php echo "<div class=\"lead text-center\"><p>Welcome back, {$_SESSION["Nickname"]}.</p><p>Please select one of the options below:</p></div>"; ?>
+<h1 class="mt-5 pull-left">PHP User Manager</h1>
+<p class="lead">Administration Landing Page</p>
+<hr>
+<?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}. Please select one of the options below:</p></div>"; ?>
 <div class="btn-toolbar my-5">
     <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
     <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>

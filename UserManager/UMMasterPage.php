@@ -89,7 +89,7 @@ require_once "UMCommonCode.php";
         </nav>
         <header class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-md-12">
                     <!-- Content placeholder for header element content -->
                     <?php echo $contentPlaceHolderHeader; ?>
                 </div>
