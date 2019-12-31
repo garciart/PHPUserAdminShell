@@ -76,3 +76,38 @@ Stack trace:
 [29-Dec-2019 23:18:47 America/New_York] Error: Call to undefined function getRole() in C:\xampp\htdocs\PHPUserManager\UserManager\UserViewPage.php:63
 Stack trace:
 #0 {main}
+[30-Dec-2019 15:57:37 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 72
+[30-Dec-2019 15:58:03 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 72
+[30-Dec-2019 15:59:00 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 72
+[30-Dec-2019 22:12:36 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 72
+[30-Dec-2019 22:17:51 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 72
+[30-Dec-2019 22:29:01 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:01 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:01 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:17 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:17 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:17 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:22 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:22 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:22 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:24 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:24 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:29:24 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:30 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:30 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:30 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:34 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:34 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:31:34 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:32:58 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:32:58 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:32:58 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:08 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:08 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:08 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:57 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:57 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:33:57 America/New_York] PHP Notice:  Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 100
+[30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99

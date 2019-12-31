@@ -54,20 +54,26 @@ ob_clean();
 
 // Connect to the database
         $userDB = new UserDB();
-        $role = new Role();
         
         $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
             echo "<table class='table table-bordered table-striped'>";
-            echo "<tr><th>User ID:</th><td>{$result['UserID']}</td></tr>";
-            echo "<tr><th>User Name:</th><td>{$result['Username']}</td></tr>";
-            echo "<tr><th>Nickname:</th><td>{$result['Nickname']}</td></tr>";
-            // echo "<tr><th>Role:</th><td>" . ($userDB->getRole($result['RoleID'])) . "</td></tr>";
-            echo "<tr><th>Email:</th><td>{$result['Email']}</td></tr>";
+            echo "<tr><th nowrap>User ID:</th><td>{$result['UserID']}</td></tr>";
+            echo "<tr><th nowrap>User Name:</th><td>{$result['Username']}</td></tr>";
+            echo "<tr><th nowrap>Nickname:</th><td>{$result['Nickname']}</td></tr>";
+            // echo "<tr><th>Role ID:</th><td>{$result['RoleID']}</td></tr>";
+            $role = $userDB->getRole($result['RoleID']);
+            echo "<tr><th nowrap>Role:</th><td>" . $role['Title'] . "</td></tr>";
+            echo "<tr><th nowrap>Email:</th><td>{$result['Email']}</td></tr>";
+            $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\">Yes</span>";
+            echo "<tr><th nowrap>Locked Out:</th><td>{$lockedOut}</td></tr>";
+            echo "<tr><th nowrap>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
+            echo "<tr><th nowrap>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
+            echo "<tr><th nowrap>Comments:</th><td>{$result['Comment']}</td></tr>";
             echo "</table>";
             ?>
             <div class='btn-toolbar'>
-                <a href="UserAdminPage.php" class="btn btn-default pull-left">Return to User Administration</a>
+                <a href="UserAdminPage.php" class="btn btn-primary pull-left">Return to User Administration</a>
             </div>
             <?php
             unset($result);
