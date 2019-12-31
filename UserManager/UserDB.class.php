@@ -69,7 +69,7 @@ class UserDB {
      */
     public function connect() {
         // Check if connection does not exists
-        if ($this->_pdo == null) {
+        if (!isset($this->_pdo)) {
             try {
                 // Create (connect to) SQLite database in file
                 $this->_pdo = new \PDO("sqlite:" . self::PATH_TO_SQLITE_DB);
@@ -329,9 +329,9 @@ class UserDB {
             );";
             $this->_pdo->exec($sql);
             // Set initial values
-            $this->createRole("user", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
-            $this->createRole("superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-            $this->createRole("admin", "Authenticated user. Can browse all pages and edit information.");
+            $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
+            $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
+            $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
             unset($this->_pdo);
         } catch (\PDOException $e) {
             error_log($e->getMessage());

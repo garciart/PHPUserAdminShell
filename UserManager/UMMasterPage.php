@@ -41,7 +41,7 @@ require_once "UMCommonCode.php";
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
+        <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
                 <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_URL}/index.php\""); ?> class="navbar-left" title="Home"><img src="images\logo.png" class="nav_logo"></a>

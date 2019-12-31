@@ -10,7 +10,9 @@
  * @version GIT: $Id$ In development
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $ROOT_URL = "PHPUserManager";
 
@@ -26,14 +28,14 @@ ini_set("error_log", "ErrorLog.txt");
  * FOR PRODUCTION ERROR REPORTING
  * Uncomment set_error_handler and comment out ini_set('display_errors', 1) for production
  */
-// ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 
 /*
  * Set UserManagerError(error_level, error_message) to handle all errors and warnings.
  * Use 32767 (equivalent to E_ALL) which will log all errors and warnings, except of level E_STRICT prior to PHP 5.4.0.
  */
-set_error_handler("UserManagerErrorHandler", 32767);
-set_exception_handler("UserManagerExceptionHandler");
+// set_error_handler("UserManagerErrorHandler", 32767);
+// set_exception_handler("UserManagerExceptionHandler");
 
 /**
  * Error handler to redirect user to error page
