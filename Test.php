@@ -24,7 +24,7 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-5">PHP User Manager</h1>
+<h1 class="mt-3">PHP User Manager</h1>
 <p class="lead">Test Page</p>
 <hr>
 <?php

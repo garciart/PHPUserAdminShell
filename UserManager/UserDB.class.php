@@ -25,7 +25,7 @@ class UserDB {
     /**
      * Computational cost for Key Derivation Functions (KDF)
      */
-    const BCRYPT_COST = 14;
+    // const BCRYPT_COST = 14;
 
     /**
      * PDO instance
@@ -47,7 +47,7 @@ class UserDB {
      * getUserByUserID($userID)
      * getUserByUsername($username)
      * updateRole($title, $comment)
-     * updateUser($nickname, $username, $password, $roleID, $comment)
+     * updateUser($nickname, $username, $passwordHash, $roleID, $comment)
      * deleteRole($roleID)
      * deleteUser($userID)
      */
@@ -116,7 +116,6 @@ class UserDB {
      * @return type The rowid of the new user.
      */
     public function createUser($username, $nickname, $password, $roleID, $comment) {
-        echo "Here!";
         try {
             $this->_pdo = $this->connect();
             $sql = "INSERT INTO User
@@ -239,7 +238,7 @@ class UserDB {
     public function updateRole($roleID, $title, $comment) {
         try {
             $this->_pdo = $this->connect();
-            $sql = "UPDATE Tole
+            $sql = "UPDATE Role
                 SET Title = :Title,
                 Comment = :Comment
                 WHERE RoleID = :RoleID;";
@@ -249,19 +248,21 @@ class UserDB {
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
+            $rowsAffected = $stmt->rowCount();
             unset($this->_pdo);
+            return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
     }
 
-    public function updateUser($userID, $username, $nickname, $password, $roleID, $email, $isLockedOut, $comment) {
+    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment) {
         try {
             $this->_pdo = $this->connect();
             $sql = "UPDATE User
                 SET Username = :Username,
                 Nickname = :Nickname,
-                Password = :Password,
+                PasswordHash = :PasswordHash,
                 RoleID = :RoleID,
                 Email = :Email,
                 IsLockedOut = :IsLockedOut,
@@ -271,13 +272,15 @@ class UserDB {
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":Username", $username);
             $stmt->bindValue(":Nickname", $nickname);
-            $stmt->bindValue(":Password", $password);
+            $stmt->bindValue(":PasswordHash", $passwordHash);
             $stmt->bindValue(":RoleID", $roleID);
             $stmt->bindValue(":Email", $email);
             $stmt->bindValue(":IsLockedOut", $isLockedOut);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
+            $rowsAffected = $stmt->rowCount();
             unset($this->_pdo);
+            return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -291,7 +294,9 @@ class UserDB {
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $roleID);
             $stmt->execute();
+            $rowsAffected = $stmt->rowCount();
             unset($this->_pdo);
+            return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -305,7 +310,9 @@ class UserDB {
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
+            $rowsAffected = $stmt->rowCount();
             unset($this->_pdo);
+            return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -331,8 +338,9 @@ class UserDB {
             // Set initial values
             $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
             $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-            $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
+            $lastInsertID = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
             unset($this->_pdo);
+            return $lastInsertID;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -359,11 +367,12 @@ class UserDB {
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
             );";
             $this->_pdo->exec($sql);
-            unset($this->_pdo);
             // Set initial values
             $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
             $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
-            $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
+            $lastInsertID = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
+            unset($this->_pdo);
+            return $lastInsertID;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -406,9 +415,9 @@ class UserDB {
     }
 
     /**
-     * Authenticates the given user with the given password. If the user does not exist, any action
-     * is performed. If it exists, its stored password is retrieved, and then password_verify
-     * built-in function will check that the supplied password matches the derived one.
+     * Authenticates the given user with the given password by first checking
+     * if the user exists, and then using password_verify's built-in function
+     * to check that the supplied password matches the derived one.
      *
      * @param $username The username to authenticate.
      * @param $password The password to authenticate the user.
@@ -492,7 +501,9 @@ class UserDB {
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
+            $rowsAffected = $stmt->rowCount();
             unset($this->_pdo);
+            return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }

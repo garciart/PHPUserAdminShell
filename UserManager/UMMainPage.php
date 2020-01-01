@@ -33,6 +33,9 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
+<h1 class="mt-3 pull-left">PHP User Manager</h1>
+<p class="lead">Administration Landing Page</p>
+<hr>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderHeader = ob_get_contents();
@@ -40,11 +43,8 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<h1 class="mt-5 pull-left">PHP User Manager</h1>
-<p class="lead">Administration Landing Page</p>
-<hr>
 <?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}. Please select one of the options below:</p></div>"; ?>
-<div class="btn-toolbar my-5">
+<div class="btn-toolbar mb-3">
     <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
     <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
     <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>

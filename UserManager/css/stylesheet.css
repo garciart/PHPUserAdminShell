@@ -5,10 +5,24 @@
 * {
     font-family: sans-serif;
 }
-header {
-    padding-top: 50px;
-}
 .nav_logo {
     height: 50px;
     padding-right: 20px;
+}
+/* Columns must be as close as possible to each other without wrapping */
+th {
+    white-space: nowrap;
+}
+td {
+    white-space: nowrap;
+}
+td:last-child {
+    width: 100%;
+}
+/* Spacing between icons */
+table tr td:last-child a {
+    margin-right: 15px;
+}
+textarea {
+    resize: none;
 }
