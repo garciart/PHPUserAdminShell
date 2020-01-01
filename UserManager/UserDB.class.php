@@ -100,9 +100,9 @@ class UserDB {
             $stmt->bindValue(":Title", $title);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
-            $lastInsertID = $stmt->lastInsertId();
-            unset($this->_pdo);
-            return $lastInsertID;
+            $lastInsertId = $this->_pdo->lastInsertId();
+            // unset($this->_pdo);
+            return $lastInsertId;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -142,9 +142,9 @@ class UserDB {
             $stmt->bindValue(":CreateDate", $createDate);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
-            $lastInsertID = $stmt->lastInsertId();
-            unset($this->_pdo);
-            return $lastInsertID;
+            $lastInsertId = $this->_pdo->lastInsertId();
+            // unset($this->_pdo);
+            return $lastInsertId;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -157,7 +157,7 @@ class UserDB {
                 FROM Role
                 ORDER BY RoleID ASC;";
             $result = $this->_pdo->query($sql);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $result->fetchAll();
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -175,7 +175,7 @@ class UserDB {
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -189,7 +189,7 @@ class UserDB {
                 FROM User
                 ORDER BY Username ASC;";
             $result = $this->_pdo->query($sql);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $result->fetchAll();
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -207,7 +207,7 @@ class UserDB {
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -228,7 +228,7 @@ class UserDB {
             /*
              * Look into $result = $stmt->fetch(\PDO::FETCH_OBJ);?
              */
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $result;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -249,7 +249,7 @@ class UserDB {
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
             $rowsAffected = $stmt->rowCount();
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -279,7 +279,7 @@ class UserDB {
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
             $rowsAffected = $stmt->rowCount();
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -295,7 +295,7 @@ class UserDB {
             $stmt->bindValue(":UserID", $roleID);
             $stmt->execute();
             $rowsAffected = $stmt->rowCount();
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -311,7 +311,7 @@ class UserDB {
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
             $rowsAffected = $stmt->rowCount();
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -338,9 +338,9 @@ class UserDB {
             // Set initial values
             $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
             $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-            $lastInsertID = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
-            unset($this->_pdo);
-            return $lastInsertID;
+            $lastInsertId = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
+            // unset($this->_pdo);
+            return $lastInsertId;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -370,9 +370,9 @@ class UserDB {
             // Set initial values
             $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
             $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
-            $lastInsertID = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
-            unset($this->_pdo);
-            return $lastInsertID;
+            $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
+            // unset($this->_pdo);
+            return $lastInsertId;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
         }
@@ -389,7 +389,7 @@ class UserDB {
             $result = $this->_pdo->query($sql);
             $row = $result->fetch();
             $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $maxRoleID + 1;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -407,7 +407,7 @@ class UserDB {
             $result = $this->_pdo->query($sql);
             $row = $result->fetch();
             $maxUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $maxUserID + 1;
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -456,7 +456,7 @@ class UserDB {
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             $exists = ($result["Count"]) == 1 ? true : false;
             return $exists;
         } catch (\PDOException $e) {
@@ -481,7 +481,7 @@ class UserDB {
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            unset($this->_pdo);
+            // unset($this->_pdo);
             $passwordHash = $result["PasswordHash"];
             return $passwordHash;
         } catch (\PDOException $e) {
@@ -502,7 +502,7 @@ class UserDB {
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
             $rowsAffected = $stmt->rowCount();
-            unset($this->_pdo);
+            // unset($this->_pdo);
             return $rowsAffected;
         } catch (\PDOException $e) {
             error_log($e->getMessage());

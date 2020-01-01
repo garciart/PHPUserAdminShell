@@ -68,6 +68,7 @@ if ($_SESSION["Authenticated"] == false) {
      * Display error if input is not valid
      */
     if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "POST") {
+        /*
         $username = cleanText(filter_input(INPUT_POST, "Username"));
         $nickname = cleanText(filter_input(INPUT_POST, "Nickname"));
         $password = filter_input(INPUT_POST, "Password");
@@ -75,6 +76,16 @@ if ($_SESSION["Authenticated"] == false) {
         $email = cleanText(filter_input(INPUT_POST, "Email"));
         $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
         $comment = cleanText(filter_input(INPUT_POST, "Comment"));
+         * 
+         */
+        
+        $username = filter_input(INPUT_POST, "Username");
+        $nickname = filter_input(INPUT_POST, "Nickname");
+        $password = filter_input(INPUT_POST, "Password");
+        $roleID = filter_input(INPUT_POST, "RoleID");
+        $email = filter_input(INPUT_POST, "Email");
+        $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
+        $comment = filter_input(INPUT_POST, "Comment");
 
         $valid = true;
 
@@ -115,7 +126,7 @@ if ($_SESSION["Authenticated"] == false) {
         if ($valid == true) {
             // createUser($username, $nickname, $password, $roleID, $comment)
             $success = $userDB->createUser($username, $nickname, $password, $roleID, $comment);
-            if ($success == 1) {
+            if ($success != 0) {
                 header("Location: UserAdminPage.php?success=1");
                 die();
             } else if ($success == 0) {
