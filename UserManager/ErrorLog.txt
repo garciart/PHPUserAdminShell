@@ -183,3 +183,16 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 139
+[31-Dec-2019 22:54:14 America/New_York] PHP Notice:  Undefined variable: comment in C:\xampp\htdocs\PHPUserManager\UserManager\UserViewPage.php on line 79
+[31-Dec-2019 23:39:34 America/New_York] PHP Fatal error:  Uncaught Error: Undefined class constant 'BCRYPT_COST' in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:124
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('joe@rgprogrammi...', '&lt;script&gt;a...', '987654321', '1', 'Notice that at ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 124
+[31-Dec-2019 23:43:52 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[31-Dec-2019 23:43:52 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:145
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('joe@rgprogrammi...', '&lt;script&gt;a...', '987654321', '1', 'Notice that at ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[31-Dec-2019 23:52:34 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: User.Username

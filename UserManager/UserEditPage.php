@@ -76,7 +76,7 @@ if ($_SESSION["Authenticated"] == false) {
         $email = cleanText(filter_input(INPUT_POST, "Email"));
         $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
         $comment = cleanText(filter_input(INPUT_POST, "Comment"));
-        
+
         $valid = true;
 
         if (validateID($userID) != true) {
