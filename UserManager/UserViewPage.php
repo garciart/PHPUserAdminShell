@@ -9,35 +9,44 @@
  * @version GIT: $Id$ In development
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
-session_start();
+// Start session if not started. Must be started by page, not Master
+if (!isset($_SESSION)) {
+    session_start();
+}
 
+// Include this file to access common functions and variables
 require_once "UMCommonCode.php";
-require_once "User.class.php";
+// Include database class to access database methods
 require_once "UserDB.class.php";
 
+// Get the class name. Must be declared in the global scope of the file: see https://www.php.net/manual/en/language.namespaces.importing.php 
+use UserManager\UserDB;
+
+// Ensure the user is authenticated and authorized
 if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
     exit();
-}
-/* Start placing content into an output buffer */
-ob_start();
-?>
-<!-- Head Content Start -->
-<title>View User Details | PHP User Manager</title>
-<!-- Head Content End -->
-<?php
-/* Store the content of the buffer for later use */
-$contentPlaceHolderHead = ob_get_contents();
-/* Clean out the buffer, but do not destroy the output buffer */
-ob_clean();
-?>
-<!-- Body Content Start -->
-<!-- Header Element Content -->
-<div class="row">
-    <div class="col-md-9 pull-left">
-        <h2>View User Details:&nbsp;</h2>
+} else {
+    $result = "";
+    /* Start placing content into an output buffer */
+    ob_start();
+    ?>
+    <!-- Head Content Start -->
+    <title>View User Details | PHP User Manager</title>
+    <!-- Head Content End -->
+    <?php
+    /* Store the content of the buffer for later use */
+    $contentPlaceHolderHead = ob_get_contents();
+    /* Clean out the buffer, but do not destroy the output buffer */
+    ob_clean();
+    ?>
+    <!-- Body Content Start -->
+    <!-- Header Element Content -->
+    <div class="mt-3 row">
+        <div>
+            <h2>View User Details:</h2>
+        </div>
     </div>
-
     <hr>
     <?php
     /* Store the content of the buffer for later use */
@@ -46,31 +55,29 @@ ob_clean();
     ob_clean();
     ?>
     <!-- Main Element Content -->
-    <div>
+    <div class="row">
         <?php
-
-// Get the class name
-        use UserManager\UserDB;
-
-// Connect to the database
+        // Connect to the database
         $userDB = new UserDB();
-        
+
         $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
+            echo "<div class=\"table-responsive\">";
             echo "<table class='table table-bordered table-striped'>";
-            echo "<tr><th nowrap>User ID:</th><td>{$result['UserID']}</td></tr>";
+            echo "<tr><th nowrap>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
             echo "<tr><th nowrap>User Name:</th><td>{$result['Username']}</td></tr>";
             echo "<tr><th nowrap>Nickname:</th><td>{$result['Nickname']}</td></tr>";
             // echo "<tr><th>Role ID:</th><td>{$result['RoleID']}</td></tr>";
             $role = $userDB->getRole($result['RoleID']);
             echo "<tr><th nowrap>Role:</th><td>" . $role['Title'] . "</td></tr>";
             echo "<tr><th nowrap>Email:</th><td>{$result['Email']}</td></tr>";
-            $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\">Yes</span>";
-            echo "<tr><th nowrap>Locked Out:</th><td>{$lockedOut}</td></tr>";
+            $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
+            echo "<tr><th nowrap>Locked Out?</th><td>{$lockedOut}</td></tr>";
             echo "<tr><th nowrap>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
             echo "<tr><th nowrap>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
             echo "<tr><th nowrap>Comments:</th><td>{$result['Comment']}</td></tr>";
             echo "</table>";
+            echo "</div>";
             ?>
             <div class='btn-toolbar'>
                 <a href="UserAdminPage.php" class="btn btn-primary pull-left">Return to User Administration</a>
@@ -98,4 +105,4 @@ ob_clean();
     ob_end_clean();
     /* Call the master page. It will echo the content of the placeholders in the designated locations */
     require_once "UMMasterPage.php";
-    
+}

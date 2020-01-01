@@ -105,7 +105,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <hr>
-                    <p class="mt-5 mb-3 text-muted">Copyright &copy; 2017<span id="currentYear"></span> Rob Garcia. All Rights Reserved.</p>
+                    <p class="my-3 text-muted">Copyright &copy; 2017<span id="currentYear"></span> Rob Garcia. All Rights Reserved.</p>
                     <!-- Content placeholder for main element content -->
                     <?php echo $contentPlaceHolderFooter; ?>
                 </div>

@@ -111,3 +111,75 @@ Stack trace:
 [30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
 [30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
 [30-Dec-2019 22:36:29 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 99
+[31-Dec-2019 12:03:36 America/New_York] PHP Fatal error:  Uncaught Error: Class 'UserDB' not found in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 84
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:08 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:53 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 107
+[31-Dec-2019 12:18:56 America/New_York] PHP Notice:  Undefined index: LastLoginDate in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php on line 109
+[31-Dec-2019 13:52:39 America/New_York] PHP Notice:  Undefined variable: errorAlert in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 53
+[31-Dec-2019 15:29:30 America/New_York] PHP Notice:  Undefined variable: camera_active in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 192
+[31-Dec-2019 15:29:30 America/New_York] PHP Warning:  Use of undefined constant comment - assumed 'comment' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 201
+[31-Dec-2019 15:31:28 America/New_York] PHP Notice:  Undefined variable: camera_active in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 192
+[31-Dec-2019 15:31:28 America/New_York] PHP Warning:  Use of undefined constant comment - assumed 'comment' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 201
+[31-Dec-2019 15:32:31 America/New_York] PHP Warning:  Use of undefined constant comment - assumed 'comment' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 201
+[31-Dec-2019 15:35:44 America/New_York] PHP Warning:  Use of undefined constant comment - assumed 'comment' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 193
+[31-Dec-2019 18:02:58 America/New_York] PHP Warning:  A non-numeric value encountered in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 119
+[31-Dec-2019 18:02:58 America/New_York] PHP Warning:  A non-numeric value encountered in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 119
+[31-Dec-2019 19:27:53 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:27:53 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 98
+[31-Dec-2019 19:31:35 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:31:35 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 98
+[31-Dec-2019 19:32:53 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:32:53 America/New_York] PHP Notice:  Undefined index: IsLockedOut in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 98
+[31-Dec-2019 19:36:52 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:37:18 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:39:19 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:39:53 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:43:14 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:43:14 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:44:09 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:44:09 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:44:48 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:44:48 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:45:05 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:45:05 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:46:16 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:46:16 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:47:12 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:47:12 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:48:06 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 85
+[31-Dec-2019 19:48:06 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 95
+[31-Dec-2019 19:48:06 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:48:06 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 105
+[31-Dec-2019 19:48:06 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 19:52:43 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 96
+[31-Dec-2019 19:52:43 America/New_York] PHP Notice:  Undefined index: RoleID in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 106
+[31-Dec-2019 21:23:14 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function updateUser() in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php:139
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 139
+[31-Dec-2019 21:23:34 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function updateUser() in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php:139
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 139
+[31-Dec-2019 21:31:19 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function updateUser() in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php:139
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 139
