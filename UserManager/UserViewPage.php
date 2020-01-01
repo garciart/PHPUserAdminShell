@@ -75,7 +75,8 @@ if ($_SESSION["Authenticated"] == false) {
             echo "<tr><th nowrap>Locked Out?</th><td>{$lockedOut}</td></tr>";
             echo "<tr><th nowrap>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
             echo "<tr><th nowrap>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
-            echo "<tr><th nowrap>Comments:</th><td>{$result['Comment']}</td></tr>";
+            echo "<tr><th nowrap>Comments:</th>";
+            echo "<td><textarea rows=\"4\" class=\"w-100\">{$result['Comment']}</textarea></td></tr>";
             echo "</table>";
             echo "</div>";
             ?>

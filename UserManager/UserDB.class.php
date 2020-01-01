@@ -100,7 +100,7 @@ class UserDB {
             $stmt->bindValue(":Title", $title);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
-            $lastInsertID = $this->_pdo->lastInsertId();
+            $lastInsertID = $stmt->lastInsertId();
             unset($this->_pdo);
             return $lastInsertID;
         } catch (\PDOException $e) {
@@ -121,7 +121,7 @@ class UserDB {
             $sql = "INSERT INTO User
                 VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment);";
             // Hash the password using Key Derivation Functions (KDF)
-            $options = array("cost" => self::BCRYPT_COST);
+            $options = array("cost" => BCRYPT_COST);
             $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
             // Email and username are initially the same
             $email = $username;
@@ -142,7 +142,7 @@ class UserDB {
             $stmt->bindValue(":CreateDate", $createDate);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
-            $lastInsertID = $this->_pdo->lastInsertId();
+            $lastInsertID = $stmt->lastInsertId();
             unset($this->_pdo);
             return $lastInsertID;
         } catch (\PDOException $e) {
