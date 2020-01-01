@@ -128,15 +128,13 @@ require_once "UMCommonCode.php";
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript">
+            // Using jQuery
             $(document).ready(function () {
                 $("[data-toggle='tooltip']").tooltip();
             });
             $(document).ready(function () {
                 $("#adminTable").DataTable();
             });
-        </script>
-        <script>
-            // Using jQuery
             $(document).ready(function () {
                 $("a#logout").click(function () {
                     if (confirm("Are you sure you want to log out?")) {

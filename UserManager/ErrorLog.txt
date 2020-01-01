@@ -196,3 +196,33 @@ Stack trace:
 #1 {main}
   thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
 [31-Dec-2019 23:52:34 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: User.Username
+[01-Jan-2020 12:58:18 America/New_York] PHP Notice:  Undefined variable: bldg_id in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 140
+[01-Jan-2020 12:59:05 America/New_York] PHP Notice:  Undefined variable: bldg_id in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 139
+[01-Jan-2020 12:59:58 America/New_York] PHP Notice:  Undefined variable: bldg_id in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 139
+[01-Jan-2020 13:08:58 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::lastInsertId() in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:145
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('bill@rgprogramm...', 'Bill', '987654321', '1', 'Test user.')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:11:50 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:11:50 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:145
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('bill@rgprogramm...', 'Bill', '987654321', '1', 'Test user.')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:16:41 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:16:41 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:145
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('bill@rgprogramm...', 'Bill', '987654321', '1', 'Test')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:59:57 America/New_York] PHP Notice:  Undefined property: UserManager\UserDB::$_pdo in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 13:59:57 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:145
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php(117): UserManager\UserDB->createUser('bill@rgprogramm...', 'Bill', '987654321', '1', '')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 145
+[01-Jan-2020 14:17:10 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 126
+[01-Jan-2020 14:17:10 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
+[01-Jan-2020 14:42:51 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 138
+[01-Jan-2020 14:42:51 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
