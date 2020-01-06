@@ -1,20 +1,9 @@
 # PHP User Manager
-<h3>This is an extension of my tutorial, <a href="" title="https://github.com/garciart/Master-Pages-In-PHP" target="_blank">Master Pages in PHP</a>, incorporating a user administration system (using SQLite) and Bootstrap styling. Simply clone, rename the project, and add your own pages!</h3>
-<img src="README\readme00.png" title="Login Page" />
-<hr>
-<h2>Introduction:</h2>
-<p>My first production language was C, so I, like many others, naturally progressed into Active Server Pages (ASP), and then on to .NET. However:</p>
-<ul>
-<li>Once you reach a certain point (e.g., start-up, etc.), .NET is not free.</li>
-<li>Limited choice of hosting services.</li>
-<li>No more Web Site Administration Tool.</li>
-</ul>
-<hr>
-<h2>Setup:</h2>
-<p>Open the php.ini file:</p>
-<img src="README\readme01.png" title="Opening the php.ini file using XAMPP" />
-<p>Uncomment the SQLite3 extension by deleting the leading colon:</p>
-<img src="README\readme02.png" title="Opening the php.ini file using XAMPP" />
-<p>Restart the server.</p>
-<hr>
-<p>Thanks to Julen Pardo at https://www.webcodegeeks.com/php/login-form-php-example/ for the Key Derivation Functions (KDF).<p>
+### This is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP", incorporating a user administration system (using SQLite) and Bootstrap styling. Simply clone, rename the project, and add your own pages!
+![PHP User Manager](README_images\readme00.png)
+---
+While my first programs were written in Basic and Assembly Language, the language I've used the most is C. To this day, if I have to write a quick utility program, I'll knock it out in C. So, it's not surprising that when I began to develop applications for the web, I started with C# and ASP.NET. All in all, I have written quite a few web sites using the lessons I learned from Cristian Darie’s excellent book, Beginning ASP.NET 2.0 E-Commerce in C# 2005: From Novice to Professional.
+However, while I love .NET, it has its limitations. For example, once you reach a certain point, .NET is not free, and neither are its development or production tools (e.g., Visual Studio, SQL Server, etc.). Another issue is that many companies do not provide .NET hosting services. Therefore, I began to create alternative versions of my boilerplates in other languages, such as PHP and JavaScript.
+One of my boilerplates was a version of that beloved tool that many of us miss: The Web Site Administration Tool. Here it is for PHP, extending one of my previous tutorials, Master Pages in PHP. Feel free to copy it and use it if you need an authentication and user administration system. Have fun and good luck!
+---
+Thanks to Julen Pardo at https://www.webcodegeeks.com/php/login-form-php-example/ for the Key Derivation Functions (KDF).
