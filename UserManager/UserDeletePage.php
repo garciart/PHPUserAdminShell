@@ -45,7 +45,10 @@ if ($_SESSION["Authenticated"] == false) {
     <!-- Header Element Content -->
     <div class="mt-3 row">
         <div>
-            <h2>Delete User:&nbsp;</h2><h2 id="errorAlert" class="text-danger"><?php echo $errorAlert; ?></h2>
+            <h2>Delete User:&nbsp;</h2>
+<h2 id="errorAlert" class="text-danger">
+<?php echo $errorAlert; ?>
+</h2>
         </div>
     </div>
     <hr>
@@ -116,18 +119,18 @@ if ($_SESSION["Authenticated"] == false) {
         if (!empty($result)) {
             echo "<div class=\"table-responsive\">";
             echo "<table class='table table-bordered table-striped'>";
-            echo "<tr><th nowrap>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
-            echo "<tr><th nowrap>User Name:</th><td>{$result['Username']}</td></tr>";
-            echo "<tr><th nowrap>Nickname:</th><td>{$result['Nickname']}</td></tr>";
+            echo "<tr><th>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
+            echo "<tr><th>User Name:</th><td>{$result['Username']}</td></tr>";
+            echo "<tr><th>Nickname:</th><td>{$result['Nickname']}</td></tr>";
             // echo "<tr><th>Role ID:</th><td>{$result['RoleID']}</td></tr>";
             $role = $userDB->getRole($result['RoleID']);
-            echo "<tr><th nowrap>Role:</th><td>" . $role['Title'] . "</td></tr>";
-            echo "<tr><th nowrap>Email:</th><td>{$result['Email']}</td></tr>";
+            echo "<tr><th>Role:</th><td>" . $role['Title'] . "</td></tr>";
+            echo "<tr><th>Email:</th><td>{$result['Email']}</td></tr>";
             $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
-            echo "<tr><th nowrap>Locked Out?</th><td>{$lockedOut}</td></tr>";
-            echo "<tr><th nowrap>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
-            echo "<tr><th nowrap>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
-            echo "<tr><th nowrap>Comments:</th>";
+            echo "<tr><th>Locked Out?</th><td>{$lockedOut}</td></tr>";
+            echo "<tr><th>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
+            echo "<tr><th>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
+            echo "<tr><th>Comments:</th>";
             echo "<td><textarea rows=\"4\" class=\"w-100\">{$result['Comment']}</textarea></td></tr>";
             echo "</table>";
             echo "</div>";

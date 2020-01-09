@@ -137,7 +137,7 @@ function validatePassword($pword) {
 
 function getPasswordHash($password) {
     // Hash the password using Key Derivation Functions (KDF)
-    $options = array("cost" => $this->BCRYPT_COST);
+    $options = array("cost" => BCRYPT_COST);
     $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
     return $passwordHash;
 }

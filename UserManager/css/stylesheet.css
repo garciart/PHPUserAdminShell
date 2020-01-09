@@ -16,13 +16,14 @@ th {
 td {
     white-space: nowrap;
 }
-td:last-child {
-    width: 100%;
-}
 /* Spacing between icons */
 table tr td:last-child a {
     margin-right: 15px;
 }
 textarea {
+    background-color: whitesmoke;
     resize: none;
+}
+.editarea {
+    background-color: white;
 }
