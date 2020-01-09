@@ -86,40 +86,44 @@ if ($_SESSION["Authenticated"] == false) {
         $userDB = new UserDB();
         $result = $userDB->getAllUsers();
         if ($result) {
-            echo "<div class=\"table-responsive\">";
-            echo "<table class=\"table table-bordered table-striped\" data-toggle=\"table\" id=\"adminTable\">";
-            echo "<thead>";
-            echo "<tr>";
-            echo "<th>UserID:</th>";
-            echo "<th>Username:</th>";
-            echo "<th>Nickname:</th>";
-            echo "<th>Role:</th>";
-            echo "<th>Locked Out?</th>";
-            echo "<th>Last Login:</th>";
-            echo "<th class=\"text-center\">Action</th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-            foreach ($result as $row) {
-                echo "<tr>";
-                echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
-                echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["Username"]}</a></td>";
-                echo "<td>{$row["Nickname"]}</td>";
-                $role = $userDB->getRole($row["RoleID"]);
-                echo "<td>{$role["Title"]}</td>";
-                $lockedOut = $row['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
-                echo "<td>{$lockedOut}</td>";
-                echo "<td>{$row['LastLoginDate']}</td>";
-                echo "<td class=\"text-center\">";
-                echo "<a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                echo "<a href=\"UserEditPage.php?UserID={$row["UserID"]}\" title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                echo "<a href=\"UserDeletePage.php?UserID={$row["UserID"]}\" title=\"Delete User\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
-                echo "</td>";
-                echo "</tr>";
-            }
-            echo "</tbody>";
-            echo "</table>";
-            echo "</div>";
+            ?>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped" data-toggle="table" id="adminTable">
+                    <thead>
+                        <tr>
+                            <th>UserID:</th>
+                            <th>Username:</th>
+                            <th>Nickname:</th>
+                            <th>Role:</th>
+                            <th>Locked Out?</th>
+                            <th>Last Login:</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($result as $row) {
+                            echo "<tr>";
+                            echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
+                            echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["Username"]}</a></td>";
+                            echo "<td>{$row["Nickname"]}</td>";
+                            $role = $userDB->getRole($row["RoleID"]);
+                            echo "<td>{$role["Title"]}</td>";
+                            $lockedOut = $row['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
+                            echo "<td>{$lockedOut}</td>";
+                            echo "<td>{$row['LastLoginDate']}</td>";
+                            echo "<td class=\"text-center\">";
+                            echo "<a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
+                            echo "<a href=\"UserEditPage.php?UserID={$row["UserID"]}\" title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a href=\"UserDeletePage.php?UserID={$row["UserID"]}\" title=\"Delete User\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <?php
             unset($result);
         } else {
             echo "<p class=\"lead\"><em>No records were found.</em></p>";

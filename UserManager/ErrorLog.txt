@@ -226,3 +226,8 @@ Stack trace:
 [01-Jan-2020 14:17:10 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
 [01-Jan-2020 14:42:51 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 138
 [01-Jan-2020 14:42:51 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
+[08-Jan-2020 23:23:16 America/New_York] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:140
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php(117): getPasswordHash('qwertyuiop')
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 140

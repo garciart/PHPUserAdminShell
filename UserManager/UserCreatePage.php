@@ -48,7 +48,10 @@ if ($_SESSION["Authenticated"] == false) {
     <!-- Header Element Content -->
     <div class="mt-3 row">
         <div>
-            <h2>Add User:&nbsp;</h2><h2 id="errorAlert" class="text-danger"><?php echo $errorAlert; ?></h2>
+            <h2>Add User:&nbsp;</h2>
+            <h2 id="errorAlert" class="text-danger">
+                <?php echo $errorAlert; ?>
+            </h2>
         </div>
     </div>
     <hr>
@@ -69,16 +72,16 @@ if ($_SESSION["Authenticated"] == false) {
      */
     if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "POST") {
         /*
-        $username = cleanText(filter_input(INPUT_POST, "Username"));
-        $nickname = cleanText(filter_input(INPUT_POST, "Nickname"));
-        $password = filter_input(INPUT_POST, "Password");
-        $roleID = filter_input(INPUT_POST, "RoleID");
-        $email = cleanText(filter_input(INPUT_POST, "Email"));
-        $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
-        $comment = cleanText(filter_input(INPUT_POST, "Comment"));
+          $username = cleanText(filter_input(INPUT_POST, "Username"));
+          $nickname = cleanText(filter_input(INPUT_POST, "Nickname"));
+          $password = filter_input(INPUT_POST, "Password");
+          $roleID = filter_input(INPUT_POST, "RoleID");
+          $email = cleanText(filter_input(INPUT_POST, "Email"));
+          $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
+          $comment = cleanText(filter_input(INPUT_POST, "Comment"));
          * 
          */
-        
+
         $username = filter_input(INPUT_POST, "Username");
         $nickname = filter_input(INPUT_POST, "Nickname");
         $password = filter_input(INPUT_POST, "Password");
@@ -146,17 +149,27 @@ if ($_SESSION["Authenticated"] == false) {
             <div class="table-responsive">
                 <table class='table table-bordered table-striped'>
                     <tr>
-                        <th nowrap>Username:</th>
-                        <td class="w-100"><input type="text" name="Username" class="form-control" value="<?php echo $username; ?>" required autofocus></td>
-                        <td><span class="text-danger"><?php echo $usernameError; ?></span></td>
+                        <th>Username:</th>
+                        <td class="w-100">
+                            <input type="text" name="Username" class="form-control" value="<?php echo $username; ?>" required autofocus>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $usernameError; ?>
+                            </span>
+                        </td>
                     </tr>
                     <tr>
-                        <th nowrap>Nickname:</th>
-                        <td><input type="text" name="Nickname" class="form-control" value="<?php echo $nickname; ?>" required></td>
-                        <td><span class="text-danger"><?php echo $nicknameError; ?></span></td>
+                        <th>Nickname:</th>
+                        <td>
+                            <input type="text" name="Nickname" class="form-control" value="<?php echo $nickname; ?>" required>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $nicknameError; ?>
+                            </span>
+                        </td>
                     </tr>
                     <tr>
-                        <th nowrap>Role:</th>
+                        <th>Role:</th>
                         <td>
                             <?php
                             $roleList = $userDB->getAllRoles();
@@ -172,16 +185,24 @@ if ($_SESSION["Authenticated"] == false) {
 
                             echo "</select>";
                             ?>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $roleIDError; ?>
+                            </span>
                         </td>
-                        <td><span class="text-danger"><?php echo $roleIDError; ?></span></td>
                     </tr>
                     <tr>
-                        <th nowrap>Email:</th>
-                        <td><input type="text" name="Email" class="form-control" value="<?php echo $email; ?>" required></td>
-                        <td><span class="text-danger"><?php echo $emailError; ?></span></td>
+                        <th>Email:</th>
+                        <td>
+                            <input type="text" name="Email" class="form-control" value="<?php echo $email; ?>" required>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $emailError; ?>
+                            </span>
+                        </td>
                     </tr>
                     <tr>
-                        <th nowrap>Locked Out?</th>
+                        <th>Locked Out?</th>
                         <td>
                             <input type="checkbox" name="IsLockedOut"
                             <?php
@@ -190,18 +211,31 @@ if ($_SESSION["Authenticated"] == false) {
                             }
                             ?>
                                    >
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $isLockedOutError; ?>
+                            </span>
                         </td>
-                        <td><span class="text-danger"><?php echo $isLockedOutError; ?></span></td>
                     </tr>
                     <tr>
-                        <th nowrap>Comments:</th>
-                        <td><textarea maxlength="512" name="Comment" rows="4" class="w-100"><?php echo $comment; ?></textarea></td>
-                        <td><span class="text-danger"><?php echo $commentError; ?></span></td>
+                        <th>Comments:</th>
+                        <td>
+                            <textarea maxlength="512" name="Comment" rows="4" class="w-100"><?php echo $comment; ?></textarea>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $commentError; ?>
+                            </span>
+                        </td>
                     </tr>
                     <tr class='bg-warning'>
-                        <th nowrap>Password:</th>
-                        <td><input type="password" name="Password"></td>
-                        <td><span class="text-danger"><?php echo $passwordError; ?></span></td>
+                        <th>Password:</th>
+                        <td>
+                            <input type="password" name="Password">
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $passwordError; ?>
+                            </span>
+                        </td>
                     </tr>
                 </table>
             </div>
