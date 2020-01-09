@@ -6,7 +6,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 // Start session if not started. Must be started by page, not Master
@@ -122,7 +122,6 @@ if ($_SESSION["Authenticated"] == false) {
             echo "<tr><th>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
             echo "<tr><th>User Name:</th><td>{$result['Username']}</td></tr>";
             echo "<tr><th>Nickname:</th><td>{$result['Nickname']}</td></tr>";
-            // echo "<tr><th>Role ID:</th><td>{$result['RoleID']}</td></tr>";
             $role = $userDB->getRole($result['RoleID']);
             echo "<tr><th>Role:</th><td>" . $role['Title'] . "</td></tr>";
             echo "<tr><th>Email:</th><td>{$result['Email']}</td></tr>";

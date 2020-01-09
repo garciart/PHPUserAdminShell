@@ -6,7 +6,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 // Start session if not started. Must be started by page, not Master
@@ -27,7 +27,6 @@ if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
     exit();
 } else {
-    $result = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -60,6 +59,7 @@ if ($_SESSION["Authenticated"] == false) {
         // Connect to the database
         $userDB = new UserDB();
 
+        // Get UserID from query string and query database
         $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
             echo "<div class=\"table-responsive\">";
