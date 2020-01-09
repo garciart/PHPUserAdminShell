@@ -6,7 +6,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 session_start();
@@ -47,7 +47,7 @@ ob_clean();
 $file = "ErrorLog.txt";
 $f = fopen($file, "r") or exit("Unable to open file!");
 while (!feof($f)) {
-    echo fgets($f) . "<br>";
+    echo "<span class=\"text-monospace\">" . fgets($f) . "</span><br>";
 }
 fclose($f);
 ?>

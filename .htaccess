@@ -1,5 +1,5 @@
-ErrorDocument 400 /PHPUserManager/UserManager/ErrorPage.php
-ErrorDocument 401 /PHPUserManager/UserManager/ErrorPage.php
-ErrorDocument 403 /PHPUserManager/UserManager/ErrorPage.php
-ErrorDocument 404 /PHPUserManager/UserManager/ErrorPage.php
-ErrorDocument 500 /PHPUserManager/UserManager/ErrorPage.php
+ErrorDocument 400 /PHPUserManager/UserManager/ErrorPage.php?ErrorCode=400
+ErrorDocument 401 /PHPUserManager/UserManager/ErrorPage.php?ErrorCode=401
+ErrorDocument 403 /PHPUserManager/UserManager/ErrorPage.php?ErrorCode=403
+ErrorDocument 404 /PHPUserManager/UserManager/ErrorPage.php?ErrorCode=404
+ErrorDocument 500 /PHPUserManager/UserManager/ErrorPage.php?ErrorCode=500

@@ -7,7 +7,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 if (!isset($_SESSION)) {
@@ -29,9 +29,9 @@ ini_set("error_log", "ErrorLog.txt");
 
 /*
  * FOR DEVELOPMENT ERROR REPORTING
- * Uncomment ini_set('display_errors', 1) and comment out set_error_handler for development
+ * Uncomment ini_set('display_errors', 1) and comment set_error_handler for development
  * FOR PRODUCTION ERROR REPORTING
- * Uncomment set_error_handler and comment out ini_set('display_errors', 1) for production
+ * Uncomment set_error_handler and comment ini_set('display_errors', 1) for production
  */
 ini_set('display_errors', 1);
 
@@ -128,7 +128,7 @@ function validateURL($url) {
  * @return boolean True if the password is valid, false if not
  */
 function validatePassword($pword) {
-    if (empty($pword) || strlen($pword) < 8) {
+    if (empty($pword) || strlen($pword) < 8 || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($text)))) {
         return false;
     } else {
         return true;

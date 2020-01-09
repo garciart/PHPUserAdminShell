@@ -6,7 +6,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 // Start session if not started. Must be started by page, not Master
@@ -27,7 +27,6 @@ if ($_SESSION["Authenticated"] == false) {
     header("Location: LoginPage.php");
     exit();
 } else {
-    $result = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -48,6 +47,7 @@ if ($_SESSION["Authenticated"] == false) {
         </div>
         <div>
             <?php
+            // Get success flag from query string and check for errors
             $success = filter_input(INPUT_GET, "success", FILTER_SANITIZE_NUMBER_INT);
             if ($success == '0') {
                 echo "<h2 class=\"pull-left text-danger\">Error: Cannot retrieve user data!</h2>";
@@ -123,10 +123,11 @@ if ($_SESSION["Authenticated"] == false) {
                     </tbody>
                 </table>
             </div>
+            <a href="UMMainPage.php" class="btn btn-primary pull-left">Return to Main Administration Page</a>
             <?php
             unset($result);
         } else {
-            echo "<p class=\"lead\"><em>No records were found.</em></p>";
+            echo "<h2 class=\"text-danger\"><em>No records were found.</em></h2>";
         }
         ?>
     </div>

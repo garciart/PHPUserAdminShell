@@ -6,7 +6,7 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
 // Start session if not started. Must be started by page, not Master
@@ -71,18 +71,6 @@ if ($_SESSION["Authenticated"] == false) {
      * Display error if input is not valid
      */
     if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "POST") {
-        /*
-          $userID = cleanText(filter_input(INPUT_POST, "UserID"));
-          $username = cleanText(filter_input(INPUT_POST, "Username"));
-          $nickname = cleanText(filter_input(INPUT_POST, "Nickname"));
-          $password = filter_input(INPUT_POST, "Password");
-          $roleID = filter_input(INPUT_POST, "RoleID");
-          $email = cleanText(filter_input(INPUT_POST, "Email"));
-          $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
-          $comment = cleanText(filter_input(INPUT_POST, "Comment"));
-         * 
-         */
-
         $userID = filter_input(INPUT_POST, "UserID");
         $username = filter_input(INPUT_POST, "Username");
         $nickname = filter_input(INPUT_POST, "Nickname");

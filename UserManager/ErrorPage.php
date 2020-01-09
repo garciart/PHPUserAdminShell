@@ -6,18 +6,22 @@
  *
  * @author  Rob Garcia <rgarcia@rgprogramming.com>
  * @license https://opensource.org/licenses/MIT The MIT License
- * @version GIT: $Id$ In development
+ * @version 1.0
  * @link    https://github.com/garciart/PHPUserManager GitHub Repository
  */
-session_start();
+// Start session if not started. Must be started by page, not Master
+if (!isset($_SESSION)) {
+    session_start();
+}
 
+// Include this file to access common functions and variables
 require_once "UMCommonCode.php";
 
 /* Start placing content into an output buffer */
 ob_start();
 ?>
 <!-- Head Content Start -->
-<title>About Page | PHP User Manager</title>
+<title>Error Page | PHP User Manager</title>
 <!-- Head Content End -->
 <?php
 /* Store the content of the buffer for later use */
@@ -27,9 +31,6 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
-<h1 class="mt-3">PHP User Manager</h1>
-<p class="lead">Error Page</p>
-<hr>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderHeader = ob_get_contents();
@@ -47,6 +48,11 @@ ob_clean();
             if (isset($_SESSION["Error"])) {
                 echo "{$_SESSION["Error"]}<br>";
                 unset($_SESSION["Error"]);
+            }
+            // If it exists, get the ErrorCode from query string and display
+            $result = cleanText(filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT));
+            if (!empty($result)) {
+                echo $result . " Error";
             }
             ?>
         </div>
