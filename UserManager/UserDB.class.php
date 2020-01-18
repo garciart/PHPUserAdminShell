@@ -156,8 +156,9 @@ class UserDB {
             $sql = "SELECT *
                 FROM Role
                 ORDER BY RoleID ASC;";
-            $result = $this->_pdo->query($sql);
-            // unset($this->_pdo);
+            $stmt = $this->_pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
             return $result->fetchAll();
         } catch (\PDOException $e) {
             error_log($e->getMessage());
@@ -182,6 +183,10 @@ class UserDB {
         }
     }
 
+    /**
+     * Gets all the users in the database and their information.
+     * @return array An array of all the users in the database and their information. An empty array indicates an error.
+     */
     public function getAllUsers() {
         try {
             $this->_pdo = $this->connect();
@@ -196,6 +201,11 @@ class UserDB {
         }
     }
 
+    /**
+     * Returns a single user and his or her information.
+     * @param integer $userID The user's ID.
+     * @return array The user's information indexed by column name or empty if the user's ID is not found.
+     */
     public function getUserByUserID($userID) {
         try {
             $this->_pdo = $this->connect();
@@ -214,6 +224,11 @@ class UserDB {
         }
     }
 
+    /**
+     * Returns a single user and his or her information.
+     * @param string $username The user's email.
+     * @return array The user's information indexed by column name or empty if the user's username is not found.
+     */
     public function getUserByUsername($username) {
         try {
             $this->_pdo = $this->connect();
@@ -302,6 +317,11 @@ class UserDB {
         }
     }
 
+    /**
+     * Deletes a user from the database.
+     * @param integer $userID The user's ID.
+     * @return integer The number of rows affected. A value other than 1 indicates an error.
+     */
     public function deleteUser($userID) {
         try {
             $this->_pdo = $this->connect();
@@ -361,8 +381,8 @@ class UserDB {
                 RoleID integer NOT NULL,
                 Email text NOT NULL,
                 IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
-                LastLoginDate string NOT NULL,
-                CreateDate string NOT NULL,
+                LastLoginDate text NOT NULL,
+                CreateDate text NOT NULL,
                 Comment text,
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
             );";
@@ -379,15 +399,16 @@ class UserDB {
     }
 
     /**
-     * Gets the highest value of RoleID (usually the last row inserted) in the Role table.
-     * @return type The max value of RoleID or 0 if there is no data.
+     * Gets the highest value of RoleID (usually the last row inserted) from the Role table.
+     * @return integer The anticipated value of the next RoleID or 0 if there is no data.
      */
     private function getNextRoleID() {
         try {
             $this->_pdo = $this->connect();
             $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role;";
-            $result = $this->_pdo->query($sql);
-            $row = $result->fetch();
+            $stmt = $this->_pdo->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetch();
             $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
             // unset($this->_pdo);
             return $maxRoleID + 1;
@@ -397,8 +418,8 @@ class UserDB {
     }
 
     /**
-     * Gets the highest value of UserID (usually the last row inserted) in the User table.
-     * @return type The max value of UserID or 0 if there is no data.
+     * Gets the highest value of UserID (usually the last row inserted) from the User table.
+     * @return integer The anticipated value of the next UserID or 0 if there is no data.
      */
     private function getNextUserID() {
         try {
@@ -434,18 +455,15 @@ class UserDB {
 
     /**
      * Checks if the given users exists in the database.
-     *
+     * Julen Pardo came up with this. 
+     * Thought about changing the method to retrieve the UserID instead,
+     * but Email is supposed to be unique.
+     * If the count != 1, that means there are no users or more than one,
+     * which means something is wrong. This is a better method.
      * @param $username The username to check if exists.
      * @return True if the users exists, false if not.
      */
     private function userExists($username) {
-        /*
-         * Julen Pardo came up with this. 
-         * Thought about changing the method to retrieve the UserID instead,
-         * but Username is supposed to be unique.
-         * If the count != 1, that means there are no users or more than one,
-         * which means something is wrong. This is a better method.
-         */
         try {
             $this->_pdo = $this->connect();
             $sql = "SELECT COUNT(*) AS Count
@@ -508,5 +526,4 @@ class UserDB {
             error_log($e->getMessage());
         }
     }
-
 }
