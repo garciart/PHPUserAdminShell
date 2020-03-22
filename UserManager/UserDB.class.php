@@ -119,7 +119,7 @@ class UserDB {
         try {
             $this->_pdo = $this->connect();
             $sql = "INSERT INTO User
-                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreateDate, :Comment);";
+                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment);";
             // Hash the password using Key Derivation Functions (KDF)
             $options = array("cost" => BCRYPT_COST);
             $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -128,7 +128,7 @@ class UserDB {
             // Set other initial values
             $isLockedOut = 0;
             $lastLoginDate = date("Y-m-d H:i:s");
-            $createDate = date("Y-m-d H:i:s");
+            $creationDate = date("Y-m-d H:i:s");
             // Execute SQL
             $stmt = $this->_pdo->prepare($sql);
             $stmt->bindValue(":UserID", $this->getNextUserID());
@@ -139,7 +139,7 @@ class UserDB {
             $stmt->bindValue(":Email", $email);
             $stmt->bindValue(":IsLockedOut", $isLockedOut);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
-            $stmt->bindValue(":CreateDate", $createDate);
+            $stmt->bindValue(":CreationDate", $creationDate);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
             $lastInsertId = $this->_pdo->lastInsertId();
@@ -382,7 +382,7 @@ class UserDB {
                 Email text NOT NULL,
                 IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
                 LastLoginDate text NOT NULL,
-                CreateDate text NOT NULL,
+                CreationDate text NOT NULL,
                 Comment text,
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
             );";

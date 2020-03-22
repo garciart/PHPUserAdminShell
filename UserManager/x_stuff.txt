@@ -27,7 +27,7 @@ echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
 // echo "Email: " . $_SESSION["Email"] . "<br>";
 // echo "IsLockedOut: " . $_SESSION["IsLockedOut"] . "<br>";
 // echo "LastLoginDate: " . $_SESSION["LastLoginDate"] . "<br>";
-// echo "CreateDate: " . $_SESSION["CreateDate"] . "<br>";
+// echo "CreationDate: " . $_SESSION["CreationDate"] . "<br>";
 // echo "Comment: " . $_SESSION["Comment"] . "<br>";
 
 <form action="UserEditPage.php" method="post">
@@ -82,6 +82,6 @@ echo "RoleID: " . $_SESSION["RoleID"] . "<br>";
     echo "Email: " . $user->getEmail() . "<br>";
     echo "IsLockedOut: " . $user->getIsLockedOut() . "<br>";
     echo "LastLoginDate: " . $user->getLastLoginDate() . "<br>";
-    echo "CreateDate: " . $user->getCreateDate() . "<br>";
+    echo "CreationDate: " . $user->getCreationDate() . "<br>";
     echo "Comment: " . $user->getComment() . "<br>";
     ?>
