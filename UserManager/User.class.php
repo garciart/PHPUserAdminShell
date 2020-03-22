@@ -23,10 +23,10 @@ class User {
     private $_email;
     private $_isLockedOut;
     private $_lastLoginDate;
-    private $_createDate;
+    private $_creationDate;
     private $_comment;
 
-    public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $createDate, $comment) {
+    public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $creationDate, $comment) {
         $this->setUserID($userID);
         $this->setUsername($username);
         $this->setNickname($nickname);
@@ -35,7 +35,7 @@ class User {
         $this->setEmail($email);
         $this->setIsLockedOut($isLockedOut);
         $this->setLastLoginDate($lastLoginDate);
-        $this->setCreateDate($createDate);
+        $this->setCreationDate($creationDate);
         $this->setComment($comment);
     }
 
@@ -103,12 +103,12 @@ class User {
         $this->_lastLoginDate = $lastLoginDate;
     }
 
-    public function getCreateDate() {
-        return $this->_createDate;
+    public function getCreationDate() {
+        return $this->_creationDate;
     }
 
-    public function setCreateDate($createDate) {
-        $this->_createDate = $createDate;
+    public function setCreationDate($creationDate) {
+        $this->_creationDate = $creationDate;
     }
 
     public function getComment() {

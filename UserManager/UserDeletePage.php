@@ -128,7 +128,7 @@ if ($_SESSION["Authenticated"] == false) {
             $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
             echo "<tr><th>Locked Out?</th><td>{$lockedOut}</td></tr>";
             echo "<tr><th>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
-            echo "<tr><th>Account Creation Date:</th><td>{$result['CreateDate']}</td></tr>";
+            echo "<tr><th>Account Creation Date:</th><td>{$result['CreationDate']}</td></tr>";
             echo "<tr><th>Comments:</th>";
             echo "<td><textarea rows=\"4\" class=\"w-100\">{$result['Comment']}</textarea></td></tr>";
             echo "</table>";

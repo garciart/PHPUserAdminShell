@@ -33,7 +33,7 @@ $userDB = new UserDB();
 $authenticated = $userDB->AuthenticateUser($username, $password);
 if ($authenticated) {
     $result = $userDB->getUserByUsername($username);
-    $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreateDate"], $result["Comment"]);
+    $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreationDate"], $result["Comment"]);
     // Create session
     session_regenerate_id();
     $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
