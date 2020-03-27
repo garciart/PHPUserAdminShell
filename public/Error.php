@@ -1,22 +1,21 @@
 <?php
-/*
- * Error page.
+/**
+ * Site error page.
  *
- * PHP version 5.3
+ * PHP version used: 5.5.4
+ * SQLite version used: 3.28.0
  *
- * @author  Rob Garcia <rgarcia@rgprogramming.com>
- * @license https://opensource.org/licenses/MIT The MIT License
- * @version 1.0
- * @link    https://github.com/garciart/PHPUserManager GitHub Repository
+ * Styling guide: PSR-12: Extended Coding Style
+ *     (https://www.php-fig.org/psr/psr-12/)
+ *
+ * @category  PHP
+ * @package   hello
+ * @author    Rob Garcia <rgarcia@rgprogramming.com>
+ * @copyright 2020 Rob Garcia
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      https://github.com/garciart/PHPUserManager
  */
-// Start session if not started. Must be started by page, not Master
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-// Include this file to access common functions and variables
-require_once "UMCommonCode.php";
-
+session_start();
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -31,6 +30,9 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
+<h1 class="mt-3">PHP User Manager</h1>
+<p class="lead">Host Application Error Page</p>
+<hr>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderHeader = ob_get_contents();
@@ -41,8 +43,9 @@ ob_clean();
 <div class="row">
     <div class="col-md-12 text-center">
         <div class="page-header">
-            <h1>PC LOAD LETTER???</h1>
-            <img src="images/error_os.gif" alt="PC LOAD LETTER">
+            <h1>I can't believe this just happened!</h1>
+            <br>
+            <img src="img/error.gif" alt="WTF just happened?">
             <hr>
             <?php
             if (isset($_SESSION["Error"])) {
@@ -50,16 +53,18 @@ ob_clean();
                 unset($_SESSION["Error"]);
             }
             // If it exists, get the ErrorCode from query string and display
-            $result = cleanText(filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT));
+            $result = filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT);
             if (!empty($result)) {
                 echo $result . " Error";
+            } else {
+                echo "WTF, over?";
             }
             ?>
         </div>
         <br>
         <div class="text-danger">
             <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
-            <a href='<?php echo "/{$ROOT_URL}/index.php" ?>' class="btn btn-primary">Return To Home Page</a>
+            <a href='<?php echo "index.php" ?>' class="btn btn-primary">Return To Home Page</a>
         </div>
     </div>
 </div>
@@ -78,4 +83,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UMMasterPage.php";
+require_once "Master.php";

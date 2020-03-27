@@ -1,0 +1,5 @@
+ErrorDocument 400 /PHPUserManager/public/Error.php?ErrorCode=400
+ErrorDocument 401 /PHPUserManager/public/Error.php?ErrorCode=401
+ErrorDocument 403 /PHPUserManager/public/Error.php?ErrorCode=403
+ErrorDocument 404 /PHPUserManager/public/Error.php?ErrorCode=404
+ErrorDocument 500 /PHPUserManager/public/Error.php?ErrorCode=500
