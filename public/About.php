@@ -2,12 +2,18 @@
 /**
  * Contains general information about the site and its authors.
  *
- * PHP version 5.3
+ * PHP version used: 5.5.4
+ * SQLite version used: 3.28.0
  *
- * @author  Rob Garcia <rgarcia@rgprogramming.com>
- * @license https://opensource.org/licenses/MIT The MIT License
- * @version 1.0
- * @link    https://github.com/garciart/PHPUserManager GitHub Repository
+ * Styling guide: PSR-12: Extended Coding Style
+ *     (https://www.php-fig.org/psr/psr-12/)
+ *
+ * @category  PHP
+ * @package   hello
+ * @author    Rob Garcia <rgarcia@rgprogramming.com>
+ * @copyright 2020 Rob Garcia
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      https://github.com/garciart/PHPUserManager
  */
 session_start();
 /* Start placing content into an output buffer */
@@ -25,7 +31,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-3">PHP User Manager</h1>
-<p class="lead">About Page</p>
+<p class="lead">Host Application About Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */

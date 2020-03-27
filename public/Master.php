@@ -2,15 +2,21 @@
 /*
  * Master page for all pages. Standardizes page format accros the site.
  *
- * PHP version 5.3
+ * PHP version used: 5.5.4
+ * SQLite version used: 3.28.0
  *
- * @author  Rob Garcia <rgarcia@rgprogramming.com>
- * @license https://opensource.org/licenses/MIT The MIT License
- * @version 1.0
- * @link    https://github.com/garciart/PHPUserManager GitHub Repository
+ * Styling guide: PSR-12: Extended Coding Style
+ *     (https://www.php-fig.org/psr/psr-12/)
+ *
+ * @category  PHP
+ * @package   hello
+ * @author    Rob Garcia <rgarcia@rgprogramming.com>
+ * @copyright 2020 Rob Garcia
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      https://github.com/garciart/PHPUserManager
+ *
+ * IMPORTANT! Sessions must be started by calling page, if necessary.
  */
-
-// IMPORTANT! Sessions must be started by calling page, if necessary.
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,8 +25,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" type="image/png" href="images/logo.png">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/logo.png" type="image/png">
         <!-- Bootstrap goes first -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -42,7 +48,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> class="navbar-left" title="Home"><img src="Images/logo.png" class="nav_logo"></a>
+                <a <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> class="navbar-left" title="Home"><img src="img/logo.png" class="nav_logo"></a>
                 <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -57,7 +63,7 @@
                         </li>
                         <?php
                         $logID = "login";
-                        $logPage = "UserManager/LoginPage.php";
+                        $logPage = "../UserManager/LoginPage.php";
                         $logStatus = "Log In";
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {

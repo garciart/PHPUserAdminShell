@@ -3,7 +3,7 @@ This is an extension of my tutorial, [Master Pages in PHP](https://github.com/ga
 
 ---
 
-![PHP User Manager](README/readme00.png)
+![PHP User Manager](docs/readme00.png)
 
 ---
 
@@ -12,6 +12,8 @@ While my first programs were written in Basic and Assembly Language, the languag
 However, while I love .NET, it has its limitations. For example, once you reach a certain point, .NET is not free, and neither are Microsoft's development or production tools (e.g., Visual Studio, SQL Server, etc.). Another issue is that many companies do not provide .NET hosting services. Hopefully, .NET Core, the cross-platform successor to .NET, will take off. In the meantime, to better serve my clients, I began to create alternative versions of my boilerplates in other languages, such as PHP and JavaScript. 
 
 One of my boilerplates was a version of that beloved tool that many of us miss: The Web Site Administration Tool. Here it is for PHP, extending one of my previous tutorials, Master Pages in PHP. Feel free to copy it and use it if you need an authentication and user administration system. Have fun and good luck!
+
+>**The focus of this repo is the UserManager folder, which is meant to be copied, pasted, and connected into a project through the login page. For that reason, this repo does not attempt to use a Symfony, Laravel, or Codeigniter folder structure.**
 
 ---
 
