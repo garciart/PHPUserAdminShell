@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 }
 
 // Include this file to access common functions and variables
-require_once "UMCommonCode.php";
+require_once "CommonCode.php";
 
 /* Start placing content into an output buffer */
 ob_start();
@@ -59,7 +59,7 @@ ob_clean();
         <br>
         <div class="text-danger">
             <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
-            <a href='<?php echo "/{$ROOT_URL}/index.php" ?>' class="btn btn-primary">Return To Home Page</a>
+            <a href='<?php echo "/{$ROOT_DIR}/index.php" ?>' class="btn btn-primary">Return To Home Page</a>
         </div>
     </div>
 </div>
@@ -78,4 +78,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "UMMasterPage.php";
+require_once "MainPage.php";

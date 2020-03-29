@@ -13,7 +13,7 @@ However, while I love .NET, it has its limitations. For example, once you reach 
 
 One of my boilerplates was a version of that beloved tool that many of us miss: The Web Site Administration Tool. Here it is for PHP, extending one of my previous tutorials, Master Pages in PHP. Feel free to copy it and use it if you need an authentication and user administration system. Have fun and good luck!
 
->**The focus of this repo is the UserManager folder, which is meant to be copied, pasted, and connected into a project through the login page. For that reason, this repo does not attempt to use a Symfony, Laravel, or Codeigniter folder structure.**
+>***Please note that the focus of this repo is the UserManager folder, which is meant to be copied, pasted, and integrated into a project through the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.***
 
 ---
 

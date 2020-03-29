@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 }
 
 // Include this file to access common functions and variables
-require_once "UMCommonCode.php";
+require_once "CommonCode.php";
 // Include database class to access database methods
 require_once "UserDB.class.php";
 
@@ -113,7 +113,7 @@ if ($_SESSION["Authenticated"] == false) {
                     </tbody>
                 </table>
             </div>
-            <a href="UMMainPage.php" class="btn btn-primary pull-left">Return to Main Administration Page</a>
+            <a href="MainPage.php" class="btn btn-primary pull-left">Return to Main Administration Page</a>
             <?php
             unset($result);
         } else {
@@ -136,5 +136,5 @@ if ($_SESSION["Authenticated"] == false) {
     /* Clean out the buffer and turn off output buffering */
     ob_end_clean();
     /* Call the master page. It will echo the content of the placeholders in the designated locations */
-    require_once "UMMasterPage.php";
+    require_once "MainPage.php";
 }
