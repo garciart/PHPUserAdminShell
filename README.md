@@ -1,5 +1,5 @@
 # PHP User Manager
-This is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP", incorporating a user administration system (using SQLite) and Bootstrap styling. Simply clone, rename the project, and add your own pages!
+This is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP"), incorporating a user administration system (using SQLite) and Bootstrap styling. Simply clone, rename the project, and add your own pages!
 
 ---
 
@@ -17,4 +17,4 @@ One of my boilerplates was a version of that beloved tool that many of us miss: 
 
 ---
 
-Thanks to Julen Pardo at [https://www.webcodegeeks.com/php/login-form-php-example/](https://www.webcodegeeks.com/php/login-form-php-example/ ""Julen Pardo at Web Code Geeks) for the Key Derivation Functions (KDF).
+Thanks to Julen Pardo at [Web Code Geeks](https://www.webcodegeeks.com/php/login-form-php-example/ "Julen Pardo at Web Code Geeks") for the Key Derivation Functions (KDF).
