@@ -13,7 +13,7 @@
 
 namespace UserManager;
 
-require_once "UMCommonCode.php";
+require_once "CommonCode.php";
 
 class UserDB {
 

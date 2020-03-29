@@ -11,7 +11,7 @@
  * @category  PHP
  * @package   hello
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
- * @copyright 2020 Rob Garcia
+ * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  *
@@ -68,8 +68,8 @@
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
-                                <li class="nav-item <?php if ($childPage == "UMMainPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "UMMainPage.php" ? "" : "href=\"UserManager/UMMainPage.php\""); ?> title="About">User Admin</a>
+                                <li class="nav-item <?php if ($childPage == "MainPage.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "MainPage.php" ? "" : "href=\"UserManager/MainPage.php\""); ?> title="About">User Admin</a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code

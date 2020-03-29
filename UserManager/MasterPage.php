@@ -11,7 +11,7 @@
  */
 
 // IMPORTANT! Sessions must be started by calling page, if necessary.
-require_once "UMCommonCode.php";
+require_once "CommonCode.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -44,18 +44,18 @@ require_once "UMCommonCode.php";
         <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_URL}/index.php\""); ?> class="navbar-left" title="Home"><img src="images\logo.png" class="nav_logo"></a>
-                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_URL}/index.php\""); ?> title="Home">PHP User Manager</a>
+                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> class="navbar-left" title="Home"><img src="images\logo.png" class="nav_logo"></a>
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_URL}/index.php\""); ?> title="Home">Home</a>
+                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> title="Home">Home</a>
                         </li>
                         <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/{$ROOT_URL}/About.php\""); ?> title="About">About</a>
+                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/{$ROOT_DIR}/About.php\""); ?> title="About">About</a>
                         </li>
                         <?php
                         $logID = "login";
@@ -64,8 +64,8 @@ require_once "UMCommonCode.php";
                         if (isset($_SESSION["Authenticated"])) {
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
-                                <li class="nav-item <?php if ($childPage == "UMMainPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "UMMainPage.php" ? "" : "href=\"UMMainPage.php\""); ?> title="About">User Admin</a>
+                                <li class="nav-item <?php if ($childPage == "MainPage.php") echo "active"; ?>">
+                                    <a class="nav-link" <?php echo ($childPage == "MainPage.php" ? "" : "href=\"MainPage.php\""); ?> title="About">User Admin</a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code

@@ -11,7 +11,7 @@
  * @category  PHP
  * @package   hello
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
- * @copyright 2020 Rob Garcia
+ * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */

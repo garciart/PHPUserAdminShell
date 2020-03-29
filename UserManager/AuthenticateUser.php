@@ -13,7 +13,7 @@
 session_start();
 
 require_once "User.class.php";
-require_once "UMCommonCode.php";
+require_once "CommonCode.php";
 require_once "UserDB.class.php";
 
 // Get the class name
@@ -48,7 +48,7 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
-    header("Location: UMMainPage.php");
+    header("Location: MainPage.php");
     exit();
 } else {
     $_SESSION["Authenticated"] = false;

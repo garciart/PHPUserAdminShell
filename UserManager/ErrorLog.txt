@@ -3,19 +3,19 @@ Stack trace:
 #0 {main}
 [22-Dec-2019 12:41:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
 [22-Dec-2019 12:42:16 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
-[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:22
+[22-Dec-2019 12:49:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php:22
 Stack trace:
 #0 C:\xampp\htdocs\PHPUserManager\UserManager\ErrorPage.php(14): require_once()
 #1 {main}
-  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 22
-[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:22
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php on line 22
+[22-Dec-2019 12:49:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function track_errors() in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php:22
 Stack trace:
-#0 C:\xampp\htdocs\PHPUserManager\UserManager\UMMainPage.php(15): require_once()
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php(15): require_once()
 #1 {main}
-  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 22
-[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 47
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php on line 22
+[22-Dec-2019 12:51:00 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php on line 47
 [22-Dec-2019 12:51:00 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
-[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 47
+[22-Dec-2019 12:57:23 America/New_York] PHP Notice:  Undefined variable: php_errormsg in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php on line 47
 [22-Dec-2019 12:57:23 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
 [22-Dec-2019 12:59:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
 [22-Dec-2019 12:59:26 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'YoMama.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHPUserManager\UserManager\UserProfile.php on line 17
@@ -226,13 +226,14 @@ Stack trace:
 [01-Jan-2020 14:17:10 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
 [01-Jan-2020 14:42:51 America/New_York] PHP Notice:  Undefined index: PasswordHash in C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php on line 138
 [01-Jan-2020 14:42:51 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: User.PasswordHash
-[08-Jan-2020 23:23:16 America/New_York] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php:140
+[08-Jan-2020 23:23:16 America/New_York] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php:140
 Stack trace:
 #0 C:\xampp\htdocs\PHPUserManager\UserManager\UserEditPage.php(117): getPasswordHash('qwertyuiop')
 #1 {main}
-  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UMCommonCode.php on line 140
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php on line 140
 [20-Mar-2020 21:55:54 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on array in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:162
 Stack trace:
 #0 C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php(87): UserManager\UserDB->getAllRoles()
 #1 {main}
   thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 162
+[28-Mar-2020 21:23:34 America/New_York] PHP Notice:  Undefined index: CreationDate in C:\xampp\htdocs\PHPUserManager\UserManager\AuthenticateUser.php on line 36
