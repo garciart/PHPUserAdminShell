@@ -237,3 +237,913 @@ Stack trace:
 #1 {main}
   thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 162
 [28-Mar-2020 21:23:34 America/New_York] PHP Notice:  Undefined index: CreationDate in C:\xampp\htdocs\PHPUserManager\UserManager\AuthenticateUser.php on line 36
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:01 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:07 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:08 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:33:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:48 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:49 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:34:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:18 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 21:43:19 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 21:43:36 America/New_York] PHP Notice:  Undefined variable: contentPlaceHolderHead in C:\xampp\htdocs\PHPUserManager\UserManager\MasterPage.php on line 37
+[30-Mar-2020 21:43:36 America/New_York] PHP Notice:  Undefined variable: contentPlaceHolderHeader in C:\xampp\htdocs\PHPUserManager\UserManager\MasterPage.php on line 94
+[30-Mar-2020 21:43:36 America/New_York] PHP Notice:  Undefined variable: contentPlaceHolderMain in C:\xampp\htdocs\PHPUserManager\UserManager\MasterPage.php on line 102
+[30-Mar-2020 21:43:36 America/New_York] PHP Notice:  Undefined variable: contentPlaceHolderFooter in C:\xampp\htdocs\PHPUserManager\UserManager\MasterPage.php on line 112
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:54 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:41:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:50 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:42:51 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:36 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 22:56:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:33 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:08:34 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:20 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:21 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:55 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:14:56 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:02 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:15:03 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:37 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:37 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:17:38 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:40 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:41 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:41 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[30-Mar-2020 23:21:41 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 12
+[30-Mar-2020 23:21:41 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18

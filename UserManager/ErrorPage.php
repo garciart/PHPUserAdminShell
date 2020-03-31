@@ -42,7 +42,7 @@ ob_clean();
     <div class="col-md-12 text-center">
         <div class="page-header">
             <h1>PC LOAD LETTER???</h1>
-            <img src="images/error_os.gif" alt="PC LOAD LETTER">
+            <img src="img/error_os.gif" alt="PC LOAD LETTER">
             <hr>
             <?php
             if (isset($_SESSION["Error"])) {

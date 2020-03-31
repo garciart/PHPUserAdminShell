@@ -37,7 +37,7 @@ ob_clean();
 <!-- Main Element Content -->
 <div class="col-sm-4 mx-auto text-center">
     <form class="form-signin" action="AuthenticateUser.php" method="post">
-        <img class="mb-4" src="images/logo.png" alt="" width="72" height="72">
+        <img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
@@ -80,4 +80,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "MainPage.php";
+require_once "MasterPage.php";
