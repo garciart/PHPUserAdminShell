@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$ROOT_DIR = "PHPUserManager";
+$ROOT_DIR = "PHPUserManager\Public";
 
 /**
  * Computational cost for Key Derivation Functions (KDF)

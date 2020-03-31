@@ -2,8 +2,11 @@
     Created on : Dec 16, 2019, 11:27:37 AM
     Author     : Rob Garcia <rgarcia@rgprogramming.com>
 */
+html {
+    font-family: sans-serif;
+}
 header {
-    padding-top: 60px;
+    clear: both;
 }
 .nav_logo {
     height: 50px;

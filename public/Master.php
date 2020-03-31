@@ -25,12 +25,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="img/logo.png" type="image/png">
         <!-- Bootstrap goes first -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -45,10 +46,12 @@
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
+        <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> class="navbar-left" title="Home"><img src="img/logo.png" class="nav_logo"></a>
+                <a <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> class="navbar-left" title="Home">
+                    <img src="img/logo.png" class="nav_logo">
+                </a>
                 <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -74,7 +77,7 @@
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code
                                 $logID = "logout";
-                                $logPage = "UserManager/Logout.php";
+                                $logPage = "../UserManager/Logout.php";
                                 $logStatus = "Log Out";
                             }
                         }
@@ -93,7 +96,7 @@
         </nav>
         <header class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-md-12 text-center">
                     <!-- Content placeholder for header element content -->
                     <?php echo $contentPlaceHolderHeader; ?>
                 </div>
@@ -130,9 +133,10 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script>
+
+        <script type="text/javascript">
             // Using jQuery
-            $(function () {
+            $(document).ready(function () {
                 $("a#logout").click(function () {
                     if (confirm("Are you sure you want to log out?")) {
                         return true;
