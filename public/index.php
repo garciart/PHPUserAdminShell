@@ -8,14 +8,15 @@
  * Styling guide: PSR-12: Extended Coding Style
  *     (https://www.php-fig.org/psr/psr-12/)
  *
- * @category  PHP
- * @package   hello
+ * @category  PHPUserManager
+ * @package   public
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
  * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
 session_start();
+
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -40,14 +41,16 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed nonummy nibh euismod tincidunt ut laoreet dolore magna aliat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercita ullamcorper suscipit lobortis nisl ut aliquip ex consequat.</p>
-<!-- Notice we can include code in the buffer as well -->
-<?php
-for ($x = 10; $x >= 1; $x--) {
-    echo "T-$x and counting...<br>";
-}
-echo "Lift-off!<br>"
-?>
+<div class="col-md-12">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed nonummy nibh euismod tincidunt ut laoreet dolore magna aliat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercita ullamcorper suscipit lobortis nisl ut aliquip ex consequat.</p>
+    <!-- Notice we can include code in the buffer as well -->
+    <?php
+    for ($x = 10; $x >= 1; $x--) {
+        echo "T-$x and counting...<br>";
+    }
+    echo "Lift-off!<br>"
+    ?>
+</div>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();

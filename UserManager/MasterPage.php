@@ -8,8 +8,8 @@
  * Styling guide: PSR-12: Extended Coding Style
  *     (https://www.php-fig.org/psr/psr-12/)
  *
- * @category  PHP
- * @package   hello
+ * @category  PHPUserManager
+ * @package   usermanager
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
  * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License

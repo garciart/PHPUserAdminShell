@@ -8,8 +8,8 @@
  * Styling guide: PSR-12: Extended Coding Style
  *     (https://www.php-fig.org/psr/psr-12/)
  *
- * @category  PHP
- * @package   hello
+ * @category  PHPUserManager
+ * @package   usermanager
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
  * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License
@@ -50,11 +50,15 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}. Please select one of the options below:</p></div>"; ?>
-<div class="btn-toolbar mb-3">
-    <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
-    <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
-    <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>
-    <a href="ErrorLogPage.php" class="btn btn-primary btn-block">Error Log</a>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="btn-toolbar my-3">
+            <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
+            <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
+            <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>
+            <a href="ErrorLogPage.php" class="btn btn-primary btn-block">Error Log</a>
+        </div>
+    </div>
 </div>
 <?php
 /* Store the content of the buffer for later use */
@@ -71,4 +75,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "MainPage.php";
+require_once "MasterPage.php";
