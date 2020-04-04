@@ -1191,3 +1191,9 @@ Stack trace:
 [31-Mar-2020 23:01:52 America/New_York] PHP Notice:  Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 24
 [31-Mar-2020 23:04:10 America/New_York] PHP Notice:  Undefined index: CreationDate in C:\xampp\htdocs\PHPUserManager\UserManager\AuthenticateUser.php on line 36
 [31-Mar-2020 23:05:48 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in C:\xampp\htdocs\PHPUserManager\UserManager\MainPage.php on line 18
+[03-Apr-2020 22:48:00 America/New_York] PHP Notice:  Undefined index: CreationDate in C:\xampp\htdocs\PHPUserManager\UserManager\AuthenticateUser.php on line 36
+[03-Apr-2020 22:58:03 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on array in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php:162
+Stack trace:
+#0 C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php(87): UserManager\UserDB->getAllRoles()
+#1 {main}
+  thrown in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php on line 162

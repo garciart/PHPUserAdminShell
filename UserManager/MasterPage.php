@@ -9,7 +9,7 @@
  *     (https://www.php-fig.org/psr/psr-12/)
  *
  * @category  PHPUserManager
- * @package   usermanager
+ * @package   UserManager
  * @author    Rob Garcia <rgarcia@rgprogramming.com>
  * @copyright 2019-2020 Rob Garcia
  * @license   https://opensource.org/licenses/MIT The MIT License
