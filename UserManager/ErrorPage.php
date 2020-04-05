@@ -1,15 +1,20 @@
 <?php
 /*
  * Error page.
+ * 
+ * PHP version used: 5.5.4
+ * SQLite version used: 3.28.0
  *
- * PHP version 5.3
+ * Styling guide: PSR-12: Extended Coding Style
+ *     (https://www.php-fig.org/psr/psr-12/)
  *
- * @author  Rob Garcia <rgarcia@rgprogramming.com>
- * @license https://opensource.org/licenses/MIT The MIT License
- * @version 1.0
- * @link    https://github.com/garciart/PHPUserManager GitHub Repository
+ * @category  PHPUserManager
+ * @package   UserManager
+ * @author    Rob Garcia <rgarcia@rgprogramming.com>
+ * @copyright 2019-2020 Rob Garcia
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      https://github.com/garciart/PHPUserManager
  */
-// Start session if not started. Must be started by page, not Master
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -42,7 +47,7 @@ ob_clean();
     <div class="col-md-12 text-center">
         <div class="page-header">
             <h1>PC LOAD LETTER???</h1>
-            <img src="img/error_os.gif" alt="PC LOAD LETTER">
+            <img src="img/error_os.gif" alt="PC LOAD LETTER" style="width:100%;">
             <hr>
             <?php
             if (isset($_SESSION["Error"])) {
