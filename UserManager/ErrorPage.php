@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Error page.
  * 
  * PHP version used: 5.5.4
@@ -15,7 +15,8 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-if (!isset($_SESSION)) {
+/* Check if a session is already active */
+if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 

@@ -3,12 +3,18 @@
 /**
  * Database class. Handles all database calls.
  *
- * PHP version 5.3
+ * PHP version used: 5.5.4
+ * SQLite version used: 3.28.0
  *
- * @author  Rob Garcia <rgarcia@rgprogramming.com>
- * @license https://opensource.org/licenses/MIT The MIT License
- * @version 1.0
- * @link    https://github.com/garciart/PHPUserManager GitHub Repository
+ * Styling guide: PSR-12: Extended Coding Style
+ *     (https://www.php-fig.org/psr/psr-12/)
+ *
+ * @category  PHPUserManager
+ * @package   UserManager
+ * @author    Rob Garcia <rgarcia@rgprogramming.com>
+ * @copyright 2019-2020 Rob Garcia
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      https://github.com/garciart/PHPUserManager
  */
 
 namespace UserManager;
