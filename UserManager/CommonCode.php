@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Code common to one or more files.
  *
- * PHP version used: 5.6
+ * PHP version used: 5.5.4
  * SQLite version used: 3.28.0
  *
  * Styling guide: PSR-12: Extended Coding Style
@@ -15,7 +16,8 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-if (!isset($_SESSION)) {
+/* Check if a session is already active */
+if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 

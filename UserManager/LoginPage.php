@@ -15,7 +15,11 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-session_start();
+/* Check if a session is already active */
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 require_once "CommonCode.php";
 /* Start placing content into an output buffer */
 ob_start();

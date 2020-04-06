@@ -17,6 +17,7 @@
  *
  * IMPORTANT! Sessions must be started by calling page, if necessary.
  */
+
 require_once "CommonCode.php";
 ?>
 <!doctype html>
