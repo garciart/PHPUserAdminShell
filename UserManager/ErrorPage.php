@@ -23,6 +23,11 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 // Include this file to access common functions and variables
 require_once "CommonCode.php";
 
+// Ensure the user is authenticated and authorized
+if ($_SESSION["Authenticated"] == false) {
+    header("Location: LoginPage.php");
+    exit();
+} else {
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -48,7 +53,7 @@ ob_clean();
     <div class="col-md-12 text-center">
         <div class="page-header">
             <h1>PC LOAD LETTER???</h1>
-            <img src="img/error_os.gif" alt="PC LOAD LETTER" style="width:100%;">
+            <img src="img/error_os.gif" alt="PC LOAD LETTER" class="col-md-6">
             <hr>
             <?php
             if (isset($_SESSION["Error"])) {
@@ -56,8 +61,9 @@ ob_clean();
                 unset($_SESSION["Error"]);
             }
             // If it exists, get the ErrorCode from query string and display
-            $result = cleanText(filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT));
+            $result = filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT);
             if (!empty($result)) {
+                cleanText($result);
                 echo $result . " Error";
             }
             ?>
@@ -65,7 +71,7 @@ ob_clean();
         <br>
         <div class="text-danger">
             <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
-            <a href='<?php echo "/{$ROOT_DIR}/index.php" ?>' class="btn btn-primary">Return To Home Page</a>
+            <a href='<?php echo "/{$USERMANGER_ROOT_DIR}/MainPage.php" ?>' class="btn btn-primary">Return To Home Page</a>
         </div>
     </div>
 </div>
@@ -85,3 +91,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
 require_once "MasterPage.php";
+}

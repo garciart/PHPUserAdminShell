@@ -49,7 +49,7 @@ ob_clean();
         <div class="page-header">
             <h1>I can't believe this just happened!</h1>
             <br>
-            <img src="img/error.gif" alt="WTF just happened?">
+            <img src="img/error.gif" alt="WTF just happened?" class="col-md-6">
             <hr>
             <?php
             if (isset($_SESSION["Error"])) {

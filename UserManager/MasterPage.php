@@ -51,20 +51,20 @@ require_once "CommonCode.php";
         <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> class="navbar-left" title="Home">
+                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> class="navbar-left" title="Home">
                     <img src="img/logo.png" class="nav_logo">
                 </a>
-                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$ROOT_DIR}/index.php\""); ?> title="Home">Home</a>
+                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">Home</a>
                         </li>
                         <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/{$ROOT_DIR}/About.php\""); ?> title="About">About</a>
+                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/About.php\""); ?> title="About">About</a>
                         </li>
                         <?php
                         $logID = "login";

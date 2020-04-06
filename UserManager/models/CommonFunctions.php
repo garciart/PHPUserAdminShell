@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Code common to one or more files.
  *
@@ -15,7 +16,12 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-declare(strict_types=1);
+declare(strict_types = 1);
+
+/* Check if a session is already active */
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 /**
  * Get the application's model directory.
@@ -37,11 +43,11 @@ ini_set("error_log", ROOT_DIR . DIRECTORY_SEPARATOR . "ErrorLog.txt");
  *
  * FOR PRODUCTION ERROR REPORTING:
  * Uncomment set_error_handler() and set_exception_handler() and comment out
- * ini_set("DISPLAY_ERRORS", 1)
+ * ini_set("DISPLAY_ERRORS", "1")
  */
 
 // Development error reporting
-// ini_set("DISPLAY_ERRORS", 1);
+// ini_set("DISPLAY_ERRORS", "1");
 
 /*
  * Production error reporting
@@ -61,8 +67,7 @@ set_exception_handler("exceptionHandler");
  *
  * @return void
  */
-function errorHandler($errno, $errstr, $errfile, $errline)
-{
+function errorHandler($errno, $errstr, $errfile, $errline) {
     $error = "Type {$errno} Error: {$errstr} in {$errfile} at line {$errline}.";
     echo "{$error}\n";
     error_log($error);
@@ -76,10 +81,9 @@ function errorHandler($errno, $errstr, $errfile, $errline)
  *
  * @return void
  */
-function exceptionHandler($ex)
-{
+function exceptionHandler($ex) {
     $exception = "Type {$ex->getCode()} Exception: {$ex->getMessage()} " .
-        "in {$ex->getFile()} at line {$ex->getLine()}.\n";
+            "in {$ex->getFile()} at line {$ex->getLine()}.\n";
     echo $exception;
     error_log($exception);
     // Do not die. Redirect the user to an appropriate exception page.
@@ -92,8 +96,7 @@ function exceptionHandler($ex)
  *
  * @return boolean True if the UserID is an integer greater than 0, false if not.
  */
-function validateUserID($userID)
-{
+function validateUserID($userID) {
     // throw new \Exception("Test...");
     if (empty($userID) || $userID < 1 || !filter_var($userID, FILTER_VALIDATE_INT)) {
         return false;
@@ -109,10 +112,8 @@ function validateUserID($userID)
  *
  * @return boolean True if the text is valid, false if not.
  */
-function validateText($text)
-{
-    if (empty(trim($text)) 
-        || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", $text))
+function validateText($text) {
+    if (empty(trim($text)) || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", $text))
     ) {
         return false;
     } else {
@@ -127,8 +128,7 @@ function validateText($text)
  *
  * @return boolean True if the email is valid, false if not.
  */
-function validateEmail($email)
-{
+function validateEmail($email) {
     if (empty(trim($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
         return false;
     } else {
@@ -143,14 +143,10 @@ function validateEmail($email)
  *
  * @return boolean True if the date format is valid, false if not.
  */
-function validateDate($date)
-{
-    if (empty(trim($date)) 
-        || (!preg_match(
-            "/^([0-9]){4}-([0-9]){2}-([0-9]){2} ([0-9]){2}:([0-9]){2}:([0-9]){2}$/",
-            $date
-        )    ) 
-        || strlen($date) != 19
+function validateDate($date) {
+    if (empty(trim($date)) || (!preg_match(
+                    "/^([0-9]){4}-([0-9]){2}-([0-9]){2} ([0-9]){2}:([0-9]){2}:([0-9]){2}$/", $date
+            ) ) || strlen($date) != 19
     ) {
         return false;
     } else {
