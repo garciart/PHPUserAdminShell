@@ -53,14 +53,12 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}. Please select one of the options below:</p></div>"; ?>
-<div class="row justify-content-center">
-    <div class="col-md-4">
-        <div class="btn-toolbar my-3">
-            <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
-            <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
-            <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>
-            <a href="ErrorLogPage.php" class="btn btn-primary btn-block">Error Log</a>
-        </div>
+<div class="col-md-4 mx-auto text-center">
+    <div class="btn-toolbar my-3">
+        <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
+        <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
+        <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>
+        <a href="ErrorLogPage.php" class="btn btn-primary btn-block">Error Log</a>
     </div>
 </div>
 <?php

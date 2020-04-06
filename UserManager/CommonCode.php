@@ -16,12 +16,15 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
+declare(strict_types = 1);
+
 /* Check if a session is already active */
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-$ROOT_DIR = "PHPUserManager\Public";
+// Include this file to access common functions and variables
+require_once "Config.php";
 
 /**
  * Computational cost for Key Derivation Functions (KDF)
@@ -31,40 +34,51 @@ const BCRYPT_COST = 14;
 // Report all PHP errors
 error_reporting(-1);
 // Log errors in ErrorLog.txt
-ini_set('log_errors', 1);
+ini_set("log_errors", "1");
 ini_set("error_log", "ErrorLog.txt");
 
-/*
- * FOR DEVELOPMENT ERROR REPORTING
- * Uncomment ini_set('display_errors', 1) and comment set_error_handler for development
- * FOR PRODUCTION ERROR REPORTING
- * Uncomment set_error_handler and comment ini_set('display_errors', 1) for production
- */
-ini_set('display_errors', 1);
 
-/*
- * Set UserManagerError(error_level, error_message) to handle all errors and warnings.
- * Use 32767 (equivalent to E_ALL) which will log all errors and warnings, except of level E_STRICT prior to PHP 5.4.0.
- */
-// set_error_handler("UserManagerErrorHandler", 32767);
-// set_exception_handler("UserManagerExceptionHandler");
+if ($ERROR_REPORTING == "PROD") {
+    /*
+     * Production error reporting
+     * Use "32767" instead of "E_ALL" and make sure to set "DISPLAY_ERRORS = On"
+     * in php.ini
+     */
+    set_error_handler("UserManagerErrorHandler", 32767);
+    set_exception_handler("UserManagerExceptionHandler");
+} else {
+    // Development error reporting
+    ini_set("DISPLAY_ERRORS", "1");
+}
 
 /**
  * Error handler to redirect user to error page
  * 
- * @param int $errno Specifies the error report level for the user-defined error
- * @param string $errstr Specifies the error message for the user-defined error
+ * @param integer $errno   The error report level.
+ * @param string  $errstr  The error message.
+ * @param string  $errfile The filename with the error.
+ * @param integer $errline The line number of the error.
+ * @return void
  */
 function UserManagerErrorHandler($errno, $errstr, $errfile, $errline) {
-    $_SESSION["Error"] = "Type {$errno} Error: {$errstr} in {$errfile} at line {$errline}.";
+    $error = "Type {$errno} Error: {$errstr} in {$errfile} at line {$errline}.";
+    $_SESSION["Error"] = $error;
+    error_log($error);
     header("Location: ErrorPage.php");
     // Do not die. ini_set("error_log", "..." must capture error info in log
 }
 
-function UserManagerExceptionHandler($exception) {
+/**
+ * Exception handler. Can be used to redirect users to exception page.
+ * @param string $ex Exception class object.
+ * @return void
+ */
+function UserManagerExceptionHandler($ex) {
+    $exception = "Type {$ex->getCode()} Exception: {$ex->getMessage()} " .
+            "in {$ex->getFile()} at line {$ex->getLine()}.\n";
     $_SESSION["Error"] = $exception;
     error_log($exception);
-    header("Location: ErrorPage.php");
+    header("location: ErrorPage.php");
     // Do not die. ini_set("error_log", "..." must capture error info in log
 }
 
@@ -83,7 +97,7 @@ function cleanText($data) {
  * @return boolean True if the database ID is valid, false if not
  */
 function validateID($id) {
-    if (empty($id) || $id < 0 || !filter_var($id, FILTER_VALIDATE_INT)) {
+    if (empty($id) || $id < 1 || !filter_var($id, FILTER_VALIDATE_INT)) {
         return false;
     } else {
         return true;
@@ -96,7 +110,8 @@ function validateID($id) {
  * @return boolean True if the text is valid, false if not
  */
 function validateText($text) {
-    if (empty(trim($text)) || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($text)))) {
+    if (empty(trim($text)) || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", $text))
+    ) {
         return false;
     } else {
         return true;
@@ -109,7 +124,7 @@ function validateText($text) {
  * @return boolean True if the email is valid, false if not
  */
 function validateEmail($email) {
-    if (empty($email) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
+    if (empty(trim($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
         return false;
     } else {
         return true;
@@ -142,9 +157,30 @@ function validatePassword($pword) {
     }
 }
 
+/**
+ * Convert input into hash
+ * @param type $password The inputted password
+ * @return string The hash of the password
+ */
 function getPasswordHash($password) {
     // Hash the password using Key Derivation Functions (KDF)
     $options = array("cost" => BCRYPT_COST);
     $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
     return $passwordHash;
+}
+
+/**
+ * Validate date format.
+ * @param string $date The date that will be entered into the database.
+ * @return boolean True if the date format is valid, false if not.
+ */
+function validateDate($date) {
+    if (empty(trim($date)) || (!preg_match(
+                    "/^([0-9]){4}-([0-9]){2}-([0-9]){2} ([0-9]){2}:([0-9]){2}:([0-9]){2}$/", $date
+            ) ) || strlen($date) != 19
+    ) {
+        return false;
+    } else {
+        return true;
+    }
 }

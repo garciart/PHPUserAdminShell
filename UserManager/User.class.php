@@ -16,6 +16,7 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
+declare(strict_types = 1);
 
 namespace UserManager;
 

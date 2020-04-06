@@ -45,10 +45,10 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<div class="col-sm-4 mx-auto text-center">
+<div class="col-md-4 mx-auto text-center">
     <form class="form-signin" action="AuthenticateUser.php" method="post">
-        <img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
+        <img src="img/logo.png" alt="" width="100" height="100">
+        <h1 class="h3 my-3">Please log in:</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
         <br>
