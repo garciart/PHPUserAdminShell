@@ -52,7 +52,7 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}. Please select one of the options below:</p></div>"; ?>
+<?php echo "<div class=\"page-header text-center\"><p>Welcome back {$_SESSION["Nickname"]}.<br>Please select one of the options below:</p></div>"; ?>
 <div class="col-md-4 mx-auto text-center">
     <div class="btn-toolbar my-3">
         <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
