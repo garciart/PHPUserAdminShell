@@ -23,9 +23,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-// Include this file to access common functions and variables
 require_once "Config.php";
 
+// Key folders. "define" allows constants to be shared with other files
+define("ROOT_DIR", $ROOT_DIR);
+define("APPLICATION_ROOT_DIR", $APPLICATION_ROOT_DIR);
+define("USERMANGER_ROOT_DIR", $USERMANGER_ROOT_DIR);
+
+// Error reporting: DEV or PROD
+$ERROR_REPORTING = "PROD";
 /**
  * Computational cost for Key Derivation Functions (KDF)
  */

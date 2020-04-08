@@ -16,9 +16,11 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
+declare(strict_types=1);
 
 namespace UserManager;
 
+// Include this file to access common functions and variables
 require_once "CommonCode.php";
 
 class UserDB {
@@ -26,7 +28,7 @@ class UserDB {
     /**
      * Path to database
      */
-    const PATH_TO_SQLITE_DB = "db/users.db";
+    const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR. "db" . DIRECTORY_SEPARATOR . "users.db";
 
     /**
      * Computational cost for Key Derivation Functions (KDF)
@@ -157,6 +159,7 @@ class UserDB {
     }
 
     public function getAllRoles() {
+        $result = null;
         try {
             $this->_pdo = $this->connect();
             $sql = "SELECT *

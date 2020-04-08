@@ -23,11 +23,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 // Include this file to access common functions and variables
 require_once "CommonCode.php";
 
-// Ensure the user is authenticated and authorized
-if ($_SESSION["Authenticated"] == false) {
-    header("Location: LoginPage.php");
-    exit();
-} else {
+/* DO NOT CHECK IF SESSION IS STARTED OR YOU WILL END UP IN A LOOP */
 /* Start placing content into an output buffer */
 ob_start();
 ?>
@@ -91,4 +87,3 @@ $contentPlaceHolderFooter = ob_get_contents();
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
 require_once "MasterPage.php";
-}
