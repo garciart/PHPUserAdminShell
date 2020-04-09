@@ -157,7 +157,7 @@ function validateURL($url) {
  * @return boolean True if the password is valid, false if not
  */
 function validatePassword($pword) {
-    if (empty($pword) || strlen($pword) < 8 || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($text)))) {
+    if (empty($pword) || strlen($pword) < 8 || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($pword)))) {
         return false;
     } else {
         return true;

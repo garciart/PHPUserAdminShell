@@ -54,7 +54,12 @@ ob_clean();
 <!-- Main Element Content -->
 <?php
 $file = "ErrorLog.txt";
-$f = fopen($file, "r") or exit("Unable to open file!");
+if (!file_exists($file)) {
+    $f = fopen($file, "w") or exit("Unable to create error log!");
+    fwrite($f, "[" . date("Y-m-d H:i:s e") . "] Error log initialized.");
+    fclose($f);
+}
+$f = fopen($file, "r") or exit("Unable to open error log!");
 while (!feof($f)) {
     echo "<span class=\"text-monospace\">" . fgets($f) . "</span><br>";
 }
