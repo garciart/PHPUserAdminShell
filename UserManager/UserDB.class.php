@@ -28,7 +28,8 @@ class UserDB {
     /**
      * Path to database
      */
-    const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR . "db" . DIRECTORY_SEPARATOR . "users.db";
+    const PATH_TO_SQLITE_DB = "db". DIRECTORY_SEPARATOR . "users.db";
+    // const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR . "db" . DIRECTORY_SEPARATOR . "users.db";
 
     /**
      * Main methods:
@@ -53,6 +54,7 @@ class UserDB {
      * Constructor. If the database is not found, it creates it.
      */
     public function __construct() {
+        console_log(self::PATH_TO_SQLITE_DB);
         try {
             if (!file_exists(self::PATH_TO_SQLITE_DB)) {
                 // Create tables if they do not exist with initial values
@@ -190,9 +192,11 @@ class UserDB {
     /**
      * Inserts a new user into the database.
      * 
-     * @param string $username The username to create.
-     * @param string $password The password of the user.
-     * @param string $comment  Any additional comments.
+     * @param string  $username The username to create.
+     * @param string  $nickname The nickname of the user.
+     * @param string  $password The password of the user.
+     * @param integer $roleID   The user role's ID
+     * @param string  $comment  Any additional comments.
      * 
      * @return integer The rowid of the new user.
      */
@@ -262,12 +266,13 @@ class UserDB {
     /**
      * Returns a single user role and its information.
      *
-     * @param integer $roleID The user's ID.
+     * @param integer $roleID The user role's ID.
      *
      * @return array The user role's information indexed by column name or empty if the
      *               user role's ID is not found.
      */
     public function getRole($roleID) {
+        $result = null;
         try {
             $conn = $this->connect();
             $sql = "SELECT *
@@ -288,95 +293,138 @@ class UserDB {
 
     /**
      * Gets all the users in the database and their information.
-     * @return array An array of all the users in the database and their information. An empty array indicates an error.
+     *
+     * @return array An array of all the users in the database and their
+     *               information. An empty array indicates an error.
      */
     public function getAllUsers() {
+        $result = null;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT *
                 FROM User
                 ORDER BY Username ASC;";
-            $result = $this->_pdo->query($sql);
-            // unset($this->_pdo);
-            return $result->fetchAll();
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+            // Returns an empty result set if not found
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $result;
     }
 
     /**
      * Returns a single user and his or her information.
+     *
      * @param integer $userID The user's ID.
-     * @return array The user's information indexed by column name or empty if the user's ID is not found.
+     *
+     * @return array The user's information indexed by column name or empty if the
+     *               user's ID is not found.
      */
     public function getUserByUserID($userID) {
+        $result = null;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT *
                 FROM User
                 WHERE UserID = :UserID;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
-            // Fetch the result set
+            // Returns an empty result set if not found
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            // unset($this->_pdo);
-            return $result;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $result;
     }
 
     /**
      * Returns a single user and his or her information.
-     * @param string $username The user's email.
-     * @return array The user's information indexed by column name or empty if the user's username is not found.
+     *
+     * @param string $username The user's username/email.
+     *
+     * @return array The user's information indexed by column name or empty if the
+     *               user's username/email is not found.
      */
     public function getUserByUsername($username) {
+        $result = null;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT *
                 FROM User
                 WHERE Username = :Username;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
-            // Fetch the result set
+            // Returns an empty result set if not found
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            /*
-             * Look into $result = $stmt->fetch(\PDO::FETCH_OBJ);?
-             */
-            // unset($this->_pdo);
-            return $result;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $result;
     }
 
+    /**
+     * Updates a user role's information in the database.
+     * 
+     * @param integer $roleID  The user role's ID.
+     * @param string  $title   The name of the role.
+     * @param string  $comment Any additional comments.
+     * 
+     * @return integer The number of rows affected. A value other than 1 indicates
+     *                 an error.
+     */
     public function updateRole($roleID, $title, $comment) {
+        $rowsAffected = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "UPDATE Role
                 SET Title = :Title,
                 Comment = :Comment
                 WHERE RoleID = :RoleID;";
             $lastLoginDate = date("Y-m-d H:i:s");
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             // Get the highest value of UserID + 1
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
+            // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
-            // unset($this->_pdo);
-            return $rowsAffected;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $rowsAffected;
     }
 
+    /**
+     * Updates a user's information in the database.
+     *
+     * @param integer $userID       The user's ID.
+     * @param string  $username     The username to create.
+     * @param string  $nickname     The nickname of the user.
+     * @param string  $passwordHash The hash of the password of the user.
+     * @param integer $roleID       The user role's ID
+     * @param string  $email        The email of the user.
+     * @param boolean $isLockedOut  Indicates if the user is or is not locked out.
+     * @param string  $comment      Any additional comments.
+     * 
+     * @return integer The number of rows affected. A value other than 1 indicates
+     *                 an error.
+     */
     public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment) {
+        $rowsAffected = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "UPDATE User
                 SET Username = :Username,
                 Nickname = :Nickname,
@@ -386,7 +434,7 @@ class UserDB {
                 IsLockedOut = :IsLockedOut,
                 Comment = :Comment
                 WHERE  UserID = :UserID;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":Username", $username);
             $stmt->bindValue(":Nickname", $nickname);
@@ -396,86 +444,114 @@ class UserDB {
             $stmt->bindValue(":IsLockedOut", $isLockedOut);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
+            // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
-            // unset($this->_pdo);
-            return $rowsAffected;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $rowsAffected;
     }
 
+    /**
+     * Deletes a user role from the database.
+     * 
+     * @param integer $roleID The user role's ID
+     * 
+     * @return integer The number of rows affected. A value other than 1 indicates
+     *                 an error.
+     */
     public function deleteRole($roleID) {
+        $rowsAffected = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "DELETE FROM Role
                 WHERE RoleID = :RoleID;";
-            $stmt = $this->_pdo->prepare($sql);
-            $stmt->bindValue(":UserID", $roleID);
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(":RoleID", $roleID);
             $stmt->execute();
+            // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
-            // unset($this->_pdo);
-            return $rowsAffected;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $rowsAffected;
     }
 
     /**
      * Deletes a user from the database.
+     * 
      * @param integer $userID The user's ID.
-     * @return integer The number of rows affected. A value other than 1 indicates an error.
+     * 
+     * @return integer The number of rows affected. A value other than 1 indicates
+     *                 an error.
      */
     public function deleteUser($userID) {
+        $rowsAffected = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "DELETE FROM User
                 WHERE UserID = :UserID;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->execute();
+            // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
-            // unset($this->_pdo);
-            return $rowsAffected;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $rowsAffected;
     }
 
     /**
      * Gets the highest value of RoleID (usually the last row inserted) from the Role table.
+     * 
      * @return integer The anticipated value of the next RoleID or 0 if there is no data.
      */
     private function getNextRoleID() {
+        $nextRoleID = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT MAX(RoleID) as maxRoleID FROM Role;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetch();
-            $maxRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
-            // unset($this->_pdo);
-            return $maxRoleID + 1;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+            $nextRoleID = $row["maxRoleID"] == "" ? 0 : $row["maxRoleID"];
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        // Add 1 to the last role ID
+        return $nextRoleID + 1;
     }
 
     /**
      * Gets the highest value of UserID (usually the last row inserted) from the User table.
+     * 
      * @return integer The anticipated value of the next UserID or 0 if there is no data.
      */
     private function getNextUserID() {
+        $nextUserID = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT MAX(UserID) as maxUserID FROM User;";
-            $result = $this->_pdo->query($sql);
-            $row = $result->fetch();
-            $maxUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
-            // unset($this->_pdo);
-            return $maxUserID + 1;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $nextUserID = $row["maxUserID"] == "" ? 0 : $row["maxUserID"];
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        // Add 1 to the last user ID
+        return $nextUserID + 1;
     }
 
     /**
@@ -485,6 +561,7 @@ class UserDB {
      *
      * @param $username The username to authenticate.
      * @param $password The password to authenticate the user.
+     * 
      * @return True if the password matches for the username, false if not.
      */
     public function AuthenticateUser($username, $password) {
@@ -500,74 +577,90 @@ class UserDB {
      * Checks if the given users exists in the database.
      * Julen Pardo came up with this. 
      * Thought about changing the method to retrieve the UserID instead,
-     * but Email is supposed to be unique.
+     * but username/email is supposed to be unique.
      * If the count != 1, that means there are no users or more than one,
      * which means something is wrong. This is a better method.
+     * 
      * @param $username The username to check if exists.
+     * 
      * @return True if the users exists, false if not.
      */
     private function userExists($username) {
+        $exists = false;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT COUNT(*) AS Count
                 FROM User
                 WHERE Username = :Username;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            // unset($this->_pdo);
             $exists = ($result["Count"]) == 1 ? true : false;
-            return $exists;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $exists;
     }
 
     /**
      * Gets given users password.
      *
      * @param $username The username to get the password of.
-     * @return The password of the given user.
+     * 
+     * @return The hash of the password of the given user.
      */
     private function getUserPassword($username) {
+        $passwordHash = null;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT PasswordHash
                 FROM User
                 WHERE Username = :Username;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":Username", $username);
             $stmt->execute();
             // Fetch the result set
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            // unset($this->_pdo);
             $passwordHash = $result["PasswordHash"];
-            return $passwordHash;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $passwordHash;
     }
 
+    /**
+     * Updates the user's login date after a successful login.
+     * 
+     * @param integer $userID The user's ID.
+     * 
+     * @return integer The number of rows affected. A value other than 1 indicates
+     *                 an error.
+     */
     public function updateLoginDate($userID) {
+        $rowsAffected = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "UPDATE User
                 SET LastLoginDate = :LastLoginDate
                 WHERE UserID = :UserID;";
             $lastLoginDate = date("Y-m-d H:i:s");
-            $stmt = $this->_pdo->prepare($sql);
-            // Get the highest value of UserID + 1
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
+            // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
-            // unset($this->_pdo);
-            return $rowsAffected;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $rowsAffected;
     }
-
 }
