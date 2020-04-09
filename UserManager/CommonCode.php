@@ -32,6 +32,7 @@ define("USERMANGER_ROOT_DIR", $USERMANGER_ROOT_DIR);
 
 // Error reporting: DEV or PROD
 $ERROR_REPORTING = "PROD";
+
 /**
  * Computational cost for Key Derivation Functions (KDF)
  */
@@ -189,4 +190,15 @@ function validateDate($date) {
     } else {
         return true;
     }
+}
+
+/**
+ * Used for debugging. Displays information in the console.
+ * 
+ * @param string $data The text to log in the console
+ */
+function console_log($data) {
+    echo "<script>";
+    echo "console.log(" . json_encode($data) . ")";
+    echo "</script>";
 }
