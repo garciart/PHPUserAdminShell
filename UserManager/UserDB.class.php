@@ -16,7 +16,7 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace UserManager;
 
@@ -28,18 +28,7 @@ class UserDB {
     /**
      * Path to database
      */
-    const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR. "db" . DIRECTORY_SEPARATOR . "users.db";
-
-    /**
-     * Computational cost for Key Derivation Functions (KDF)
-     */
-    // const BCRYPT_COST = 14;
-
-    /**
-     * PDO instance
-     * @var type
-     */
-    private $_pdo;
+    const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR . "db" . DIRECTORY_SEPARATOR . "users.db";
 
     /**
      * Main methods:
@@ -64,71 +53,156 @@ class UserDB {
      * Constructor. If the database is not found, it creates it.
      */
     public function __construct() {
-        if (!file_exists(self::PATH_TO_SQLITE_DB)) {
-            // Create tables if they do not exist
-            $this->createRoleTable();
-            $this->createUserTable();
-        }
-    }
-
-    /**
-     * Connects to the database.
-     * @return \PDO The PDO object that connects to the SQLite database
-     */
-    public function connect() {
-        // Check if connection does not exists
-        if (!isset($this->_pdo)) {
-            try {
-                // Create (connect to) SQLite database in file
-                $this->_pdo = new \PDO("sqlite:" . self::PATH_TO_SQLITE_DB);
-                // Turn on foreign key constraints
-                $this->_pdo->exec("PRAGMA foreign_keys = ON;");
-                // Set errormode to exceptions
-                $this->_pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            } catch (\PDOException $e) {
-                error_log($e->getMessage());
-            }
-        }
-        return $this->_pdo;
-    }
-
-    /**
-     * Inserts a user role into the database.
-     * @param type $title The name of the role.
-     * @param type $comment Any additional comments.
-     * @return type The rowid of the new role.
-     */
-    public function createRole($title, $comment) {
         try {
-            $this->_pdo = $this->connect();
-            $sql = "INSERT INTO Role
-                VALUES (:RoleID, :Title, :Comment);";
-            $stmt = $this->_pdo->prepare($sql);
-            $stmt->bindValue(":RoleID", $this->getNextRoleID());
-            $stmt->bindValue(":Title", $title);
-            $stmt->bindValue(":Comment", $comment);
-            $stmt->execute();
-            $lastInsertId = $this->_pdo->lastInsertId();
-            // unset($this->_pdo);
-            return $lastInsertId;
-        } catch (\PDOException $e) {
+            if (!file_exists(self::PATH_TO_SQLITE_DB)) {
+                // Create tables if they do not exist with initial values
+                // Make sure you create the Role table first
+                $this->createRoleTable();
+                $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
+                $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
+                $lastInsertId = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
+                if ($lastInsertId != 3) {
+                    throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId) . ".";
+                }
+                $this->createUserTable();
+                $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
+                $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
+                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
+                if ($lastInsertId != 3) {
+                    throw new Exception("Bad last insert ID when creating User table: expected 3, got " . $lastInsertId) . ".";
+                }
+            }
+        } catch (Exception $ex) {
             error_log($e->getMessage());
         }
     }
 
     /**
+     * Creates the Role table if it does not exist in the database.
+     *
+     * @return integer The number of rows affected.
+     *                 A value less than 0 indicates an error.
+     */
+    private function createRoleTable() {
+        $rowsAffected = null;
+        try {
+            $conn = $this->connect();
+            $sql = "CREATE TABLE IF NOT EXISTS Role (
+                RoleID integer PRIMARY KEY,
+                Title text UNIQUE NOT NULL,
+                Comment text
+            );";
+            $rowsAffected = $conn->exec($sql);
+        } catch (\PDOException $e) {
+            error_log($e->getMessage());
+        } finally {
+            unset($conn);
+        }
+        return $rowsAffected;
+    }
+
+    /**
+     * Creates the User table if it does not exist in the database.
+     *
+     * @return integer The number of rows affected.
+     *                 A value less than 0 indicates an error.
+     */
+    private function createUserTable() {
+        // Create User table after Role table due to the foreign key constraint
+        $rowsAffected = null;
+        try {
+            $conn = $this->connect();
+            $sql = "CREATE TABLE IF NOT EXISTS User (
+                UserID integer PRIMARY KEY,
+                Username text UNIQUE NOT NULL,
+                Nickname text NOT NULL,
+                PasswordHash text NOT NULL,
+                RoleID integer NOT NULL,
+                Email text NOT NULL,
+                IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
+                LastLoginDate text NOT NULL,
+                CreationDate text NOT NULL,
+                Comment text,
+                FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
+            );";
+            $rowsAffected = $conn->exec($sql);
+        } catch (\PDOException $e) {
+            error_log($e->getMessage());
+        } finally {
+            unset($conn);
+        }
+        return $rowsAffected;
+    }
+
+    /**
+     * Connects to the database.
+     *
+     * @return \PDO The PDO object that connects to the SQLite database
+     */
+    public function connect() {
+        $pdo = null;
+        // Check if connection does not exists
+        if (!isset($pdo)) {
+            try {
+                // Create (connect to) SQLite database in file
+                $pdo = new \PDO("sqlite:" . self::PATH_TO_SQLITE_DB);
+                // Turn on foreign key constraints
+                $pdo->exec("PRAGMA foreign_keys = ON;");
+                // Set errormode to exceptions
+                $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            } catch (\PDOException $e) {
+                error_log($e->getMessage());
+            }
+        }
+        return $pdo;
+    }
+
+    /**
+     * Inserts a new user role into the database.
+     * 
+     * @param string $title   The name of the role.
+     * @param string $comment Any additional comments.
+     * 
+     * @return integer The rowid of the new user role. A value of 0 indicates an error.
+     */
+    public function createRole($title, $comment) {
+        $lastRowID = 0;
+        try {
+            $conn = $this->connect();
+            $sql = "INSERT INTO Role
+                VALUES (:RoleID, :Title, :Comment);";
+            // Execute SQL
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(":RoleID", $this->getNextRoleID());
+            $stmt->bindValue(":Title", $title);
+            $stmt->bindValue(":Comment", $comment);
+            $stmt->execute();
+            // The last insert ID should be greater than 0
+            $lastRowID = $conn->lastInsertId();
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
+        }
+        return $lastRowID;
+    }
+
+    /**
      * Inserts a new user into the database.
-     * @param type $username The username to create.
-     * @param type $password The password of the user.
-     * @param type $comment Any additional comments.
-     * @return type The rowid of the new user.
+     * 
+     * @param string $username The username to create.
+     * @param string $password The password of the user.
+     * @param string $comment  Any additional comments.
+     * 
+     * @return integer The rowid of the new user.
      */
     public function createUser($username, $nickname, $password, $roleID, $comment) {
+        $lastRowID = 0;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "INSERT INTO User
                 VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment);";
-            // Hash the password using Key Derivation Functions (KDF)
+            // Hash the password using Key Derivation Functions (KDF) with BCRYPT_COST from CommonCode
             $options = array("cost" => BCRYPT_COST);
             $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
             // Email and username are initially the same
@@ -138,7 +212,7 @@ class UserDB {
             $lastLoginDate = date("Y-m-d H:i:s");
             $creationDate = date("Y-m-d H:i:s");
             // Execute SQL
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $this->getNextUserID());
             $stmt->bindValue(":Username", $username);
             $stmt->bindValue(":Nickname", $nickname);
@@ -150,46 +224,66 @@ class UserDB {
             $stmt->bindValue(":CreationDate", $creationDate);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
-            $lastInsertId = $this->_pdo->lastInsertId();
-            // unset($this->_pdo);
-            return $lastInsertId;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+            // The last insert ID should be greater than 0
+            $lastRowID = $conn->lastInsertId();
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $lastRowID;
     }
 
+    /**
+     * Gets all the user roles in the database and their information.
+     *
+     * @return array An array of all the user roles in the database and their
+     *               information. An empty array indicates an error.
+     */
     public function getAllRoles() {
         $result = null;
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT *
                 FROM Role
                 ORDER BY RoleID ASC;";
-            $stmt = $this->_pdo->prepare($sql);
+            // Returns an empty result set if not found
+            $stmt = $conn->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
-            return $result->fetchAll();
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $result;
     }
 
+    /**
+     * Returns a single user role and its information.
+     *
+     * @param integer $roleID The user's ID.
+     *
+     * @return array The user role's information indexed by column name or empty if the
+     *               user role's ID is not found.
+     */
     public function getRole($roleID) {
         try {
-            $this->_pdo = $this->connect();
+            $conn = $this->connect();
             $sql = "SELECT *
                 FROM Role
                 WHERE RoleID = :RoleID;";
-            $stmt = $this->_pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->bindValue(":RoleID", $roleID);
             $stmt->execute();
-            // Fetch the result set
+            // Returns an empty result set if not found
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-            // unset($this->_pdo);
-            return $result;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
         }
+        return $result;
     }
 
     /**
@@ -348,66 +442,6 @@ class UserDB {
     }
 
     /**
-     * Utility calls
-     */
-
-    /**
-     * Creates the database if it does not exist.
-     */
-    private function createRoleTable() {
-        // Make sure you create the Role table first
-        try {
-            $this->_pdo = $this->connect();
-            $sql = "CREATE TABLE IF NOT EXISTS Role (
-                RoleID integer PRIMARY KEY,
-                Title text UNIQUE NOT NULL,
-                Comment text
-            );";
-            $this->_pdo->exec($sql);
-            // Set initial values
-            $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
-            $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-            $lastInsertId = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
-            // unset($this->_pdo);
-            return $lastInsertId;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
-        }
-    }
-
-    /**
-     * Creates the database if it does not exist.
-     */
-    private function createUserTable() {
-        // Create User table after Role table due to the foreign key constraint
-        try {
-            $this->_pdo = $this->connect();
-            $sql = "CREATE TABLE IF NOT EXISTS User (
-                UserID integer PRIMARY KEY,
-                Username text UNIQUE NOT NULL,
-                Nickname text NOT NULL,
-                PasswordHash text NOT NULL,
-                RoleID integer NOT NULL,
-                Email text NOT NULL,
-                IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
-                LastLoginDate text NOT NULL,
-                CreationDate text NOT NULL,
-                Comment text,
-                FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
-            );";
-            $this->_pdo->exec($sql);
-            // Set initial values
-            $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
-            $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
-            $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
-            // unset($this->_pdo);
-            return $lastInsertId;
-        } catch (\PDOException $e) {
-            error_log($e->getMessage());
-        }
-    }
-
-    /**
      * Gets the highest value of RoleID (usually the last row inserted) from the Role table.
      * @return integer The anticipated value of the next RoleID or 0 if there is no data.
      */
@@ -535,4 +569,5 @@ class UserDB {
             error_log($e->getMessage());
         }
     }
+
 }
