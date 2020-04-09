@@ -53,7 +53,7 @@ ob_clean();
         <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
         <br>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" class="form-control" placeholder="Password" id="password" required />
+        <input id="password" name="password" type="password" autocomplete="on" class="form-control" placeholder="Password" required />
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
         <?php

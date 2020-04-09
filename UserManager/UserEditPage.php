@@ -255,7 +255,7 @@ if ($_SESSION["Authenticated"] == false) {
                     <tr class='bg-warning'>
                         <th>Password:</th>
                         <td>
-                            <input type="password" name="Password">
+                            <input type="password" name="Password" autocomplete="off" />
                             <br>
                             <span class="text-danger">
                                 <?php echo $passwordError; ?>

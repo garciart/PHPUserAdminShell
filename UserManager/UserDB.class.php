@@ -54,7 +54,6 @@ class UserDB {
      * Constructor. If the database is not found, it creates it.
      */
     public function __construct() {
-        console_log(self::PATH_TO_SQLITE_DB);
         try {
             if (!file_exists(self::PATH_TO_SQLITE_DB)) {
                 // Create tables if they do not exist with initial values
