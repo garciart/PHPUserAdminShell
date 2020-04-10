@@ -64,7 +64,7 @@ require_once "CommonCode.php";
                             <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">Home</a>
                         </li>
                         <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/About.php\""); ?> title="About">About</a>
+                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"About.php\""); ?> title="About">About</a>
                         </li>
                         <?php
                         $logID = "login";
