@@ -1,5 +1,5 @@
 # PHP User Manager
-This is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP"), incorporating a user administration system (using SQLite) and Bootstrap styling. Simply clone, rename the project, and add your own pages!
+This is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP"), incorporating a user administration system (using SQLite) and Bootstrap styling. You can download it and add it to your project, or you can clone it and use it as the foundation of your web site!
 
 ---
 
@@ -13,7 +13,9 @@ However, while I love .NET, it has its limitations. For example, once you reach 
 
 One of my boilerplates was a version of that beloved tool that many of us miss: The Web Site Administration Tool. Here it is for PHP, extending one of my previous tutorials, Master Pages in PHP. Feel free to copy it and use it if you need an authentication and user administration system. Have fun and good luck!
 
->***Please note that the focus of this repo is the UserManager folder, which is meant to be copied, pasted, and integrated into a project through the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.***
+>***To use, copy the UserManager folder into your project and add a link to the UserManager/LoginPage.php. You also have to change the default directories and settings in the UserManager/Config.php folder.***
+
+>***Please note that the focus of this repo is the UserManager folder, which is meant to be copied, pasted, and integrated into a project through a link to the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.***
 
 ---
 

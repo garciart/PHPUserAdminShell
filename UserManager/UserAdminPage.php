@@ -97,8 +97,8 @@ if ($_SESSION["Authenticated"] == false) {
                 <table class="table table-bordered table-striped" data-toggle="table" id="adminTable">
                     <thead>
                         <tr>
-                            <th>UserID:</th>
                             <th>Username:</th>
+                            <th>UserID:</th>
                             <th>Nickname:</th>
                             <th>Role:</th>
                             <th>Locked Out?</th>
@@ -110,8 +110,8 @@ if ($_SESSION["Authenticated"] == false) {
                         <?php
                         foreach ($result as $row) {
                             echo "<tr>";
-                            echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
                             echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["Username"]}</a></td>";
+                            echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
                             echo "<td>{$row["Nickname"]}</td>";
                             $role = $userDB->getRole($row["RoleID"]);
                             echo "<td>{$role["Title"]}</td>";

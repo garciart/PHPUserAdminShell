@@ -65,6 +65,8 @@ while (!feof($f)) {
 }
 fclose($f);
 ?>
+<hr>
+<a href="MainPage.php" class="btn btn-primary pull-left">Return to Main Administration Page</a>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderMain = ob_get_contents();

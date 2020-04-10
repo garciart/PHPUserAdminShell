@@ -61,9 +61,6 @@
                         <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
                             <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">Home</a>
                         </li>
-                        <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"About.php\""); ?> title="About">About</a>
-                        </li>
                         <?php
                         $logID = "login";
                         $logPage = "../UserManager/LoginPage.php";

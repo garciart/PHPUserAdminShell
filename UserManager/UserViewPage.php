@@ -70,8 +70,8 @@ if ($_SESSION["Authenticated"] == false) {
         if (!empty($result)) {
             echo "<div class=\"table-responsive\">";
             echo "<table class='table table-bordered table-striped'>";
-            echo "<tr><th>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
             echo "<tr><th>User Name:</th><td>{$result['Username']}</td></tr>";
+            echo "<tr><th>User ID:</th><td style=\"width: 100%;\">{$result['UserID']}</td></tr>";
             echo "<tr><th>Nickname:</th><td>{$result['Nickname']}</td></tr>";
             // echo "<tr><th>Role ID:</th><td>{$result['RoleID']}</td></tr>";
             $role = $userDB->getRole($result['RoleID']);

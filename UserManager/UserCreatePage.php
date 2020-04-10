@@ -146,7 +146,7 @@ if ($_SESSION["Authenticated"] == false) {
                     <tr>
                         <th>Username:</th>
                         <td class="w-100">
-                            <input type="text" name="Username" class="form-control" value="<?php echo $username; ?>" required autofocus>
+                            <input type="text" name="Username" class="form-control" value="<?php echo $username; ?>" required autofocus oninput="Email.value = Username.value; return true;">
                             <br>
                             <span class="text-danger">
                                 <?php echo $usernameError; ?>
@@ -189,7 +189,7 @@ if ($_SESSION["Authenticated"] == false) {
                     <tr>
                         <th>Email:</th>
                         <td>
-                            <input type="text" name="Email" class="form-control" value="<?php echo $email; ?>" required>
+                            <input type="text" name="Email" class="form-control" value="<?php echo $email; ?>" required readonly>
                             <br>
                             <span class="text-danger">
                                 <?php echo $emailError; ?>
