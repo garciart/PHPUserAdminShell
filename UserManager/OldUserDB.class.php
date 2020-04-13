@@ -16,7 +16,7 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace UserManager;
 
@@ -29,6 +29,7 @@ class UserDB {
      * Path to database
      */
     const PATH_TO_SQLITE_DB = "db/users.db";
+
     //const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR. "db" . DIRECTORY_SEPARATOR . "users.db";
 
     /**
@@ -536,4 +537,5 @@ class UserDB {
             error_log($e->getMessage());
         }
     }
+
 }

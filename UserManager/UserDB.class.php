@@ -28,7 +28,8 @@ class UserDB {
     /**
      * Path to database
      */
-    const PATH_TO_SQLITE_DB = "db". DIRECTORY_SEPARATOR . "users.db";
+    const PATH_TO_SQLITE_DB = "db" . DIRECTORY_SEPARATOR . "users.db";
+
     // const PATH_TO_SQLITE_DB = USERMANGER_ROOT_DIR . DIRECTORY_SEPARATOR . "db" . DIRECTORY_SEPARATOR . "users.db";
 
     /**
@@ -661,4 +662,5 @@ class UserDB {
         }
         return $rowsAffected;
     }
+
 }

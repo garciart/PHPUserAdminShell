@@ -56,7 +56,7 @@ ob_clean();
 $file = "ErrorLog.txt";
 if (!file_exists($file)) {
     $f = fopen($file, "w") or exit("Unable to create error log!");
-    fwrite($f, "[" . date("Y-m-d H:i:s e") . "] Error log initialized.");
+    fwrite($f, "[" . date("d-M-Y H:i:s e") . "] Error log initialized.\n");
     fclose($f);
 }
 $f = fopen($file, "r") or exit("Unable to open error log!");
