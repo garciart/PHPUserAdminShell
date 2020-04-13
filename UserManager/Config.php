@@ -16,7 +16,6 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-
 // Key folders
 $ROOT_DIR = "PHPUsermanager";
 $APPLICATION_ROOT_DIR = $ROOT_DIR . DIRECTORY_SEPARATOR . "Public";

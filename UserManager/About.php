@@ -50,10 +50,10 @@ ob_clean();
 <p>However, while I love .NET, it has its limitations. For example, once you reach a certain point, .NET is not free, and neither are Microsoft's development or production tools (e.g., Visual Studio, SQL Server, etc.). Another issue is that many companies do not provide .NET hosting services. Hopefully, .NET Core, the cross-platform successor to .NET, will take off. In the meantime, to better serve my clients, I began to create alternative versions of my boilerplates in other languages, such as PHP and JavaScript.</p>
 <p>One of my boilerplates was a version of that beloved tool that many of us miss: The Web Site Administration Tool. Here it is for PHP, extending one of my previous tutorials, Master Pages in PHP. Feel free to copy it and use it if you need an authentication and user administration system. Have fun and good luck!</p>
 <blockquote>
-<p><em><strong>To use, copy the UserManager folder into your project and add a link to the UserManager/LoginPage.php. You also have to change the default directories and settings in the UserManager/Config.php folder.</strong></em></p>
+    <p><em><strong>To use, copy the UserManager folder into your project and add a link to the UserManager/LoginPage.php. You also have to change the default directories and settings in the UserManager/Config.php folder.</strong></em></p>
 </blockquote>
 <blockquote>
-<p><em><strong>Please note that the focus of this repo is the UserManager folder, which is meant to be copied, pasted, and integrated into a project through the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.</strong></em></p>
+    <p><em><strong>Please note that the focus of this repo is the UserManager folder, which is meant to be copied, pasted, and integrated into a project through the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.</strong></em></p>
 </blockquote>
 <hr>
 <p>Thanks to Julen Pardo at <a href="https://www.webcodegeeks.com/php/login-form-php-example/" title="Julen Pardo at Web Code Geeks" rel="nofollow" target="_blank">Web Code Geeks</a> for the Key Derivation Functions (KDF).</p>
