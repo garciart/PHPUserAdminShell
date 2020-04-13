@@ -1,1 +1,8 @@
 [2020-04-09 19:31:39 America/New_York] Error log initialized.
+[12-Apr-2020 23:02:31 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 395.
+[12-Apr-2020 23:02:31 America/New_York] SQLSTATE[HY000]: General error: 25 column index out of range
+[12-Apr-2020 23:03:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 395.
+[12-Apr-2020 23:03:23 America/New_York] SQLSTATE[HY000]: General error: 25 column index out of range[13-Apr-2020 00:04:31 America/New_York] Type 0 Exception: trim() expects parameter 1 to be string, null given in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php at line 98.
+
+[13-Apr-2020 00:05:18 America/New_York] Type 0 Exception: trim() expects parameter 1 to be string, null given in C:\xampp\htdocs\PHPUserManager\UserManager\CommonCode.php at line 98.
+
