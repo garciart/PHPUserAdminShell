@@ -1,6 +1,6 @@
 <?php
 /**
- * Landing page for user administration.
+ * Landing page for role administration.
  *
  * PHP version used: 5.5.4
  * SQLite version used: 3.28.0
@@ -110,8 +110,8 @@ if ($_SESSION["Authenticated"] == false) {
                             echo "<td><a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\">{$row["Title"]}</a></td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                            echo "<a href=\"EditRolePage.php?RoleID={$row["RoleID"]}\" title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a href=\"DeleteRolePage.php?RoleID={$row["RoleID"]}\" title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\" title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a href=\"RoleDeletePage.php?RoleID={$row["RoleID"]}\" title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }
