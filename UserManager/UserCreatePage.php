@@ -122,6 +122,7 @@ if ($_SESSION["Authenticated"] == false) {
         }
 
         if ($valid == true) {
+            // createUser($username, $nickname, $password, $roleID, $comment)
             $success = $userDB->createUser($username, $nickname, $password, $roleID, $comment);
             if ($success != 0) {
                 header("Location: UserAdminPage.php?success=1");

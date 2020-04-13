@@ -389,10 +389,11 @@ class UserDB {
                 SET Title = :Title,
                 Comment = :Comment
                 WHERE RoleID = :RoleID;";
+            $lastLoginDate = date("Y-m-d H:i:s");
             $stmt = $conn->prepare($sql);
-            $stmt->bindValue(":RoleID", $roleID);
-            $stmt->bindValue(":Title", $title);
-            $stmt->bindValue(":Comment", $comment);
+            // Get the highest value of UserID + 1
+            $stmt->bindValue(":UserID", $userID);
+            $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->execute();
             // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();

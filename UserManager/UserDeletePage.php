@@ -52,9 +52,9 @@ if ($_SESSION["Authenticated"] == false) {
     <div class="mt-3 row">
         <div>
             <h2>Delete User:&nbsp;</h2>
-            <h2 id="errorAlert" class="text-danger">
-                <?php echo $errorAlert; ?>
-            </h2>
+<h2 id="errorAlert" class="text-danger">
+<?php echo $errorAlert; ?>
+</h2>
         </div>
     </div>
     <hr>
@@ -103,6 +103,14 @@ if ($_SESSION["Authenticated"] == false) {
         $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
             $userID = $result['UserID'];
+            /*
+              $username = $result['Username'];
+              $nickname = $result['Nickname'];
+              $roleID = $result['RoleID'];
+              $email = $result['Email'];
+              $isLockedOut = strval($result['IsLockedOut']);
+              $comment = $result['Comment'];
+             */
         } else {
             header("Location: UserAdminPage.php?success=-3");
         }
@@ -110,6 +118,9 @@ if ($_SESSION["Authenticated"] == false) {
     ?>
     <div class="row">
         <?php
+        // Connect to the database
+        $userDB = new UserDB();
+
         $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
             echo "<div class=\"table-responsive\">";

@@ -1,4 +1,1 @@
-[2020-04-09 19:31:39 America/New_York] Error log initialized.[12-Apr-2020 23:02:31 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 395.
-[12-Apr-2020 23:02:31 America/New_York] SQLSTATE[HY000]: General error: 25 column index out of range
-[12-Apr-2020 23:03:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 395.
-[12-Apr-2020 23:03:23 America/New_York] SQLSTATE[HY000]: General error: 25 column index out of range
+[2020-04-09 19:31:39 America/New_York] Error log initialized.
