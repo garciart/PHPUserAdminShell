@@ -157,7 +157,18 @@ function validateURL($url) {
  * @return boolean True if the password is valid, false if not
  */
 function validatePassword($pword) {
-    if (empty($pword) || strlen($pword) < 8 || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($pword)))) {
+    if (empty($pword) || strlen($pword) < 8
+            // Password must contain legal characters, and...
+            || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($pword)))
+            // at least one upper case letter,
+            || !preg_match("/[A-Z]/", trim($pword))
+            // one lower case letter,
+            || !preg_match("/[a-z]/", trim($pword))
+            // one number,
+            || !preg_match("/\d/", trim($pword))
+            // and one legal special character
+            || !preg_match("/\W/", trim($pword))
+       ) {
         return false;
     } else {
         return true;
