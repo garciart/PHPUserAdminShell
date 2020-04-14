@@ -67,11 +67,10 @@ class UserDB {
                     throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId) . ".";
                 }
                 $this->createUserTable();
-                $this->createUser("rob@rgprogramming.com", "Rob", "123456789", 1, "New user.");
-                $this->createUser("steve@rgprogramming.com", "Steve", "abcdefghi", 2, "Old user.");
-                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "8675309", 3, "For test purposes only.");
-                if ($lastInsertId != 3) {
-                    throw new Exception("Bad last insert ID when creating User table: expected 3, got " . $lastInsertId) . ".";
+                $this->createUser("rob@rgprogramming.com", "Rob", "P@ssW0rd", 1, "New user.");
+                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "W0rdP@ss", 3, "Old user.");
+                if ($lastInsertId != 2) {
+                    throw new Exception("Bad last insert ID when creating User table: expected 2, got " . $lastInsertId) . ".";
                 }
             }
         } catch (Exception $ex) {
