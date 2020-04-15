@@ -116,6 +116,7 @@ if ($_SESSION["Authenticated"] == false) {
             echo "<table class='table table-bordered table-striped'>";
             echo "<tr><th>Role ID:</th><td style=\"width: 100%;\">{$result['RoleID']}</td></tr>";
             echo "<tr><th>Title:</th><td>{$result['Title']}</td></tr>";
+            echo "<tr><th>Level:</th><td>{$result['Level']}</td></tr>";
             echo "<tr><th>Comments:</th>";
             echo "<td><textarea rows=\"4\" class=\"w-100\">{$result['Comment']}</textarea></td></tr>";
             echo "</table>";

@@ -111,7 +111,7 @@ if ($_SESSION["Authenticated"] == false) {
                         foreach ($result as $row) {
                             echo "<tr>";
                             echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["Username"]}</a></td>";
-                            echo "<td><a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\">{$row["UserID"]}</a></td>";
+                            echo "<td>{$row["UserID"]}</td>";
                             echo "<td>{$row["Nickname"]}</td>";
                             $role = $userDB->getRole($row["RoleID"]);
                             echo "<td>{$role["Title"]}</td>";

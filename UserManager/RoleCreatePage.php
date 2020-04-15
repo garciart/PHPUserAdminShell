@@ -35,8 +35,8 @@ if ($_SESSION["Authenticated"] == false) {
 } else {
     $result = "";
     $errorAlert = "";
-    $title = $comment = "";
-    $titleError = $commentError = "";
+    $level = $title = $comment = "";
+    $levelError = $titleError = $commentError = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -76,11 +76,17 @@ if ($_SESSION["Authenticated"] == false) {
      * Display error if input is not valid
      */
     if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "POST") {
+        $level = filter_input(INPUT_POST, "Level");
         $title = trim(filter_input(INPUT_POST, "Title"));
         $comment = trim(filter_input(INPUT_POST, "Comment"));
 
         $valid = true;
 
+        if (validateLevel($level) != true) {
+            $valid = false;
+            $roleIDError = "Level must be greater than 0 and less than 20.";
+        }
+        
         if (!empty($title)) {
             if (validateText($title) != true) {
                 $valid = false;
@@ -96,7 +102,7 @@ if ($_SESSION["Authenticated"] == false) {
         }
 
         if ($valid == true) {
-            $success = $userDB->createRole($title, $comment);
+            $success = $userDB->createRole($level, $title, $comment);
             if ($success != 0) {
                 header("Location: RoleAdminPage.php?success=1");
                 die();
@@ -123,6 +129,22 @@ if ($_SESSION["Authenticated"] == false) {
                             <br>
                             <span class="text-danger">
                                 <?php echo $titleError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Level:</th>
+                        <td>
+                            <?php
+                            echo "<select name='Level'>";
+                            for($i = 1; $i <= 20; $i++) {
+                                echo "<option value=\"{$i}\">{$i}</option>";
+                            }
+                            echo "</select>";
+                            ?>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $levelError; ?>
                             </span>
                         </td>
                     </tr>

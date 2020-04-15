@@ -170,11 +170,10 @@ if ($_SESSION["Authenticated"] == false) {
                             echo "<select name='RoleID'>";
 
                             foreach ($roleList as $row) {
-                                unset($id, $name);
-                                $id = $row['RoleID'];
+                                unset($level, $title);
+                                $level = $row['Level'];
                                 $title = $row['Title'];
-                                $selected = ($id == $roleID ? "selected" : "");
-                                echo "<option value=\"{$id}\" {$selected}>{$title}</option>";
+                                echo "<option value=\"{$level}\">{$title} (Level: {$level})</option>";
                             }
 
                             echo "</select>";
