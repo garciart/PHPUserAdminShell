@@ -99,6 +99,7 @@ if ($_SESSION["Authenticated"] == false) {
                         <tr>
                             <th>RoleID:</th>
                             <th>Title:</th>
+                            <th>Level:</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -108,6 +109,7 @@ if ($_SESSION["Authenticated"] == false) {
                             echo "<tr>";
                             echo "<td><a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\">{$row["RoleID"]}</a></td>";
                             echo "<td><a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\">{$row["Title"]}</a></td>";
+                            echo "<td>{$row["Level"]}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
                             echo "<a href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\" title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";

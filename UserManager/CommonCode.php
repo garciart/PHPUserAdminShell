@@ -112,6 +112,19 @@ function validateID($id) {
 }
 
 /**
+ * Validate role level
+ * @param int $level The role level
+ * @return boolean True if the database ID is valid, false if not
+ */
+function validateLevel($level) {
+    if (empty($level) || $level < 1 || $level > 20 || !filter_var($level, FILTER_VALIDATE_INT)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
  * Validate database input
  * @param string $text The text that will be entered into the database
  * @return boolean True if the text is valid, false if not

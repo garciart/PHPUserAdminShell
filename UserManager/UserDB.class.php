@@ -60,21 +60,22 @@ class UserDB {
                 // Create tables if they do not exist with initial values
                 // Make sure you create the Role table first
                 $this->createRoleTable();
-                $this->createRole("User", "Anonymous and unauthenticated user. Can only browse non-secured pages.");
-                $this->createRole("Superuser", "Authenticated user. Can browse all pages, but cannot edit information.");
-                $lastInsertId = $this->createRole("Administrator", "Authenticated user. Can browse all pages and edit information.");
+                $this->createRole(5, "Member", "Authenticated user, aka Member. Only authorized to view and edit his or her own profile.");
+                $this->createRole(15, "Editor", "Authenticated user, aka Editor. Authorized to view, add, edit, and delete profiles and view (but not edit) the content of other User Manager pages, such as Role Administration.");
+                $lastInsertId = $this->createRole(20, "Administrator", "Authenticated user, aka Administrator. Authorized to view, add, edit, and delete all profiles and roles.");
+                console_log("Last Insert ID: " . $lastInsertId);
                 if ($lastInsertId != 3) {
-                    throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId) . ".";
+                    throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId . ".");
                 }
                 $this->createUserTable();
-                $this->createUser("rob@rgprogramming.com", "Rob", "P@ssW0rd", 1, "New user.");
-                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "W0rdP@ss", 3, "Old user.");
+                $this->createUser("rob@rgprogramming.com", "Rob", "P@ssW0rd", 1, "New member.");
+                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "W0rdP@ss", 3, "Administrator.");
                 if ($lastInsertId != 2) {
-                    throw new Exception("Bad last insert ID when creating User table: expected 2, got " . $lastInsertId) . ".";
+                    throw new ErrorException("Bad last insert ID when creating User table: expected 2, got " . $lastInsertId . ".");
                 }
             }
         } catch (Exception $ex) {
-            error_log($e->getMessage());
+            error_log($ex->getMessage());
         }
     }
 
@@ -90,6 +91,7 @@ class UserDB {
             $conn = $this->connect();
             $sql = "CREATE TABLE IF NOT EXISTS Role (
                 RoleID integer PRIMARY KEY,
+                Level integer NOT NULL,
                 Title text UNIQUE NOT NULL,
                 Comment text
             );";
@@ -159,22 +161,24 @@ class UserDB {
     }
 
     /**
-     * Inserts a new user role into the database.
+     * Inserts a new role into the database.
      * 
-     * @param string $title   The name of the role.
-     * @param string $comment Any additional comments.
+     * @param integer $level   The role's access level.
+     * @param string  $title   The name of the role.
+     * @param string  $comment Any additional comments.
      * 
-     * @return integer The rowid of the new user role. A value of 0 indicates an error.
+     * @return integer The rowid of the new role. A value of 0 indicates an error.
      */
-    public function createRole($title, $comment) {
+    public function createRole($level, $title, $comment) {
         $lastRowID = 0;
         try {
             $conn = $this->connect();
             $sql = "INSERT INTO Role
-                VALUES (:RoleID, :Title, :Comment);";
+                VALUES (:RoleID, :Level, :Title, :Comment);";
             // Execute SQL
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(":RoleID", $this->getNextRoleID());
+            $stmt->bindValue(":Level", $level);
             $stmt->bindValue(":Title", $title);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
@@ -194,7 +198,7 @@ class UserDB {
      * @param string  $username The username to create.
      * @param string  $nickname The nickname of the user.
      * @param string  $password The password of the user.
-     * @param integer $roleID   The user role's ID
+     * @param integer $roleID   The role's ID
      * @param string  $comment  Any additional comments.
      * 
      * @return integer The rowid of the new user.
@@ -238,9 +242,9 @@ class UserDB {
     }
 
     /**
-     * Gets all the user roles in the database and their information.
+     * Gets all the roles in the database and their information.
      *
-     * @return array An array of all the user roles in the database and their
+     * @return array An array of all the roles in the database and their
      *               information. An empty array indicates an error.
      */
     public function getAllRoles() {
@@ -263,12 +267,12 @@ class UserDB {
     }
 
     /**
-     * Returns a single user role and its information.
+     * Returns a single role and its information.
      *
-     * @param integer $roleID The user role's ID.
+     * @param integer $roleID The role's ID.
      *
-     * @return array The user role's information indexed by column name or empty if the
-     *               user role's ID is not found.
+     * @return array The role's information indexed by column name or empty if the
+     *               role's ID is not found.
      */
     public function getRole($roleID) {
         $result = null;
@@ -372,25 +376,28 @@ class UserDB {
     }
 
     /**
-     * Updates a user role's information in the database.
+     * Updates a role's information in the database.
      * 
-     * @param integer $roleID  The user role's ID.
+     * @param integer $roleID  The role's ID.
+     * @param integer $level   The role's access level.
      * @param string  $title   The name of the role.
      * @param string  $comment Any additional comments.
      * 
      * @return integer The number of rows affected. A value other than 1 indicates
      *                 an error.
      */
-    public function updateRole($roleID, $title, $comment) {
+    public function updateRole($roleID, $level, $title, $comment) {
         $rowsAffected = 0;
         try {
             $conn = $this->connect();
             $sql = "UPDATE Role
-                SET Title = :Title,
+                SET Level = :Level
+                Title = :Title,
                 Comment = :Comment
                 WHERE RoleID = :RoleID;";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(":RoleID", $roleID);
+            $stmt->bindValue(":Level", $level);
             $stmt->bindValue(":Title", $title);
             $stmt->bindValue(":Comment", $comment);
             $stmt->execute();
@@ -411,7 +418,7 @@ class UserDB {
      * @param string  $username     The username to create.
      * @param string  $nickname     The nickname of the user.
      * @param string  $passwordHash The hash of the password of the user.
-     * @param integer $roleID       The user role's ID
+     * @param integer $roleID       The role's ID
      * @param string  $email        The email of the user.
      * @param boolean $isLockedOut  Indicates if the user is or is not locked out.
      * @param string  $comment      Any additional comments.
@@ -453,9 +460,9 @@ class UserDB {
     }
 
     /**
-     * Deletes a user role from the database.
+     * Deletes a role from the database.
      * 
-     * @param integer $roleID The user role's ID
+     * @param integer $roleID The role's ID
      * 
      * @return integer The number of rows affected. A value other than 1 indicates
      *                 an error.
@@ -661,5 +668,4 @@ class UserDB {
         }
         return $rowsAffected;
     }
-
 }
