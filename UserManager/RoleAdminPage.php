@@ -97,8 +97,8 @@ if ($_SESSION["Authenticated"] == false) {
                 <table class="table table-bordered table-striped" data-toggle="table" id="adminTable">
                     <thead>
                         <tr>
-                            <th>RoleID:</th>
                             <th>Title:</th>
+                            <th>RoleID:</th>
                             <th>Level:</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -107,8 +107,8 @@ if ($_SESSION["Authenticated"] == false) {
                         <?php
                         foreach ($result as $row) {
                             echo "<tr>";
-                            echo "<td><a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\">{$row["RoleID"]}</a></td>";
                             echo "<td><a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\">{$row["Title"]}</a></td>";
+                            echo "<td>{$row["RoleID"]}</td>";
                             echo "<td>{$row["Level"]}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";

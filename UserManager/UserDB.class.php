@@ -253,7 +253,7 @@ class UserDB {
             $conn = $this->connect();
             $sql = "SELECT *
                 FROM Role
-                ORDER BY RoleID ASC;";
+                ORDER BY Level ASC;";
             // Returns an empty result set if not found
             $stmt = $conn->prepare($sql);
             $stmt->execute();
@@ -391,7 +391,7 @@ class UserDB {
         try {
             $conn = $this->connect();
             $sql = "UPDATE Role
-                SET Level = :Level
+                SET Level = :Level,
                 Title = :Title,
                 Comment = :Comment
                 WHERE RoleID = :RoleID;";

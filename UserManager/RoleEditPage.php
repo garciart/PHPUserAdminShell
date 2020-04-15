@@ -77,6 +77,7 @@ if ($_SESSION["Authenticated"] == false) {
      */
     if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "POST") {
         $roleID = filter_input(INPUT_POST, "RoleID");
+        $level = filter_input(INPUT_POST, "Level");
         $title = filter_input(INPUT_POST, "Title");
         $comment = filter_input(INPUT_POST, "Comment");
 
@@ -86,17 +87,17 @@ if ($_SESSION["Authenticated"] == false) {
             $valid = false;
             $roleIDError = "Role ID number must be greater than 0.";
         }
+
+        if (validateLevel($level) != true) {
+            $valid = false;
+            $roleIDError = "Level must be greater than 0 and less than 20.";
+        }
         
         if (!empty($title)) {
             if (validateText($title) != true) {
                 $valid = false;
                 $titleError = "Title must be alphanumeric.";
             }
-        }
-
-        if (validateLevel($level) != true) {
-            $valid = false;
-            $roleIDError = "Level must be greater than 0 and less than 20.";
         }
         
         if (!empty($comment)) {
@@ -107,7 +108,7 @@ if ($_SESSION["Authenticated"] == false) {
         }
 
         if ($valid == true) {
-            $success = $userDB->updateRole($roleID, $title, $comment);
+            $success = $userDB->updateRole($roleID, $level, $title, $comment);
             if ($success == 1) {
                 header("Location: RoleAdminPage.php?success=2");
                 die();
@@ -125,6 +126,7 @@ if ($_SESSION["Authenticated"] == false) {
         $result = $userDB->getRole(cleanText(filter_input(INPUT_GET, "RoleID", FILTER_SANITIZE_NUMBER_INT)));
         if (!empty($result)) {
             $roleID = $result['RoleID'];
+            $level = $result['Level'];
             $title = $result['Title'];
             $comment = $result['Comment'];
         } else {
@@ -143,6 +145,23 @@ if ($_SESSION["Authenticated"] == false) {
                             <br>
                             <span class="text-danger">
                                 <?php echo $titleError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Level:</th>
+                        <td>
+                            <?php
+                            echo "<select name='Level'>";
+                            for($i = 1; $i <= 20; $i++) {
+                                $selected = ($i == $level ? "selected" : "");
+                                echo "<option value=\"{$i}\" {$selected}>{$i}</option>";
+                            }
+                            echo "</select>";
+                            ?>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $levelError; ?>
                             </span>
                         </td>
                     </tr>
