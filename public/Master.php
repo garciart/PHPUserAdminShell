@@ -18,7 +18,7 @@
  * IMPORTANT! Sessions must be started by calling page, if necessary.
  */
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">

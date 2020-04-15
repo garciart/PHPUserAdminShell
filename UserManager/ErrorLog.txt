@@ -1,5 +1,27 @@
-[13-Apr-2020 00:23:35 America/New_York] Error log initialized.
-[13-Apr-2020 00:25:43 America/New_York] Type 8 Error: Undefined offset: -1 in C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php at line 109.
-[13-Apr-2020 00:25:43 America/New_York] Type 8 Error: Undefined offset: -1 in C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php at line 109.
-[13-Apr-2020 00:25:43 America/New_York] Type 8 Error: Undefined offset: -1 in C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php at line 109.
-[13-Apr-2020 00:25:43 America/New_York] Type 8 Error: Undefined offset: -1 in C:\xampp\htdocs\PHPUserManager\UserManager\RoleAdminPage.php at line 109.
+[14-Apr-2020 22:30:50 America/New_York] SQLSTATE[HY000]: General error: 1 near "(": syntax error
+[14-Apr-2020 22:30:50 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:30:50 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:30:50 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:30:50 America/New_York] Type 0 Exception: Class 'UserManager\Exception' not found in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 67.
+
+[14-Apr-2020 22:37:32 America/New_York] SQLSTATE[HY000]: General error: 1 near "(": syntax error
+[14-Apr-2020 22:37:32 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:37:32 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:37:32 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:37:32 America/New_York] Type 0 Exception: Class 'UserManager\Exception' not found in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 68.
+
+[14-Apr-2020 22:39:41 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: User
+[14-Apr-2020 22:40:00 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: User
+[14-Apr-2020 22:40:43 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: User
+[14-Apr-2020 22:45:07 America/New_York] SQLSTATE[HY000]: General error: 1 near "(": syntax error
+[14-Apr-2020 22:45:07 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:45:07 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:45:07 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:45:07 America/New_York] Type 0 Exception: Class 'UserManager\ErrorException' not found in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 68.
+
+[14-Apr-2020 22:48:12 America/New_York] SQLSTATE[HY000]: General error: 1 near "(": syntax error
+[14-Apr-2020 22:48:12 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:48:12 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:48:12 America/New_York] SQLSTATE[HY000]: General error: 1 no such table: Role
+[14-Apr-2020 22:48:12 America/New_York] Type 0 Exception: Class 'UserManager\ErrorException' not found in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 69.
+

@@ -35,8 +35,8 @@ if ($_SESSION["Authenticated"] == false) {
 } else {
     $result = "";
     $errorAlert = "";
-    $roleID = $title = $comment = "";
-    $roleIDError = $titleError = $commentError = "";
+    $roleID = $level = $title = $comment = "";
+    $roleIDError = $levelError = $titleError = $commentError = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -86,7 +86,7 @@ if ($_SESSION["Authenticated"] == false) {
             $valid = false;
             $roleIDError = "Role ID number must be greater than 0.";
         }
-
+        
         if (!empty($title)) {
             if (validateText($title) != true) {
                 $valid = false;
@@ -94,6 +94,11 @@ if ($_SESSION["Authenticated"] == false) {
             }
         }
 
+        if (validateLevel($level) != true) {
+            $valid = false;
+            $roleIDError = "Level must be greater than 0 and less than 20.";
+        }
+        
         if (!empty($comment)) {
             if (validateText($comment) != true) {
                 $valid = false;
