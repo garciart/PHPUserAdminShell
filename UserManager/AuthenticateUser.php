@@ -21,11 +21,13 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-require_once "User.class.php";
 require_once "CommonCode.php";
+require_once "Role.class.php";
 require_once "UserDB.class.php";
+require_once "User.class.php";
 
 // Get the class name
+use UserManager\Role;
 use UserManager\UserDB;
 use UserManager\User;
 
@@ -41,8 +43,10 @@ if (!isset($username, $password)) {
 $userDB = new UserDB();
 $authenticated = $userDB->AuthenticateUser($username, $password);
 if ($authenticated) {
-    $result = $userDB->getUserByUsername($username);
-    $user = new User($result["UserID"], $result["Username"], $result["Nickname"], $result["PasswordHash"], $result["RoleID"], $result["Email"], $result["IsLockedOut"], $result["LastLoginDate"], $result["CreationDate"], $result["Comment"]);
+    $userResult = $userDB->getUserByUsername($username);
+    $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"]);
+    $roleResult = $userDB->getRole($userResult["RoleID"]);
+    $currentRole = new Role($roleResult["RoleID"], $roleResult["Level"], $roleResult["Title"], $roleResult["Comment"]);
     // Create session
     session_regenerate_id();
     $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
@@ -57,6 +61,7 @@ if ($authenticated) {
     $_SESSION["Username"] = $user->getUsername();
     $_SESSION["Nickname"] = $user->getNickname();
     $_SESSION["RoleID"] = $user->getRoleID();
+    $_SESSION["Level"] = $currentRole->getLevel();
     header("Location: MainPage.php");
     exit();
 } else {

@@ -44,6 +44,21 @@ ob_clean();
 <!-- Header Element Content -->
 <h1 class="mt-3 pull-left">PHP User Manager</h1>
 <p class="lead">Administration Landing Page</p>
+<div>
+    <?php
+    // Get success flag from query string and check for errors
+    $success = filter_input(INPUT_GET, "success", FILTER_SANITIZE_NUMBER_INT);
+    if ($success == '0') {
+        echo "<h2 class=\"pull-left text-danger\">Error: Cannot retrieve user data!</h2>";
+    } else if ($success == '2') {
+        echo "<h2 class=\"pull-left text-success\">Profile updated</h2>";
+    } else if ($success == '-2') {
+        echo "<h2 class=\"pull-left text-danger\">Profile not updated</h2>";
+    } else if ($success == '-666') {
+        echo "<h2 class=\"pull-left text-danger\">Unknown Fatal Error! Contact administrator to review log</h2>";
+    }
+    ?>
+</div>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -55,6 +70,7 @@ ob_clean();
 <?php echo "<div class=\"page-header text-center\"><p>Welcome back, {$_SESSION["Nickname"]}.<br>Please select one of the options below:</p></div>"; ?>
 <div class="col-md-4 mx-auto text-center">
     <div class="btn-toolbar my-3">
+        <a href="EditProfile.php" class="btn btn-primary btn-block">Edit Profile</a>
         <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
         <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
         <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>

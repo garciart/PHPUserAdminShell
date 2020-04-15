@@ -22,11 +22,13 @@ namespace UserManager;
 class Role {
 
     private $_roleID;
+    private $_level;
     private $_title;
     private $_comment;
 
-    public function __construct($roleID, $title, $comment) {
+    public function __construct($roleID, $level, $title, $comment) {
         $this->setRoleID($roleID);
+        $this->setLevel($level);
         $this->setTitle($title);
         $this->setComment($comment);
     }
@@ -39,6 +41,14 @@ class Role {
         $this->_roleID = $roleID;
     }
 
+    public function getLevel() {
+        return $this->_level;
+    }
+
+    public function setLevel($level) {
+        $this->_level = $level;
+    }
+    
     function getTitle() {
         return $this->_title;
     }
