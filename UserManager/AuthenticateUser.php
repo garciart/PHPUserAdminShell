@@ -37,35 +37,35 @@ $password = filter_input(INPUT_POST, "password");
 if (!isset($username, $password)) {
     header("Location: LoginPage.php");
     exit();
-}
-
-// Connect to the database
-$userDB = new UserDB();
-$authenticated = $userDB->AuthenticateUser($username, $password);
-if ($authenticated) {
-    $userResult = $userDB->getUserByUsername($username);
-    $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"]);
-    $roleResult = $userDB->getRole($userResult["RoleID"]);
-    $currentRole = new Role($roleResult["RoleID"], $roleResult["Level"], $roleResult["Title"], $roleResult["Comment"]);
-    // Create session
-    session_regenerate_id();
-    $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
-    if ($user->getIsLockedOut()) {
-        header("Location: LoginPage.php");
+} else {
+    // Connect to the database
+    $userDB = new UserDB();
+    $authenticated = $userDB->AuthenticateUser($username, $password);
+    if ($authenticated) {
+        $userResult = $userDB->getUserByUsername($username);
+        $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"]);
+        $roleResult = $userDB->getRole($userResult["RoleID"]);
+        $currentRole = new Role($roleResult["RoleID"], $roleResult["Level"], $roleResult["Title"], $roleResult["Comment"]);
+        // Create session
+        session_regenerate_id();
+        $_SESSION["IsLockedOut"] = $user->getIsLockedOut();
+        if ($user->getIsLockedOut()) {
+            header("Location: LoginPage.php");
+            exit();
+        } else {
+            $userDB->updateLoginDate($user->getUserID());
+        }
+        $_SESSION["Authenticated"] = true;
+        $_SESSION["UserID"] = $user->getUserID();
+        $_SESSION["Username"] = $user->getUsername();
+        $_SESSION["Nickname"] = $user->getNickname();
+        $_SESSION["RoleID"] = $user->getRoleID();
+        $_SESSION["Level"] = $currentRole->getLevel();
+        header("Location: MainPage.php");
         exit();
     } else {
-        $userDB->updateLoginDate($user->getUserID());
+        $_SESSION["Authenticated"] = false;
+        header("Location: LoginPage.php");
+        exit();
     }
-    $_SESSION["Authenticated"] = true;
-    $_SESSION["UserID"] = $user->getUserID();
-    $_SESSION["Username"] = $user->getUsername();
-    $_SESSION["Nickname"] = $user->getNickname();
-    $_SESSION["RoleID"] = $user->getRoleID();
-    $_SESSION["Level"] = $currentRole->getLevel();
-    header("Location: MainPage.php");
-    exit();
-} else {
-    $_SESSION["Authenticated"] = false;
-    header("Location: LoginPage.php");
-    exit();
 }
