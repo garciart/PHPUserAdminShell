@@ -29,8 +29,11 @@ require_once "UserDB.class.php";
 use UserManager\UserDB;
 
 // Ensure the user is authenticated and authorized
-if ($_SESSION["Authenticated"] == false) {
+if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
+    exit();
+} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 5) {
+    header("Location: MainPage.php");
     exit();
 } else {
     $result = "";
