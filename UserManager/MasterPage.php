@@ -33,7 +33,8 @@ require_once "CommonCode.php";
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../UserManager/css/stylesheet.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css"/>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -48,23 +49,27 @@ require_once "CommonCode.php";
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> class="navbar-left" title="Home">
-                    <img src="img/logo.png" class="nav_logo">
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">
+                    <img src="img/logo.png" alt="" class="nav_logo">
                 </a>
-                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
+                <a class="navbar-brand d-none d-md-block" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">Home</a>
+                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">Home
+                                <?php if ($childPage == "index.php") echo "<span class=\"sr-only\">(current)</span>"; ?>
+                            </a>
                         </li>
                         <li class="nav-item <?php if ($childPage == "About.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"About.php\""); ?> title="About">About</a>
+                            <a class="nav-link" <?php echo ($childPage == "About.php" ? "" : "href=\"About.php\""); ?> title="About">About
+                                <?php if ($childPage == "About.php") echo "<span class=\"sr-only\">(current)</span>"; ?>
+                            </a>
                         </li>
                         <?php
                         $logID = "login";
@@ -74,7 +79,9 @@ require_once "CommonCode.php";
                             if ($_SESSION["Authenticated"] == TRUE) {
                                 ?>
                                 <li class="nav-item <?php if ($childPage == "MainPage.php") echo "active"; ?>">
-                                    <a class="nav-link" <?php echo ($childPage == "MainPage.php" ? "" : "href=\"MainPage.php\""); ?> title="About">User Admin</a>
+                                    <a class="nav-link" <?php echo ($childPage == "MainPage.php" ? "" : "href=\"MainPage.php\""); ?> title="About">User Admin
+                                        <?php if ($childPage == "MainPage.php") echo "<span class=\"sr-only\">(current)</span>"; ?>
+                                    </a>
                                 </li>
                                 <?php
                                 // Use $logPage and $logStatus to prevent duplication of code
@@ -133,9 +140,12 @@ require_once "CommonCode.php";
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
         <script type="text/javascript">
             // Using jQuery
             $(document).ready(function () {
