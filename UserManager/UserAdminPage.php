@@ -78,7 +78,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             ?>
         </div>
         <div class="ml-auto">
-            <a href="UserCreatePage.php" class="btn btn-primary">Add New User</a>
+            <?php
+            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserCreatePage.php\"") . " title=\"Add New User\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New User</a>";
+            ?>
         </div>
     </div>
     <hr>
@@ -123,8 +125,8 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             echo "<td>{$row['LastLoginDate']}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                            echo "<a href=\"UserEditPage.php?UserID={$row["UserID"]}\" title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a href=\"UserDeletePage.php?UserID={$row["UserID"]}\" title=\"Delete User\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserEditPage.php?UserID={$row["UserID"]}\"") . " title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserDeletePage.php?UserID={$row["UserID"]}\"") . " title=\"Delete User\" data-toggle=\"tooltip\" " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "disabled" : "") . "><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }

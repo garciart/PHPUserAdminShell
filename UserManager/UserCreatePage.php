@@ -32,7 +32,7 @@ use UserManager\UserDB;
 if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
-} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 5) {
+} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 10) {
     header("Location: MainPage.php");
     exit();
 } else {
@@ -171,12 +171,12 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             <?php
                             $roleList = $userDB->getAllRoles();
                             echo "<select name='RoleID'>";
-
                             foreach ($roleList as $row) {
-                                unset($level, $title);
+                                unset($roleID, $level, $title);
+                                $roleID = $row['RoleID'];
                                 $level = $row['Level'];
                                 $title = $row['Title'];
-                                echo "<option value=\"{$level}\">{$title} (Level: {$level})</option>";
+                                echo "<option value=\"{$roleID}\">{$title} (Level: {$level})</option>";
                             }
 
                             echo "</select>";
