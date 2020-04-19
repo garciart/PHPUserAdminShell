@@ -35,7 +35,7 @@ ob_clean();
 <!-- Body Content Start -->
 <!-- Header Element Content -->
 <h1 class="mt-3">PHP User Manager</h1>
-<p class="lead">User Manager About Page</p>
+<p class="lead">Host Application About Page</p>
 <hr>
 <?php
 /* Store the content of the buffer for later use */
@@ -45,7 +45,7 @@ ob_clean();
 ?>
 <!-- Main Element Content -->
 <div class="text-center"><img class="mb-4" src="img/logo.png" alt="" width="72" height="72"></div>
-<h2>This is the User Manager's About Page!</h2>
+<h2>This is the Host Application's About Page!</h2>
 <p>This is an extension of my tutorial, <a href="https://github.com/garciart/MasterPagesInPHP" title="Master Pages in PHP" target="_blank">Master Pages in PHP</a>, incorporating a user administration system (using SQLite) and Bootstrap styling. You can download it and add it to your project, or you can clone it and use it as the foundation of your web site!</p>
 <p>While my first programs were written in Basic and Assembly Language, the language I've used the most is C. To this day, if I have to write a quick utility program, I'll knock it out in C. So, it's not surprising that when I began to develop applications for the web, I started with C# and ASP.NET. All in all, I have written quite a few web sites using the lessons I learned from <a href="https://www.apress.com/us/book/9781590594681" title="Beginning ASP.NET 2.0 E-Commerce in C# 2005" rel="nofollow" target="_blank">Cristian Darie’s excellent book, Beginning ASP.NET 2.0 E-Commerce in C# 2005: From Novice to Professional</a>.</p>
 <p>However, while I love .NET, it has its limitations. For example, once you reach a certain point, .NET is not free, and neither are Microsoft's development or production tools (e.g., Visual Studio, SQL Server, etc.). Another issue is that many companies do not provide .NET hosting services. Hopefully, .NET Core, the cross-platform successor to .NET, will take off. In the meantime, to better serve my clients, I began to create alternative versions of my boilerplates in other languages, such as PHP and JavaScript.</p>
@@ -73,4 +73,4 @@ $contentPlaceHolderFooter = ob_get_contents();
 /* Clean out the buffer and turn off output buffering */
 ob_end_clean();
 /* Call the master page. It will echo the content of the placeholders in the designated locations */
-require_once "MasterPage.php";
+require_once "Master.php";

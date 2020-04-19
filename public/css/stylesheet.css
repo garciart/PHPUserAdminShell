@@ -1,13 +1,13 @@
 /* 
     Created on : Dec 16, 2019, 11:27:37 AM
     Author     : Rob Garcia <rgarcia@rgprogramming.com>
+    This is the Host Application's CSS file!
 */
 html {
     font-family: sans-serif;
 }
-header {
+.header {
     clear: both;
-    padding-top: 60px;
 }
 .nav_logo {
     height: 50px;

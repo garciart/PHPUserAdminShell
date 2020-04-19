@@ -78,7 +78,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             ?>
         </div>
         <div class="ml-auto">
-            <a href="RoleCreatePage.php" class="btn btn-primary">Add New Role</a>
+            <?php
+            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 15) ? "" : "href=\"RoleCreatePage.php\"") . " title=\"Add New Role\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New Role</a>";
+            ?>
         </div>
     </div>
     <hr>
@@ -115,8 +117,8 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             echo "<td>{$row["Level"]}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                            echo "<a href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\" title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a href=\"RoleDeletePage.php?RoleID={$row["RoleID"]}\" title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\"") . " title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"RoleDeletePage.php?RoleID={$row["RoleID"]}\"") . " title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }

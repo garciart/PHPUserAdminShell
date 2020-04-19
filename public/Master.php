@@ -46,20 +46,20 @@
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background-color: #000000;">
+        <nav class="navbar navbar-expand-lg navbar-dark static-top" role="navigation" style="background-color: #000000;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
-                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">
+                <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">
                     <img src="img/logo.png" alt="" class="nav_logo">
                 </a>
-                <a class="navbar-brand d-none d-md-block" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">PHP User Manager</a>
+                <a class="navbar-brand d-none d-md-block" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">PHP User Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item <?php if ($childPage == "index.php") echo "active"; ?>">
-                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">Home
+                            <a class="nav-link" <?php echo ($childPage == "index.php" ? "" : "href=\"index.php\""); ?> title="Home">Home
                                 <?php if ($childPage == "index.php") echo "<span class=\"sr-only\">(current)</span>"; ?>
                             </a>
                         </li>
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </nav>
-        <header class="container">
+        <header class="container header">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <!-- Content placeholder for header element content -->

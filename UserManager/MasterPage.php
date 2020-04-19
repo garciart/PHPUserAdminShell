@@ -49,7 +49,7 @@ require_once "CommonCode.php";
         /* Get the name of the child page. Use this for ternary checks on links to avoid unnecessary calls to the server */
         $childPage = (basename($_SERVER["PHP_SELF"]));
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background-color: #000000;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background-color: #003366;">
             <div class="container">
                 <!-- If the user is already on the page, replace link with URL fragment to avoid unnecessary calls to the server -->
                 <a class="navbar-brand" <?php echo ($childPage == "index.php" ? "" : "href=\"/{$APPLICATION_ROOT_DIR}/index.php\""); ?> title="Home">
@@ -103,7 +103,7 @@ require_once "CommonCode.php";
                 </div>
             </div>
         </nav>
-        <header class="container">
+        <header class="container header">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <!-- Content placeholder for header element content -->
