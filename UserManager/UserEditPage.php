@@ -196,8 +196,11 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                         <td>
                             <?php
                             $roleList = $userDB->getAllRoles();
-                            echo "<select name='RoleID'>";
-
+                            if ($userID == $_SESSION['UserID']) {
+                                echo "<select name='RoleID' disabled>";
+                            } else {
+                                echo "<select name='RoleID'>";
+                            }
                             foreach ($roleList as $row) {
                                 unset($id, $name);
                                 $id = $row['RoleID'];
@@ -205,7 +208,6 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                                 $selected = ($id == $roleID ? "selected" : "");
                                 echo "<option value=\"{$id}\" {$selected}>{$title}</option>";
                             }
-
                             echo "</select>";
                             ?>
                             <br>
@@ -229,6 +231,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                         <td>
                             <input type="checkbox" name="IsLockedOut"
                             <?php
+                            if ($userID == $_SESSION['UserID']) {
+                                echo " disabled ";
+                            }
                             if ($isLockedOut == 1) {
                                 echo "checked='checked'";
                             }

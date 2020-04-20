@@ -103,11 +103,17 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             unset($_SESSION['PasswordHash']);
         }
     } else if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "GET") {
-        $result = $userDB->getRole(cleanText(filter_input(INPUT_GET, "RoleID", FILTER_SANITIZE_NUMBER_INT)));
-        if (!empty($result)) {
-            $roleID = $result['RoleID'];
+        $roleID = cleanText(filter_input(INPUT_GET, "RoleID", FILTER_SANITIZE_NUMBER_INT));
+        if ($roleID == $_SESSION['RoleID']) {
+            header("Location: RoleAdminPage.php?success=-4");
+            exit();
         } else {
-            header("Location: RoleAdminPage.php?success=-3");
+            $result = $userDB->getRole($roleID);
+            if (!empty($result)) {
+                $roleID = $result['RoleID'];
+            } else {
+                header("Location: RoleAdminPage.php?success=-3");
+            }
         }
     }
     ?>

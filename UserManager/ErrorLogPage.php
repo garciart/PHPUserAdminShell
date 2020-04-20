@@ -54,6 +54,8 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     /* Clean out the buffer, but do not destroy the output buffer */
     ob_clean();
     ?>
+    <a href="MainPage.php" class="btn btn-primary pull-left">Return to Main Administration Page</a>
+    <hr>
     <!-- Main Element Content -->
     <?php
     $file = "ErrorLog.txt";

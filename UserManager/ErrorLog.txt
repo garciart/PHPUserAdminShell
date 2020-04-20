@@ -21,3 +21,8 @@
 [19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
 [19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
 [19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
+[19-Apr-2020 22:57:23 America/New_York] Type 0 Exception: Too few arguments to function UserManager\UserDB::getUserByUserID(), 0 passed in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 111 and exactly 1 expected in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 330.
+
+[19-Apr-2020 22:58:35 America/New_York] Type 0 Exception: Too few arguments to function UserManager\UserDB::getUserByUserID(), 0 passed in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 111 and exactly 1 expected in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 330.
+
+[19-Apr-2020 23:20:44 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\RoleEditPage.php at line 158.

@@ -83,7 +83,7 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
         $password = filter_input(INPUT_POST, "Password");
         $roleID = filter_input(INPUT_POST, "RoleID");
         $email = filter_input(INPUT_POST, "Email");
-        $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
+        $isLockedOut = filter_input(INPUT_POST, "IsLockedOut");
         $comment = filter_input(INPUT_POST, "Comment");
 
         $valid = true;
@@ -181,33 +181,10 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                     <tr>
                         <th>Nickname:</th>
                         <td>
-                            <input type="text" name="Nickname" class="form-control" value="<?php echo $nickname; ?>" required>
+                            <input type="text" name="Nickname" class="form-control" value="<?php echo $nickname; ?>" required autofocus>
                             <br>
                             <span class="text-danger">
                                 <?php echo $nicknameError; ?>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Role:</th>
-                        <td>
-                            <?php
-                            $roleList = $userDB->getAllRoles();
-                            echo "<select name='RoleID'>";
-
-                            foreach ($roleList as $row) {
-                                unset($id, $name);
-                                $id = $row['RoleID'];
-                                $title = $row['Title'];
-                                $selected = ($id == $roleID ? "selected" : "");
-                                echo "<option value=\"{$id}\" {$selected}>{$title}</option>";
-                            }
-
-                            echo "</select>";
-                            ?>
-                            <br>
-                            <span class="text-danger">
-                                <?php echo $roleIDError; ?>
                             </span>
                         </td>
                     </tr>
@@ -218,32 +195,6 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             <br>
                             <span class="text-danger">
                                 <?php echo $emailError; ?>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Locked Out?</th>
-                        <td>
-                            <input type="checkbox" name="IsLockedOut"
-                            <?php
-                            if ($isLockedOut == 1) {
-                                echo "checked='checked'";
-                            }
-                            ?>
-                                   >
-                            <br>
-                            <span class="text-danger">
-                                <?php echo $isLockedOutError; ?>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Comments:</th>
-                        <td>
-                            <textarea class="editarea w-100" maxlength="512" name="Comment" rows="4"><?php echo $comment; ?></textarea>
-                            <br>
-                            <span class="text-danger">
-                                <?php echo $commentError; ?>
                             </span>
                         </td>
                     </tr>
@@ -264,8 +215,10 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                     </tr>
                 </table>
             </div>
-            <input type="hidden" name="UserID" value="<?php echo $userID; ?>"/>
-            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="hidden" name="UserID" value="<?php echo $userID; ?>" />
+            <input type="hidden" name="RoleID" value="<?php echo $roleID; ?>" />
+            <input type="hidden" name="IsLockedOut" value="0" />
+            <input type="submit" class="btn btn-primary" value="Submit" />
             <a href="MainPage.php" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
