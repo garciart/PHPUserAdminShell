@@ -72,6 +72,8 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                 echo "<h2 class=\"pull-left text-success\">User deleted</h2>";
             } else if ($success == '-3') {
                 echo "<h2 class=\"pull-left text-danger\">User not deleted</h2>";
+            } else if ($success == '-4') {
+                echo "<h2 class=\"pull-left text-warning\">Cannot delete current user</h2>";
             } else if ($success == '-666') {
                 echo "<h2 class=\"pull-left text-danger\">Unknown Fatal Error! Contact administrator to review log</h2>";
             }

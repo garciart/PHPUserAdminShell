@@ -121,7 +121,7 @@ class UserDB {
                 Nickname text NOT NULL,
                 PasswordHash text NOT NULL,
                 RoleID integer NOT NULL,
-                Email text NOT NULL,
+                Email text UNIQUE NOT NULL,
                 IsLockedOut integer NOT NULL DEFAULT '0' CHECK (IsLockedOut >= 0 OR IsLockedOut <= 1),
                 LastLoginDate text NOT NULL,
                 CreationDate text NOT NULL,

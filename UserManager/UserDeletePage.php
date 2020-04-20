@@ -103,11 +103,17 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             unset($_SESSION['PasswordHash']);
         }
     } else if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "GET") {
-        $result = $userDB->getUserByUserID(cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT)));
-        if (!empty($result)) {
-            $userID = $result['UserID'];
+        $userID = cleanText(filter_input(INPUT_GET, "UserID", FILTER_SANITIZE_NUMBER_INT));
+        if ($userID == $_SESSION['UserID']) {
+            header("Location: UserAdminPage.php?success=-4");
+            exit();
         } else {
-            header("Location: UserAdminPage.php?success=-3");
+            $result = $userDB->getUserByUserID($userID);
+            if (!empty($result)) {
+                $userID = $result['UserID'];
+            } else {
+                header("Location: UserAdminPage.php?success=-3");
+            }
         }
     }
     ?>

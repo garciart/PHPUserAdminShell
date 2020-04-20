@@ -95,14 +95,14 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             $valid = false;
             $roleIDError = "Level must be greater than 0 and less than 20.";
         }
-        
+
         if (!empty($title)) {
             if (validateText($title) != true) {
                 $valid = false;
                 $titleError = "Title must be alphanumeric.";
             }
         }
-        
+
         if (!empty($comment)) {
             if (validateText($comment) != true) {
                 $valid = false;
@@ -155,8 +155,12 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                         <th>Level:</th>
                         <td>
                             <?php
-                            echo "<select name='Level'>";
-                            for($i = 1; $i <= 20; $i++) {
+                            if ($roleID == $_SESSION['RoleID']) {
+                                echo "<select name='Level' disabled>";
+                            } else {
+                                echo "<select name='Level'>";
+                            }
+                            for ($i = 1; $i <= 20; $i++) {
                                 $selected = ($i == $level ? "selected" : "");
                                 echo "<option value=\"{$i}\" {$selected}>{$i}</option>";
                             }
