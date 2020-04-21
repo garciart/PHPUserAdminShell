@@ -40,7 +40,7 @@ if (!isset($username, $password)) {
 } else {
     // Connect to the database
     $userDB = new UserDB();
-    $authenticated = $userDB->AuthenticateUser($username, $password);
+    $authenticated = $userDB->authenticateUser($username, $password);
     if ($authenticated) {
         $userResult = $userDB->getUserByUsername($username);
         $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"], $userResult["IsActive"], $userResult["SecurityQuestion"], $userResult["SecurityAnswerHash"]);

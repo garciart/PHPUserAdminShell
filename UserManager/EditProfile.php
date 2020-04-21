@@ -37,7 +37,7 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     $errorAlert = "";
     $isLockedOut = 0;
     $isActive = 0;
-    $userID = $username = $nickname = $password = $roleID = $email = $commen = $securityQuestion = $securityAnswer = "";
+    $userID = $username = $nickname = $password = $roleID = $email = $comment = $securityQuestion = $securityAnswer = "";
     $userIDError = $usernameError = $nicknameError = $passwordError = $roleIDError = $emailError = $isLockedOutError = $commentError = $isActiveError = $securityQuestionError = $securityAnswerError = "";
     /* Start placing content into an output buffer */
     ob_start();
@@ -139,12 +139,16 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
         
         if (validateText($securityQuestion) != true) {
             $valid = false;
-            $nicknameError = "Security question must be alphanumeric.";
+            $securityQuestionError = "Security question must be alphanumeric.";
         }
         
-        if (validateText($securityAnswer) != true) {
-            $valid = false;
-            $nicknameError = "Security answer must be alphanumeric.";
+        if (!empty($securityAnswer)) {
+            if (validateText($securityAnswer) != true) {
+                $valid = false;
+                $securityAnswerError = "Security answer must be alphanumeric.";
+            } else {
+                $_SESSION['SecurityAnswerHash'] = getHash($securityAnswer);
+            }
         }
 
         if ($valid == true) {
@@ -177,7 +181,7 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             $email = $result['Email'];
             $isLockedOut = strval($result['IsLockedOut']);
             $comment = $result['Comment'];
-            $isActive = $result['IsActive'];
+            $isActive = strval($result['IsActive']);
             $securityQuestion = $result['SecurityQuestion'];
             $_SESSION['SecurityAnswerHash'] = $result['SecurityAnswerHash'];
         } else {
@@ -263,8 +267,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             </div>
             <input type="hidden" name="UserID" value="<?php echo $userID; ?>" />
             <input type="hidden" name="RoleID" value="<?php echo $roleID; ?>" />
+            <input type="hidden" name="IsActive" value="<?php echo $isActive; ?>" />
             <input type="hidden" name="IsLockedOut" value="0" />
-            <input type="hidden" name="IsActive" value="0" />
+            <input type="hidden" name="Comment" value="<?php echo $comment; ?>" />
             <input type="submit" class="btn btn-primary" value="Submit" />
             <a href="MainPage.php" class="btn btn-secondary">Cancel</a>
         </form>

@@ -80,6 +80,8 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             $role = $userDB->getRole($result['RoleID']);
             echo "<tr><th>Role:</th><td>" . $role['Title'] . "</td></tr>";
             echo "<tr><th>Email:</th><td>{$result['Email']}</td></tr>";
+            $active = $result['IsActive'] == 0 ? "<span class=\"text-warning\"><strong>No</strong></span>" : "Yes";
+            echo "<tr><th>Active?</th><td>{$active}</td></tr>";
             $lockedOut = $result['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
             echo "<tr><th>Locked Out?</th><td>{$lockedOut}</td></tr>";
             echo "<tr><th>Last Login Date:</th><td>{$result['LastLoginDate']}</td></tr>";
