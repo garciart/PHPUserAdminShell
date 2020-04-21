@@ -43,7 +43,7 @@ if (!isset($username, $password)) {
     $authenticated = $userDB->AuthenticateUser($username, $password);
     if ($authenticated) {
         $userResult = $userDB->getUserByUsername($username);
-        $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"], $userResult["Active"], $userResult["SecurityQuestion"], $userResult["SecurityAnswerHash"]);
+        $user = new User($userResult["UserID"], $userResult["Username"], $userResult["Nickname"], $userResult["PasswordHash"], $userResult["RoleID"], $userResult["Email"], $userResult["IsLockedOut"], $userResult["LastLoginDate"], $userResult["CreationDate"], $userResult["Comment"], $userResult["IsActive"], $userResult["SecurityQuestion"], $userResult["SecurityAnswerHash"]);
         $roleResult = $userDB->getRole($userResult["RoleID"]);
         $currentRole = new Role($roleResult["RoleID"], $roleResult["Level"], $roleResult["Title"], $roleResult["Comment"]);
         // Create session
