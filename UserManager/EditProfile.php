@@ -36,8 +36,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     $result = "";
     $errorAlert = "";
     $isLockedOut = 0;
-    $userID = $username = $nickname = $password = $roleID = $email = $comment = "";
-    $userIDError = $usernameError = $nicknameError = $passwordError = $roleIDError = $emailError = $isLockedOutError = $commentError = "";
+    $isActive = 0;
+    $userID = $username = $nickname = $password = $roleID = $email = $commen = $securityQuestion = $securityAnswer = "";
+    $userIDError = $usernameError = $nicknameError = $passwordError = $roleIDError = $emailError = $isLockedOutError = $commentError = $isActiveError = $securityQuestionError = $securityAnswerError = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -85,6 +86,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
         $email = filter_input(INPUT_POST, "Email");
         $isLockedOut = filter_input(INPUT_POST, "IsLockedOut");
         $comment = filter_input(INPUT_POST, "Comment");
+        $isActive = filter_input(INPUT_POST, "IsActive");
+        $securityQuestion = filter_input(INPUT_POST, "SecurityQuestion");
+        $securityAnswer = filter_input(INPUT_POST, "SecurityAnswer");
 
         $valid = true;
 
@@ -130,10 +134,23 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                 $commentError = "Comments must be alphanumeric.";
             }
         }
+        
+        $isActive = $isActive == 1 ? 1 : 0;
+        
+        if (validateText($securityQuestion) != true) {
+            $valid = false;
+            $nicknameError = "Security question must be alphanumeric.";
+        }
+        
+        if (validateText($securityAnswer) != true) {
+            $valid = false;
+            $nicknameError = "Security answer must be alphanumeric.";
+        }
 
         if ($valid == true) {
-            $success = $userDB->updateUser($userID, $username, $nickname, $_SESSION['PasswordHash'], $roleID, $email, $isLockedOut, $comment);
+            $success = $userDB->updateUser($userID, $username, $nickname, $_SESSION['PasswordHash'], $roleID, $email, $isLockedOut, $comment, $isActive, $securityQuestion, $_SESSION['SecurityAnswerHash']);
             unset($_SESSION['PasswordHash']);
+            unset($_SESSION['SecurityAnswerHash']);
             if ($success == 1) {
                 header("Location: MainPage.php?success=2");
                 die();
@@ -147,6 +164,7 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
         } else {
             $errorAlert = "Format error: Check your data!";
             unset($_SESSION['PasswordHash']);
+            unset($_SESSION['SecurityAnswerHash']);
         }
     } else if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == "GET") {
         $result = $userDB->getUserByUserID($_SESSION["UserID"]);
@@ -159,6 +177,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             $email = $result['Email'];
             $isLockedOut = strval($result['IsLockedOut']);
             $comment = $result['Comment'];
+            $isActive = $result['IsActive'];
+            $securityQuestion = $result['SecurityQuestion'];
+            $_SESSION['SecurityAnswerHash'] = $result['SecurityAnswerHash'];
         } else {
             header("Location: MainPage.php?success=-2");
         }
@@ -213,11 +234,37 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             </span>
                         </td>
                     </tr>
+                    <tr>
+                        <th>Security Question:</th>
+                        <td>
+                            <input type="text" name="SecurityQuestion" class="form-control" value="<?php echo $securityQuestion; ?>" required>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $securityQuestionError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <span class="text-danger">Leave blank to keep the current security question answer.</span>
+                        </th>
+                    </tr>
+                    <tr class='bg-warning'>
+                        <th>Security Question Answer:</th>
+                        <td>
+                            <input type="password" name="SecurityAnswer" autocomplete="off" />
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $securityAnswerError; ?>
+                            </span>
+                        </td>
+                    </tr>
                 </table>
             </div>
             <input type="hidden" name="UserID" value="<?php echo $userID; ?>" />
             <input type="hidden" name="RoleID" value="<?php echo $roleID; ?>" />
             <input type="hidden" name="IsLockedOut" value="0" />
+            <input type="hidden" name="IsActive" value="0" />
             <input type="submit" class="btn btn-primary" value="Submit" />
             <a href="MainPage.php" class="btn btn-secondary">Cancel</a>
         </form>

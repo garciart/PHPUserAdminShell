@@ -126,7 +126,7 @@ class UserDB {
                 LastLoginDate text NOT NULL,
                 CreationDate text NOT NULL,
                 Comment text,
-                Active integer NOT NULL DEFAULT '0' CHECK (Active >= 0 OR Active <= 1),
+                IsActive integer NOT NULL DEFAULT '0' CHECK (IsActive >= 0 OR IsActive <= 1),
                 SecurityQuestion text NOT NULL,
                 SecurityAnswerHash text NOT NULL,
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
@@ -203,18 +203,18 @@ class UserDB {
      * @param string  $password         The password of the user.
      * @param integer $roleID           The role's ID
      * @param string  $comment          Any additional comments.
-     * @param string  $active           If the user has an active account.
+     * @param string  $isActive         If the user has an active account.
      * @param string  $securityQuestion Question to verify user without password.
      * @param string  $securityAnswer   Answer to security question.
      * 
      * @return integer The rowid of the new user.
      */
-    public function createUser($username, $nickname, $password, $roleID, $comment, $active, $securityQuestion, $securityAnswer) {
+    public function createUser($username, $nickname, $password, $roleID, $comment, $isActive, $securityQuestion, $securityAnswer) {
         $lastRowID = 0;
         try {
             $conn = $this->connect();
             $sql = "INSERT INTO User
-                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment, :Active, :SecurityQuestion, :SecurityAnswerHash);";
+                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment, :IsActive, :SecurityQuestion, :SecurityAnswerHash);";
             // Hash the password using Key Derivation Functions (KDF) with BCRYPT_COST from CommonCode
             // $options = array("cost" => BCRYPT_COST);
             $passwordHash = getHash($password);
@@ -237,7 +237,7 @@ class UserDB {
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->bindValue(":CreationDate", $creationDate);
             $stmt->bindValue(":Comment", $comment);
-            $stmt->bindValue(":Active", $active);
+            $stmt->bindValue(":IsActive", $isActive);
             $stmt->bindValue(":SecurityQuestion", $securityQuestion);
             $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
             $stmt->execute();
@@ -424,22 +424,22 @@ class UserDB {
     /**
      * Updates a user's information in the database.
      *
-     * @param integer $userID       The user's ID.
-     * @param string  $username     The username to create.
-     * @param string  $nickname     The nickname of the user.
-     * @param string  $passwordHash The hash of the password of the user.
-     * @param integer $roleID       The role's ID
-     * @param string  $email        The email of the user.
-     * @param boolean $isLockedOut  Indicates if the user is or is not locked out.
-     * @param string  $comment      Any additional comments.
-     * @param string  $active           If the user has an active account.
+     * @param integer $userID           The user's ID.
+     * @param string  $username         The username to create.
+     * @param string  $nickname         The nickname of the user.
+     * @param string  $passwordHash     The hash of the password of the user.
+     * @param integer $roleID           The role's ID
+     * @param string  $email            The email of the user.
+     * @param boolean $isLockedOut      Indicates if the user is or is not locked out.
+     * @param string  $comment          Any additional comments.
+     * @param string  $isActive         If the user has an active account.
      * @param string  $securityQuestion Question to verify user without password.
      * @param string  $securityAnswer   Answer to security question.
      * 
      * @return integer The number of rows affected. A value other than 1 indicates
      *                 an error.
      */
-    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $active, $securityQuestion, $securityAnswer) {
+    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $isActive, $securityQuestion, $securityAnswer) {
         $rowsAffected = 0;
         try {
             $conn = $this->connect();
@@ -451,7 +451,7 @@ class UserDB {
                 Email = :Email,
                 IsLockedOut = :IsLockedOut,
                 Comment = :Comment,
-                Active = :Active,
+                IsActive = :IsActive,
                 SecurityQuestion = :SecurityQuestion,
                 SecurityAnswerHash = :SecurityAnswerHash
                 WHERE  UserID = :UserID;";
@@ -464,7 +464,7 @@ class UserDB {
             $stmt->bindValue(":Email", $email);
             $stmt->bindValue(":IsLockedOut", $isLockedOut);
             $stmt->bindValue(":Comment", $comment);
-            $stmt->bindValue(":Active", $active);
+            $stmt->bindValue(":IsActive", $isActive);
             $stmt->bindValue(":SecurityQuestion", $securityQuestion);
             $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
             $stmt->execute();
