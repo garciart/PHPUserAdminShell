@@ -35,9 +35,9 @@ class UserDB {
     /**
      * Main methods:
      * _construct
-     * connect()
      * createRoleTable()
      * createUserTable()
+     * connect()
      * createRole($title, $comment)
      * createUser($nickname, $username, $password, $roleID, $comment)
      * getAllRoles()
@@ -68,8 +68,8 @@ class UserDB {
                     throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId . ".");
                 }
                 $this->createUserTable();
-                $this->createUser("rob@rgprogramming.com", "Rob", "P@ssW0rd", 1, "New member.");
-                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "W0rdP@ss", 3, "Administrator.");
+                $this->createUser("rob@rgprogramming.com", "Rob", "P@ssW0rd", 1, "New member.", 1, "What planet are you on?", "Earth");
+                $lastInsertId = $this->createUser("admin@rgprogramming.com", "Admin", "W0rdP@ss", 3, "Administrator.", 1, "What is the answer to the ultimate question?", "42");
                 if ($lastInsertId != 2) {
                     throw new ErrorException("Bad last insert ID when creating User table: expected 2, got " . $lastInsertId . ".");
                 }
@@ -126,6 +126,9 @@ class UserDB {
                 LastLoginDate text NOT NULL,
                 CreationDate text NOT NULL,
                 Comment text,
+                Active integer NOT NULL DEFAULT '0' CHECK (Active >= 0 OR Active <= 1),
+                SecurityQuestion text NOT NULL,
+                SecurityAnswerHash text NOT NULL,
                 FOREIGN KEY(RoleID) REFERENCES Role(RoleID)
             );";
             $rowsAffected = $conn->exec($sql);
@@ -195,23 +198,27 @@ class UserDB {
     /**
      * Inserts a new user into the database.
      * 
-     * @param string  $username The username to create.
-     * @param string  $nickname The nickname of the user.
-     * @param string  $password The password of the user.
-     * @param integer $roleID   The role's ID
-     * @param string  $comment  Any additional comments.
+     * @param string  $username         The username to create.
+     * @param string  $nickname         The nickname of the user.
+     * @param string  $password         The password of the user.
+     * @param integer $roleID           The role's ID
+     * @param string  $comment          Any additional comments.
+     * @param string  $active           If the user has an active account.
+     * @param string  $securityQuestion Question to verify user without password.
+     * @param string  $securityAnswer   Answer to security question.
      * 
      * @return integer The rowid of the new user.
      */
-    public function createUser($username, $nickname, $password, $roleID, $comment) {
+    public function createUser($username, $nickname, $password, $roleID, $comment, $active, $securityQuestion, $securityAnswer) {
         $lastRowID = 0;
         try {
             $conn = $this->connect();
             $sql = "INSERT INTO User
-                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment);";
+                VALUES (:UserID, :Username, :Nickname, :PasswordHash, :RoleID, :Email, :IsLockedOut, :LastLoginDate, :CreationDate, :Comment, :Active, :SecurityQuestion, :SecurityAnswerHash);";
             // Hash the password using Key Derivation Functions (KDF) with BCRYPT_COST from CommonCode
-            $options = array("cost" => BCRYPT_COST);
-            $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
+            // $options = array("cost" => BCRYPT_COST);
+            $passwordHash = getHash($password);
+            $securityAnswerHash = getHash($securityAnswer);
             // Email and username are initially the same
             $email = $username;
             // Set other initial values
@@ -230,6 +237,9 @@ class UserDB {
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
             $stmt->bindValue(":CreationDate", $creationDate);
             $stmt->bindValue(":Comment", $comment);
+            $stmt->bindValue(":Active", $active);
+            $stmt->bindValue(":SecurityQuestion", $securityQuestion);
+            $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
             $stmt->execute();
             // The last insert ID should be greater than 0
             $lastRowID = $conn->lastInsertId();
@@ -422,11 +432,14 @@ class UserDB {
      * @param string  $email        The email of the user.
      * @param boolean $isLockedOut  Indicates if the user is or is not locked out.
      * @param string  $comment      Any additional comments.
+     * @param string  $active           If the user has an active account.
+     * @param string  $securityQuestion Question to verify user without password.
+     * @param string  $securityAnswer   Answer to security question.
      * 
      * @return integer The number of rows affected. A value other than 1 indicates
      *                 an error.
      */
-    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment) {
+    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $active, $securityQuestion, $securityAnswer) {
         $rowsAffected = 0;
         try {
             $conn = $this->connect();
@@ -437,7 +450,10 @@ class UserDB {
                 RoleID = :RoleID,
                 Email = :Email,
                 IsLockedOut = :IsLockedOut,
-                Comment = :Comment
+                Comment = :Comment,
+                Active = :Active,
+                SecurityQuestion = :SecurityQuestion,
+                SecurityAnswerHash = :SecurityAnswerHash
                 WHERE  UserID = :UserID;";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
@@ -448,6 +464,9 @@ class UserDB {
             $stmt->bindValue(":Email", $email);
             $stmt->bindValue(":IsLockedOut", $isLockedOut);
             $stmt->bindValue(":Comment", $comment);
+            $stmt->bindValue(":Active", $active);
+            $stmt->bindValue(":SecurityQuestion", $securityQuestion);
+            $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
             $stmt->execute();
             // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();

@@ -193,11 +193,11 @@ function validatePassword($pword) {
  * @param type $password The inputted password
  * @return string The hash of the password
  */
-function getPasswordHash($password) {
+function getHash($textToHash, $options = array("cost" => BCRYPT_COST)) {
     // Hash the password using Key Derivation Functions (KDF)
-    $options = array("cost" => BCRYPT_COST);
-    $passwordHash = password_hash($password, PASSWORD_BCRYPT, $options);
-    return $passwordHash;
+    // $options = array("cost" => BCRYPT_COST);
+    $hashedText = password_hash($textToHash, PASSWORD_BCRYPT, $options);
+    return $hashedText;
 }
 
 /**
