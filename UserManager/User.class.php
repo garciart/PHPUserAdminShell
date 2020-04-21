@@ -32,8 +32,11 @@ class User {
     private $_lastLoginDate;
     private $_creationDate;
     private $_comment;
+    private $_active;
+    private $_securityQuestion;
+    private $_securityAnswerHash;
 
-    public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $creationDate, $comment) {
+    public function __construct($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $lastLoginDate, $creationDate, $comment, $active, $securityQuestion, $securityAnswerHash) {
         $this->setUserID($userID);
         $this->setUsername($username);
         $this->setNickname($nickname);
@@ -44,6 +47,9 @@ class User {
         $this->setLastLoginDate($lastLoginDate);
         $this->setCreationDate($creationDate);
         $this->setComment($comment);
+        $this->setActive($active);
+        $this->setSecurityQuestion($securityQuestion);
+        $this->setSecurityAnswerHash($securityAnswerHash);
     }
 
     public function getUserID() {
@@ -124,6 +130,30 @@ class User {
 
     public function setComment($comment) {
         $this->_comment = $comment;
+    }
+
+    public function getActive() {
+        return $this->_active;
+    }
+
+    public function setActive($active) {
+        $this->_active = ($active == 0 ? false : true);
+    }
+
+    public function getSecurityQuestion() {
+        return $this->_securityQuestion;
+    }
+
+    public function setSecurityQuestion($securityQuestion) {
+        $this->_securityQuestion = $securityQuestion;
+    }
+
+    public function getSecurityAnswerHash() {
+        return $this->_securityAnswerHash;
+    }
+
+    public function setSecurityAnswerHash($securityAnswerHash) {
+        $this->_securityAnswerHash = $securityAnswerHash;
     }
 
 }
