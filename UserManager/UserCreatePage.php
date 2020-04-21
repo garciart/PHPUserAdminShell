@@ -39,8 +39,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     $result = "";
     $errorAlert = "";
     $isLockedOut = 0;
-    $username = $nickname = $password = $roleID = $email = $comment = "";
-    $usernameError = $nicknameError = $passwordError = $roleIDError = $emailError = $isLockedOutError = $commentError = "";
+    $isActive = 1;
+    $username = $nickname = $password = $roleID = $email = $comment = $securityQuestion = $securityAnswer = "";
+    $usernameError = $nicknameError = $passwordError = $roleIDError = $emailError = $isLockedOutError = $commentError = $isActiveError = $securityQuestionError = $securityAnswerError = "";
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -87,6 +88,9 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
         $email = trim(filter_input(INPUT_POST, "Email"));
         $isLockedOut = isset($_POST["IsLockedOut"]) ? 1 : 0;
         $comment = trim(filter_input(INPUT_POST, "Comment"));
+        $isActive = isset($_POST["IsActive"]) ? 1 : 0;
+        $securityQuestion = filter_input(INPUT_POST, "SecurityQuestion");
+        $securityAnswer = filter_input(INPUT_POST, "SecurityAnswer");
 
         $valid = true;
 
@@ -124,8 +128,20 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
             }
         }
 
+        $isActive = $isActive == 1 ? 1 : 0;
+
+        if (validateText($securityQuestion) != true) {
+            $valid = false;
+            $nicknameError = "Security question must be alphanumeric.";
+        }
+
+        if (validateText($securityAnswer) != true) {
+            $valid = false;
+            $nicknameError = "Security answer must be alphanumeric.";
+        }
+
         if ($valid == true) {
-            $success = $userDB->createUser($username, $nickname, $password, $roleID, $comment);
+            $success = $userDB->createUser($username, $nickname, $password, $roleID, $comment, $isActive, $securityQuestion, $securityAnswer);
             if ($success != 0) {
                 header("Location: UserAdminPage.php?success=1");
                 die();
@@ -198,6 +214,22 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                         </td>
                     </tr>
                     <tr>
+                        <th>Active?</th>
+                        <td>
+                            <input type="checkbox" name="IsActive"
+                            <?php
+                            if ($isActive == 1) {
+                                echo "checked='checked'";
+                            }
+                            ?>
+                                   >
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $isActiveError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Locked Out?</th>
                         <td>
                             <input type="checkbox" name="IsLockedOut"
@@ -230,6 +262,26 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             <br>
                             <span class="text-danger">
                                 <?php echo $passwordError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Security Question:</th>
+                        <td>
+                            <input type="text" name="SecurityQuestion" class="form-control" value="<?php echo $securityQuestion; ?>" required>
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $securityQuestionError; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class='bg-warning'>
+                        <th>Security Question Answer:</th>
+                        <td>
+                            <input type="password" name="SecurityAnswer" autocomplete="off" />
+                            <br>
+                            <span class="text-danger">
+                                <?php echo $securityAnswerError; ?>
                             </span>
                         </td>
                     </tr>

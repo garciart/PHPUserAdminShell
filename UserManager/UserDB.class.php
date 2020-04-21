@@ -39,16 +39,22 @@ class UserDB {
      * createUserTable()
      * connect()
      * createRole($title, $comment)
-     * createUser($nickname, $username, $password, $roleID, $comment)
+     * createUser($username, $nickname, $password, $roleID, $comment, $isActive, $securityQuestion, $securityAnswer)
      * getAllRoles()
      * getRole($roleID)
      * getAllUsers()
      * getUserByUserID($userID)
      * getUserByUsername($username)
      * updateRole($title, $comment)
-     * updateUser($nickname, $username, $passwordHash, $roleID, $comment)
+     * updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $isActive, $securityQuestion, $securityAnswerHash)
      * deleteRole($roleID)
      * deleteUser($userID)
+     * getNextRoleID()
+     * getNextUserID()
+     * authenticateUser($username, $password)
+     * userExists($username)
+     * getUserPassword($username)
+     * updateLoginDate($userID)
      */
 
     /**
@@ -239,7 +245,7 @@ class UserDB {
             $stmt->bindValue(":Comment", $comment);
             $stmt->bindValue(":IsActive", $isActive);
             $stmt->bindValue(":SecurityQuestion", $securityQuestion);
-            $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
+            $stmt->bindValue(":SecurityAnswerHash", $securityAnswerHash);
             $stmt->execute();
             // The last insert ID should be greater than 0
             $lastRowID = $conn->lastInsertId();
@@ -424,22 +430,22 @@ class UserDB {
     /**
      * Updates a user's information in the database.
      *
-     * @param integer $userID           The user's ID.
-     * @param string  $username         The username to create.
-     * @param string  $nickname         The nickname of the user.
-     * @param string  $passwordHash     The hash of the password of the user.
-     * @param integer $roleID           The role's ID
-     * @param string  $email            The email of the user.
-     * @param boolean $isLockedOut      Indicates if the user is or is not locked out.
-     * @param string  $comment          Any additional comments.
-     * @param string  $isActive         If the user has an active account.
-     * @param string  $securityQuestion Question to verify user without password.
-     * @param string  $securityAnswer   Answer to security question.
+     * @param integer $userID             The user's ID.
+     * @param string  $username           The username to create.
+     * @param string  $nickname           The nickname of the user.
+     * @param string  $passwordHash       The hash of the password of the user.
+     * @param integer $roleID             The role's ID
+     * @param string  $email              The email of the user.
+     * @param boolean $isLockedOut        Indicates if the user is or is not locked out.
+     * @param string  $comment            Any additional comments.
+     * @param string  $isActive           If the user has an active account.
+     * @param string  $securityQuestion   Question to verify user without password.
+     * @param string  $securityAnswerHash Answer to security question.
      * 
      * @return integer The number of rows affected. A value other than 1 indicates
      *                 an error.
      */
-    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $isActive, $securityQuestion, $securityAnswer) {
+    public function updateUser($userID, $username, $nickname, $passwordHash, $roleID, $email, $isLockedOut, $comment, $isActive, $securityQuestion, $securityAnswerHash) {
         $rowsAffected = 0;
         try {
             $conn = $this->connect();
@@ -466,7 +472,7 @@ class UserDB {
             $stmt->bindValue(":Comment", $comment);
             $stmt->bindValue(":IsActive", $isActive);
             $stmt->bindValue(":SecurityQuestion", $securityQuestion);
-            $stmt->bindValue(":SecurityAnswerHash", $securityAnswer);
+            $stmt->bindValue(":SecurityAnswerHash", $securityAnswerHash);
             $stmt->execute();
             // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();
@@ -588,7 +594,7 @@ class UserDB {
      * 
      * @return True if the password matches for the username, false if not.
      */
-    public function AuthenticateUser($username, $password) {
+    public function authenticateUser($username, $password) {
         $authenticated = false;
         if ($this->userExists($username)) {
             $storedPassword = $this->getUserPassword($username);

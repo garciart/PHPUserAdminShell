@@ -1,28 +1,4 @@
-[15-Apr-2020 10:37:12 America/New_York] Error log initialized.
-[15-Apr-2020 10:38:43 America/New_York] Type 8 Error: Undefined index: Authenticated in C:\xampp\htdocs\PHPUserManager\UserManager\EditProfile.php at line 32.
-[19-Apr-2020 00:23:00 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 FOREIGN KEY constraint failed
-[19-Apr-2020 00:23:31 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 FOREIGN KEY constraint failed
-[19-Apr-2020 00:28:01 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:28:01 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:28:01 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:28:01 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:30:42 America/New_York] Type 8 Error: Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 174.
-[19-Apr-2020 00:30:42 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:30:42 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:30:42 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:30:42 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:10 America/New_York] Type 8 Error: Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 174.
-[19-Apr-2020 00:31:10 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:10 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:10 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:10 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Array to string conversion in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 174.
-[19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 00:31:40 America/New_York] Type 8 Error: Undefined index: RowID in C:\xampp\htdocs\PHPUserManager\UserManager\UserCreatePage.php at line 177.
-[19-Apr-2020 22:57:23 America/New_York] Type 0 Exception: Too few arguments to function UserManager\UserDB::getUserByUserID(), 0 passed in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 111 and exactly 1 expected in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 330.
-
-[19-Apr-2020 22:58:35 America/New_York] Type 0 Exception: Too few arguments to function UserManager\UserDB::getUserByUserID(), 0 passed in C:\xampp\htdocs\PHPUserManager\UserManager\UserDeletePage.php on line 111 and exactly 1 expected in C:\xampp\htdocs\PHPUserManager\UserManager\UserDB.class.php at line 330.
-
-[19-Apr-2020 23:20:44 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\RoleEditPage.php at line 158.
+[21-Apr-2020 18:07:47 America/New_York] Error log initialized.
+[21-Apr-2020 18:16:44 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: User.Email
+[21-Apr-2020 18:25:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php at line 133.
+[21-Apr-2020 18:25:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php at line 133.

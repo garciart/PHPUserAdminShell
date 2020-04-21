@@ -108,6 +108,7 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             <th>UserID:</th>
                             <th>Nickname:</th>
                             <th>Role:</th>
+                            <th>Active?</th>
                             <th>Locked Out?</th>
                             <th>Last Login:</th>
                             <th class="text-center">Action</th>
@@ -122,13 +123,15 @@ if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                             echo "<td>{$row["Nickname"]}</td>";
                             $role = $userDB->getRole($row["RoleID"]);
                             echo "<td>{$role["Title"]}</td>";
-                            $lockedOut = $row['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
-                            echo "<td>{$lockedOut}</td>";
+                            $isActive = $row['IsActive'] == 0 ? "<span class=\"text-warning\"><strong>No</strong></span>" : "Yes";
+                            echo "<td>{$isActive}</td>";
+                            $isLockedOut = $row['IsLockedOut'] == 0 ? "No" : "<span class=\"text-danger\"><strong>Yes</strong></span>";
+                            echo "<td>{$isLockedOut}</td>";
                             echo "<td>{$row['LastLoginDate']}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
                             echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserEditPage.php?UserID={$row["UserID"]}\"") . " title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserDeletePage.php?UserID={$row["UserID"]}\"") . " title=\"Delete User\" data-toggle=\"tooltip\" " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "disabled" : "") . "><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserDeletePage.php?UserID={$row["UserID"]}\"") . " title=\"Delete User\" data-toggle=\"tooltip\" " . ((($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) || $row["UserID"] == $_SESSION['UserID']) ? "disabled" : "") . "><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }
