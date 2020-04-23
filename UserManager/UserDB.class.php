@@ -615,7 +615,7 @@ class UserDB {
      * 
      * @return True if the users exists, false if not.
      */
-    private function userExists($username) {
+    public function userExists($username) {
         $exists = false;
         try {
             $conn = $this->connect();
@@ -637,9 +637,9 @@ class UserDB {
     }
 
     /**
-     * Gets given users password.
+     * Gets the user's password.
      *
-     * @param $username The username to get the password of.
+     * @param $username The username address for the user.
      * 
      * @return The hash of the password of the given user.
      */
@@ -664,6 +664,33 @@ class UserDB {
         return $passwordHash;
     }
 
+    /**
+     * Gets the user's reset information.
+     *
+     * @param $email The email address for the user.
+     * 
+     * @return The hash of the password of the given user.
+     */
+    public function getUserResetInformation($email) {
+        $result = null;
+        try {
+            $conn = $this->connect();
+            $sql = "SELECT Nickname, IsLockedOut, IsActive, SecurityQuestion, SecurityAnswerHash
+                FROM User
+                WHERE Email = :Email;";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(":Email", $email);
+            $stmt->execute();
+            // Returns an empty result set if not found
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
+        }
+        return $result;
+    }
+    
     /**
      * Updates the user's login date after a successful login.
      * 

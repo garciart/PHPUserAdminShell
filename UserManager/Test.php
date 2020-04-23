@@ -21,7 +21,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 // Ensure the user is authenticated and authorized
-if ($_SESSION["Authenticated"] == false) {
+if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
 } else {

@@ -38,6 +38,7 @@ ob_clean();
 ?>
 <!-- Body Content Start -->
 <!-- Header Element Content -->
+<h1 class="mt-3 pull-left">PC LOAD LETTER???</h1>
 <?php
 /* Store the content of the buffer for later use */
 $contentPlaceHolderHeader = ob_get_contents();
@@ -47,23 +48,20 @@ ob_clean();
 <!-- Main Element Content -->
 <div class="row">
     <div class="col-md-12 text-center">
-        <div class="page-header">
-            <h1>PC LOAD LETTER???</h1>
-            <img src="img/error_os.gif" alt="PC LOAD LETTER" class="col-md-6">
-            <hr>
-            <?php
-            if (isset($_SESSION["Error"])) {
-                echo "{$_SESSION["Error"]}<br>";
-                unset($_SESSION["Error"]);
-            }
-            // If it exists, get the ErrorCode from query string and display
-            $result = filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT);
-            if (!empty($result)) {
-                cleanText($result);
-                echo $result . " Error";
-            }
-            ?>
-        </div>
+        <img src="img/error_os.gif" alt="PC LOAD LETTER" class="col-md-6">
+        <hr>
+        <?php
+        if (isset($_SESSION["Error"])) {
+            echo "{$_SESSION["Error"]}<br>";
+            unset($_SESSION["Error"]);
+        }
+        // If it exists, get the ErrorCode from query string and display
+        $result = filter_input(INPUT_GET, "ErrorCode", FILTER_SANITIZE_NUMBER_INT);
+        if (!empty($result)) {
+            cleanText($result);
+            echo $result . " Error";
+        }
+        ?>
         <br>
         <div class="text-danger">
             <p>Something went wrong, but we've logged the error and we'll get to it right away.</p>
