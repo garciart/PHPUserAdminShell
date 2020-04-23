@@ -1,4 +1,0 @@
-[21-Apr-2020 18:07:47 America/New_York] Error log initialized.
-[21-Apr-2020 18:16:44 America/New_York] SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: User.Email
-[21-Apr-2020 18:25:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php at line 133.
-[21-Apr-2020 18:25:23 America/New_York] Type 8 Error: Undefined variable: userID in C:\xampp\htdocs\PHPUserManager\UserManager\UserAdminPage.php at line 133.

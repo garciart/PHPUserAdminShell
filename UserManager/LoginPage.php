@@ -65,7 +65,7 @@ ob_clean();
                 }
             }
             if (isset($_SESSION["Authenticated"])) {
-                if ($_SESSION["Authenticated"] == false) {
+                if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
                     echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
                     session_destroy();
                 } else {
@@ -77,20 +77,33 @@ ob_clean();
         </form>
     </div>
     <div class="col-md-4 mx-auto text-center">
-        <form class="form-signin" action="ResetPassword.php" method="post">
+        <form class="form-signin" action="AuthenticateEmail.php" method="post">
             <img src="img/page_logo.png" alt="" width="150" height="150">
             <h1 class="h3 my-3">Forgot your password?</h1>
-            <label for="email" class="sr-only">Please enter your username below:</label>
-            <input type="email" name="emsil" class="form-control" placeholder="Email" id="email" required autofocus />
+            <label for="email" class="sr-only">Please enter your email address below:</label>
+            <input type="email" name="email" class="form-control" placeholder="Email Address" id="email" required />
             <br>
             <button class="btn btn-lg btn-warning btn-block" type="submit"><i class="fas fa-unlock-alt"></i> Reset Password</button>
             <?php
-            if (isset($_SESSION["Authenticated"])) {
-                if ($_SESSION["Authenticated"] == false) {
-                    echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+            // Get success flag from query string and check for errors
+            $reset = filter_input(INPUT_GET, "reset", FILTER_SANITIZE_STRING);
+            if ($reset == "true") {
+                echo "<br><p class=\"font-weight-bold text-success\">Instructions on resetting your password have been sent to your email address.</p>";
+            } else if ($reset == "false") {
+                echo "<br><p class=\"font-weight-bold text-danger\">Incorrect answer.<br>Please check your credentials and try again.</p>";
+            }
+            if (isset($_SESSION["IsLockedOut"])) {
+                if ($_SESSION["IsLockedOut"] == true) {
+                    echo "<br><p class=\"font-weight-bold text-danger\">We are sorry, but your account is locked.<br>Please contact your administrator.</p>";
+                    session_destroy();
+                }
+            }
+            if (isset($_SESSION["Exists"])) {
+                if ($_SESSION["Exists"] == false) {
+                    echo "<br><p class=\"font-weight-bold text-danger\">Email address does not exist in the system.<br>Please try again.</p>";
                     session_destroy();
                 } else {
-                    header("Location: MainPage.php");
+                    header("Location: ResetPassword.php");
                     exit();
                 }
             }

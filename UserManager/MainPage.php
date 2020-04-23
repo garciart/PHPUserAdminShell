@@ -24,7 +24,7 @@ require_once "CommonCode.php";
 require_once "User.class.php";
 require_once "UserDB.class.php";
 
-if ($_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
+if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
 } else {
