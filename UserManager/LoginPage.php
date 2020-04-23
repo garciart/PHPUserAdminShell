@@ -45,35 +45,58 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<div class="col-md-4 mx-auto text-center">
-    <form class="form-signin" action="AuthenticateUser.php" method="post">
-        <img src="img/logo.png" alt="" width="100" height="100">
-        <h1 class="h3 my-3">Please log in:</h1>
-        <label for="username" class="sr-only">Username</label>
-        <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
-        <br>
-        <label for="password" class="sr-only">Password</label>
-        <input id="password" name="password" type="password" autocomplete="on" class="form-control" placeholder="Password" required />
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
-        <?php
-        if (isset($_SESSION["IsLockedOut"])) {
-            if ($_SESSION["IsLockedOut"] == true) {
-                echo "<br><p class=\"font-weight-bold text-danger\">We are sorry, but your account is locked.<br>Please contact your administrator.</p>";
-                session_destroy();
+<div class="row">
+    <div class="col-md-4 mx-auto text-center">
+        <form class="form-signin" action="AuthenticateUser.php" method="post">
+            <img src="img/page_logo.png" alt="" width="150" height="150">
+            <h1 class="h3 my-3">Please log in:</h1>
+            <label for="username" class="sr-only">Username</label>
+            <input type="email" name="username" class="form-control" placeholder="Username" id="username" required autofocus />
+            <br>
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" name="password" type="password" autocomplete="on" class="form-control" placeholder="Password" required />
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-out-alt"></i> Log in</button>
+            <?php
+            if (isset($_SESSION["IsLockedOut"])) {
+                if ($_SESSION["IsLockedOut"] == true) {
+                    echo "<br><p class=\"font-weight-bold text-danger\">We are sorry, but your account is locked.<br>Please contact your administrator.</p>";
+                    session_destroy();
+                }
             }
-        }
-        if (isset($_SESSION["Authenticated"])) {
-            if ($_SESSION["Authenticated"] == false) {
-                echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
-                session_destroy();
-            } else {
-                header("Location: MainPage.php");
-                exit();
+            if (isset($_SESSION["Authenticated"])) {
+                if ($_SESSION["Authenticated"] == false) {
+                    echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+                    session_destroy();
+                } else {
+                    header("Location: MainPage.php");
+                    exit();
+                }
             }
-        }
-        ?>
-    </form>
+            ?>
+        </form>
+    </div>
+    <div class="col-md-4 mx-auto text-center">
+        <form class="form-signin" action="ResetPassword.php" method="post">
+            <img src="img/page_logo.png" alt="" width="150" height="150">
+            <h1 class="h3 my-3">Forgot your password?</h1>
+            <label for="email" class="sr-only">Please enter your username below:</label>
+            <input type="email" name="emsil" class="form-control" placeholder="Email" id="email" required autofocus />
+            <br>
+            <button class="btn btn-lg btn-warning btn-block" type="submit"><i class="fas fa-unlock-alt"></i> Reset Password</button>
+            <?php
+            if (isset($_SESSION["Authenticated"])) {
+                if ($_SESSION["Authenticated"] == false) {
+                    echo "<br><p class=\"font-weight-bold text-danger\">Incorrect username or password.<br>Please try again.</p>";
+                    session_destroy();
+                } else {
+                    header("Location: MainPage.php");
+                    exit();
+                }
+            }
+            ?>
+        </form>
+    </div>
 </div>
 <?php
 /* Store the content of the buffer for later use */
