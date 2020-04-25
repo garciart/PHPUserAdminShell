@@ -46,6 +46,7 @@ if (!isset($email)) {
             exit();
         }
         $_SESSION["Exists"] = true;
+        $_SESSION["UserID"] = $result["UserID"];
         $_SESSION["Nickname"] = $result["Nickname"];
         $_SESSION["Email"] = $email;
         $_SESSION["IsActive"] = $result["IsActive"];

@@ -44,7 +44,7 @@ $contentPlaceHolderHeader = ob_get_contents();
 ob_clean();
 ?>
 <!-- Main Element Content -->
-<div class="text-center"><img class="mb-4" src="img/logo.png" alt="" width="72" height="72"></div>
+<div class="text-center"><img class="mb-4" src="img/page_logo.png" alt="" width="72" height="72"></div>
 <h2>This is the User Manager's About Page!</h2>
 <p>This is an extension of my tutorial, <a href="https://github.com/garciart/MasterPagesInPHP" title="Master Pages in PHP" target="_blank">Master Pages in PHP</a>, incorporating a user administration system (using SQLite) and Bootstrap styling. You can download it and add it to your project, or you can clone it and use it as the foundation of your web site!</p>
 <p>While my first programs were written in Basic and Assembly Language, the language I've used the most is C. To this day, if I have to write a quick utility program, I'll knock it out in C. So, it's not surprising that when I began to develop applications for the web, I started with C# and ASP.NET. All in all, I have written quite a few web sites using the lessons I learned from <a href="https://www.apress.com/us/book/9781590594681" title="Beginning ASP.NET 2.0 E-Commerce in C# 2005" rel="nofollow" target="_blank">Cristian Darie’s excellent book, Beginning ASP.NET 2.0 E-Commerce in C# 2005: From Novice to Professional</a>.</p>

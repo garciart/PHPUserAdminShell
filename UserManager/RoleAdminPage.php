@@ -32,7 +32,7 @@ use UserManager\UserDB;
 if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
-} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 5) {
+} else if ($_SESSION["AccessLevel"] >= 1 && $_SESSION["AccessLevel"] <= 5) {
     header("Location: MainPage.php");
     exit();
 } else {
@@ -81,7 +81,7 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
         </div>
         <div class="ml-auto">
             <?php
-            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 15) ? "" : "href=\"RoleCreatePage.php\"") . " title=\"Add New Role\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New Role</a>";
+            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 15) ? "" : "href=\"RoleCreatePage.php\"") . " title=\"Add New Role\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New Role</a>";
             ?>
         </div>
     </div>
@@ -119,8 +119,8 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
                             echo "<td>{$row["Level"]}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"RoleViewPage.php?RoleID={$row["RoleID"]}\" title=\"View Role Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\"") . " title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"RoleDeletePage.php?RoleID={$row["RoleID"]}\"") . " title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) ? "" : "href=\"RoleEditPage.php?RoleID={$row["RoleID"]}\"") . " title=\"Edit Role\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) ? "" : "href=\"RoleDeletePage.php?RoleID={$row["RoleID"]}\"") . " title=\"Delete Role\" data-toggle=\"tooltip\"><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }

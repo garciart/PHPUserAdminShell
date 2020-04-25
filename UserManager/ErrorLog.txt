@@ -1,0 +1,3 @@
+[24-Apr-2020 18:53:39 America/New_York] SQLSTATE[HY000]: General error: 1 near "PasswordHash": syntax error
+[24-Apr-2020 18:53:41 America/New_York] Type 2 Error: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\PHPUserManager\UserManager\ResetPassword.php at line 85.
+[24-Apr-2020 20:02:18 America/New_York] Type 2 Error: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\PHPUserManager\UserManager\ResetPassword.php at line 87.

@@ -60,7 +60,7 @@ if (!isset($username, $password)) {
         $_SESSION["Username"] = $user->getUsername();
         $_SESSION["Nickname"] = $user->getNickname();
         $_SESSION["RoleID"] = $user->getRoleID();
-        $_SESSION["Level"] = $currentRole->getLevel();
+        $_SESSION["AccessLevel"] = $currentRole->getLevel();
         header("Location: MainPage.php");
         exit();
     } else {

@@ -71,7 +71,7 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
     <div class="col-md-4 mx-auto text-center">
         <div class="btn-toolbar my-3">
             <a href="EditProfile.php" class="btn btn-primary btn-block">Edit Profile</a>
-            <?php if ($_SESSION["Level"] >= 6) { ?>
+            <?php if ($_SESSION["AccessLevel"] >= 6) { ?>
                 <a href="UserAdminPage.php" class="btn btn-primary btn-block">User Administration</a>
                 <a href="RoleAdminPage.php" class="btn btn-primary btn-block">Role Administration</a>
                 <a href="ActivityLogPage.php" class="btn btn-primary btn-block">Admin Activity Log</a>

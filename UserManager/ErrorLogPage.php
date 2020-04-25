@@ -27,7 +27,7 @@ require_once "UserDB.class.php";
 if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
-} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 5) {
+} else if ($_SESSION["AccessLevel"] >= 1 && $_SESSION["AccessLevel"] <= 5) {
     header("Location: MainPage.php");
     exit();
 } else {

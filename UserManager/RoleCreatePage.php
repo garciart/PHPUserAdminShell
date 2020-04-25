@@ -32,7 +32,7 @@ use UserManager\UserDB;
 if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
-} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 15) {
+} else if ($_SESSION["AccessLevel"] >= 1 && $_SESSION["AccessLevel"] <= 15) {
     header("Location: MainPage.php");
     exit();
 } else {
