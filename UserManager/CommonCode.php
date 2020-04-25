@@ -16,7 +16,7 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-declare(strict_types = 1);
+// declare(strict_types = 1);
 
 /* Check if a session is already active */
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -235,11 +235,11 @@ function generatePassword() {
     $specialCharacters = "@%+\/'!#$^?:.(){}[]~-_";
     $legalCharacters = $alphaCharacters . $numberCharacters . $specialCharacters;
     // Must start with an alphabetic character
-    $newPassword = substr($alphaCharacters, rand(1, strlen($alphaCharacters)), 1);
-    for($i = 0; $i <= 10; $i++) {
-        $newPassword = $newPassword . substr($legalCharacters, rand(1, strlen($legalCharacters)), 1);
+    $newPassword = substr($alphaCharacters, rand(0, strlen($alphaCharacters) - 1), 1);
+    for($i = 0; $i < 10; $i++) {
+        $newPassword = $newPassword . substr($legalCharacters, rand(0, strlen($legalCharacters) - 1), 1);
     }
     $alphaNumeric = $alphaCharacters . $numberCharacters;
-    $newPassword = $newPassword . substr($alphaNumeric, rand(1, strlen($alphaNumeric)), 1);
+    $newPassword = $newPassword . substr($alphaNumeric, rand(0, strlen($alphaNumeric) - 1), 1);
     return $newPassword;
 }
