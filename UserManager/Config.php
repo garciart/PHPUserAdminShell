@@ -25,7 +25,8 @@ $CANONICAL_URL = "http://localhost:8080/PHPUsermanager";
 $CONTACT_EMAIL = "rgarcia@rgprogramming.com";
 
 // User Manager folders
-$USERMANGER_ROOT_DIR = $ROOT_DIR . DIRECTORY_SEPARATOR . "UserManager";
+// $USERMANGER_ROOT_DIR = $ROOT_DIR . DIRECTORY_SEPARATOR . "UserManager";
+$USERMANGER_ROOT_DIR = dirname(__FILE__);
 
 // Error reporting: DEV or PROD
 $ERROR_REPORTING = "PROD";
