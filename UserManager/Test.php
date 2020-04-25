@@ -30,5 +30,5 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
     echo "Username is " . $_SESSION["Username"] . "<br>";
     echo "User nickname is " . $_SESSION["Nickname"] . "<br>";
     echo "Role ID is " . $_SESSION["RoleID"] . "<br>";
-    echo "Role level is " . $_SESSION["Level"] . "<br>";
+    echo "Role level is " . $_SESSION["AccessLevel"] . "<br>";
 }

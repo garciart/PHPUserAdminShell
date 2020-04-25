@@ -32,7 +32,7 @@ use UserManager\UserDB;
 if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false || $_SESSION["Authenticated"] == 0) {
     header("Location: LoginPage.php");
     exit();
-} else if ($_SESSION["Level"] >= 1 && $_SESSION["Level"] <= 5) {
+} else if ($_SESSION["AccessLevel"] >= 1 && $_SESSION["AccessLevel"] <= 5) {
     header("Location: MainPage.php");
     exit();
 } else {
@@ -81,7 +81,7 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
         </div>
         <div class="ml-auto">
             <?php
-            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserCreatePage.php\"") . " title=\"Add New User\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New User</a>";
+            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) ? "" : "href=\"UserCreatePage.php\"") . " title=\"Add New User\" data-toggle=\"tooltip\" class=\"btn btn-primary\">Add New User</a>";
             ?>
         </div>
     </div>
@@ -130,8 +130,8 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
                             echo "<td>{$row['LastLoginDate']}</td>";
                             echo "<td class=\"text-center\">";
                             echo "<a href=\"UserViewPage.php?UserID={$row["UserID"]}\" title=\"View User Details\" data-toggle=\"tooltip\"><i class=\"far fa-eye\"></i></a>&nbsp;";
-                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserEditPage.php?UserID={$row["UserID"]}\"") . " title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
-                            echo "<a " . (($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) ? "" : "href=\"UserDeletePage.php?UserID={$row["UserID"]}\"") . " title=\"Delete User\" data-toggle=\"tooltip\" " . ((($_SESSION["Level"] >= 6 && $_SESSION["Level"] <= 10) || $row["UserID"] == $_SESSION['UserID']) ? "disabled" : "") . "><i class=\"far fa-trash-alt\"></i></a>";
+                            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) ? "" : "href=\"UserEditPage.php?UserID={$row["UserID"]}\"") . " title=\"Edit User\" data-toggle=\"tooltip\"><i class=\"far fa-edit\"></i></a>&nbsp;";
+                            echo "<a " . (($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) ? "" : "href=\"UserDeletePage.php?UserID={$row["UserID"]}\"") . " title=\"Delete User\" data-toggle=\"tooltip\" " . ((($_SESSION["AccessLevel"] >= 6 && $_SESSION["AccessLevel"] <= 10) || $row["UserID"] == $_SESSION['UserID']) ? "disabled" : "") . "><i class=\"far fa-trash-alt\"></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }

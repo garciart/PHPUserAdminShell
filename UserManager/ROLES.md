@@ -1,6 +1,4 @@
-# Information
-
-## Role Levels in User Manager
+# Role Levels in User Manager
 
 The role level attribute contains an integer from 0 to 20 that is stored in the user's session as $_SESSION["RoleLevel"]. You can use this variable to assign capabilities to users and/or control access to pages in your own application. Using Wordpress roles as an example, you may assign Subscribers to level 1, Administrators to level 16, etc., or you can prevent anyone with a role level less than 10 from accessing a certain page or activating a plugin.
 

@@ -55,6 +55,7 @@ class UserDB {
      * userExists($username)
      * getUserPassword($username)
      * updateLoginDate($userID)
+     * updatePassword($newPassword)
      */
 
     /**
@@ -69,7 +70,7 @@ class UserDB {
                 $this->createRole(5, "Member", "Authenticated user, aka Member. Only authorized to view and edit his or her own profile.");
                 $this->createRole(15, "Editor", "Authenticated user, aka Editor. Authorized to view, add, edit, and delete profiles and view (but not edit) the content of other User Manager pages, such as Role Administration.");
                 $lastInsertId = $this->createRole(20, "Administrator", "Authenticated user, aka Administrator. Authorized to view, add, edit, and delete all profiles and roles.");
-                console_log("Last Insert ID: " . $lastInsertId);
+                consoleLog("Last Insert ID: " . $lastInsertId);
                 if ($lastInsertId != 3) {
                     throw new Exception("Bad last insert ID when creating Role table: expected 3, got " . $lastInsertId . ".");
                 }
@@ -675,7 +676,7 @@ class UserDB {
         $result = null;
         try {
             $conn = $this->connect();
-            $sql = "SELECT Nickname, IsLockedOut, IsActive, SecurityQuestion, SecurityAnswerHash
+            $sql = "SELECT UserID, Nickname, IsLockedOut, IsActive, SecurityQuestion, SecurityAnswerHash
                 FROM User
                 WHERE Email = :Email;";
             $stmt = $conn->prepare($sql);
@@ -710,6 +711,27 @@ class UserDB {
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(":UserID", $userID);
             $stmt->bindValue(":LastLoginDate", $lastLoginDate);
+            $stmt->execute();
+            // Rows affected should equal 1
+            $rowsAffected = $stmt->rowCount();
+        } catch (\PDOException $ex) {
+            error_log($ex->getMessage());
+        } finally {
+            unset($conn);
+        }
+        return $rowsAffected;
+    }
+    
+    public function updatePassword($userID, $newPasswordHash) {
+        $rowsAffected = 0;
+        try {
+            $conn = $this->connect();
+            $sql = "UPDATE User
+                SET PasswordHash = :PasswordHash
+                WHERE UserID = :UserID;";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(":UserID", $userID);
+            $stmt->bindValue(":PasswordHash", $newPasswordHash);
             $stmt->execute();
             // Rows affected should equal 1
             $rowsAffected = $stmt->rowCount();

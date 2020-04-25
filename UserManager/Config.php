@@ -16,9 +16,15 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  * @link      https://github.com/garciart/PHPUserManager
  */
-// Key folders
+
+// Project folders
 $ROOT_DIR = "PHPUsermanager";
 $APPLICATION_ROOT_DIR = $ROOT_DIR . DIRECTORY_SEPARATOR . "Public";
+$APPLICATION_NAME = "PHP User Manager";
+$CANONICAL_URL = "http://localhost:8080/PHPUsermanager";
+$CONTACT_EMAIL = "rgarcia@rgprogramming.com";
+
+// User Manager folders
 $USERMANGER_ROOT_DIR = $ROOT_DIR . DIRECTORY_SEPARATOR . "UserManager";
 
 // Error reporting: DEV or PROD

@@ -21,14 +21,17 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 require_once "CommonCode.php";
+require_once "Config.php";
+// Include database class to access database methods
+require_once "UserDB.class.php";
+
+// Get the class name. Must be declared in the global scope of the file: see https://www.php.net/manual/en/language.namespaces.importing.php 
+use UserManager\UserDB;
 
 if (!isset($_SESSION["Exists"]) || $_SESSION["Exists"] == false || $_SESSION["Exists"] == 0) {
     header("Location: LoginPage.php");
     exit();
 } else {
-// Unset so back buttons work        
-// unset($_SESSION["Exists"]);
-
     /* Start placing content into an output buffer */
     ob_start();
     ?>
@@ -55,7 +58,7 @@ if (!isset($_SESSION["Exists"]) || $_SESSION["Exists"] == false || $_SESSION["Ex
     <!-- Main Element Content -->
     <div class="col-md-6 mx-auto text-center">
         <form class="form-signin" action="" method="post">
-            <img src="img/logo.png" alt="" width="100" height="100">
+            <img src="img/page_logo.png" alt="" width="100" height="100">
             <h1 class="h3 my-3"><?php echo $_SESSION["SecurityQuestion"] ?></h1>
             <br>
             <label for="answer" class="sr-only">Answer</label>
@@ -68,12 +71,21 @@ if (!isset($_SESSION["Exists"]) || $_SESSION["Exists"] == false || $_SESSION["Ex
                 $answer = filter_input(INPUT_POST, "answer");
                 $correct = password_verify($answer, $_SESSION["SecurityAnswerHash"]) ? true : false;
                 if ($correct) {
+                    // Connect to the database
+                    $userDB = new UserDB();
+                    // Generate a new password and update database
+                    $newPassword = generatePassword();
+                    $userDB->updatePassword($_SESSION["UserID"], getHash($newPassword));
                     /**
                      * PHP SMTP CODE GOES HERE
                      */
-                    echo '<script type="text/javascript">';
-                    echo ' alert("You are good to go!")';
-                    echo '</script>';
+                    $msg = "This is " . $APPLICATION_NAME . " at " . $CANONICAL_URL . ". Your new password is:\n\n" . $newPassword . "\n\nWe suggest you login and change it as soon as possible. If you did not request to reset your password, contact us immediatley at " . $CONTACT_EMAIL . ".";
+                    $msg = wordwrap($msg, 79);
+                    $headers = 'From: ' . $CONTACT_EMAIL . "\r\n" .
+                            'Reply-To: ' . $CONTACT_EMAIL . "\r\n" .
+                            'X-Mailer: PHP/' . phpversion();
+                    mail($_SESSION["Email"], "Password Reset", $msg);
+                    consoleLog($msg);
                 }
                 session_destroy();
                 header("Location: LoginPage.php?reset=" . ($correct ? "true" : "false"));

@@ -110,7 +110,7 @@ if (!isset($_SESSION["Authenticated"]) || $_SESSION["Authenticated"] == false ||
         if (!empty($password)) {
             if (validatePassword($password) != true) {
                 $valid = false;
-                $passwordError = "Password must be 8 characters long.";
+                $passwordError = "Password must<br>- Start with a letter<br>- Contain one uppercase letter, number, and valid special character<br>- Contain eight characters or more.";
             } else {
                 $_SESSION['PasswordHash'] = getHash($password);
             }

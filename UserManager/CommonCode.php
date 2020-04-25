@@ -165,22 +165,24 @@ function validateURL($url) {
 }
 
 /**
- * Validate password input
+ * Validate password input. Password characters must comply with Oracle Identity
+ * Manager and Microsoft Active Directory requirements.
  * @param string $pword The password that will be encrypted and entered into the database
  * @return boolean True if the password is valid, false if not
  */
 function validatePassword($pword) {
     if (empty($pword) || strlen($pword) < 8
+            || (!preg_match("/^[A-Za-z]/", $pword))
             // Password must contain legal characters, and...
-            || (!preg_match("/^[A-Za-z0-9\s\-._~:\/?#\[\]@!$&'()*+,;=]*$/", trim($pword)))
+            || (!preg_match("/^[A-Za-z0-9@%+\/\\'!#$\^?:.(){}[\]~\-_]*$/", $pword))
             // at least one upper case letter,
-            || !preg_match("/[A-Z]/", trim($pword))
+            || !preg_match("/[A-Z]/", $pword)
             // one lower case letter,
-            || !preg_match("/[a-z]/", trim($pword))
+            || !preg_match("/[a-z]/", $pword)
             // one number,
-            || !preg_match("/\d/", trim($pword))
+            || !preg_match("/\d/", $pword)
             // and one legal special character
-            || !preg_match("/\W/", trim($pword))
+            || !preg_match("/\W/", $pword)
        ) {
         return false;
     } else {
@@ -221,8 +223,23 @@ function validateDate($date) {
  * 
  * @param string $data The text to log in the console
  */
-function console_log($data) {
+function consoleLog($data) {
     echo "<script>";
     echo "console.log(" . json_encode($data) . ")";
     echo "</script>";
+}
+
+function generatePassword() {
+    $alphaCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    $numberCharacters = "0123456789";
+    $specialCharacters = "@%+\/'!#$^?:.(){}[]~-_";
+    $legalCharacters = $alphaCharacters . $numberCharacters . $specialCharacters;
+    // Must start with an alphabetic character
+    $newPassword = substr($alphaCharacters, rand(1, strlen($alphaCharacters)), 1);
+    for($i = 0; $i <= 10; $i++) {
+        $newPassword = $newPassword . substr($legalCharacters, rand(1, strlen($legalCharacters)), 1);
+    }
+    $alphaNumeric = $alphaCharacters . $numberCharacters;
+    $newPassword = $newPassword . substr($alphaNumeric, rand(1, strlen($alphaNumeric)), 1);
+    return $newPassword;
 }
