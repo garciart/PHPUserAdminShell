@@ -1,4 +1,5 @@
 # PHP User Manager
+
 The PHP User Manager recreates the functionality of .NET's Web Site Administration Tool (WSAT), allowing you to easily manage users, roles, and access. It is an extension of my tutorial, [Master Pages in PHP](https://github.com/garciart/Master-Pages-In-PHP "Master Pages in PHP"). Since it uses SQLite, you can simply download it and add it to your project, or you can clone it and use it as the foundation of your own web site.
 
 ---
@@ -7,7 +8,7 @@ The PHP User Manager recreates the functionality of .NET's Web Site Administrati
 
 ---
 
-## Steps:
+## Steps
 
 To add it to your web site:
 
@@ -19,7 +20,7 @@ And that's it. Make sure you check out [ROLES.md](https://github.com/garciart/PH
 
 >***Please note that the focus of this repo is the code in the UserManager folder, which is meant to be copied, pasted, and integrated into a project through a link to the Login page. For that reason, this repo does not attempt to apply a Symfony, Laravel, or Codeigniter folder structure.***
 
-## Background:
+## Background
 
 While my first programs were written in Basic and Assembly Language, the language I've used the most is C. To this day, if I have to write a quick utility program, I'll knock it out in C. So, it's not surprising that when I began to develop applications for the web, I started with C# and ASP.NET. All in all, I have written quite a few web sites using the lessons I learned from [Cristian Darie’s excellent book, Beginning ASP.NET 2.0 E-Commerce in C# 2005: From Novice to Professional](https://www.apress.com/us/book/9781590594681 "Beginning ASP.NET 2.0 E-Commerce in C# 2005").
 
